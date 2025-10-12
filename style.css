@@ -56,7 +56,7 @@
 }
 
 .main-logo {
-    max-width: 150px; /* يمكنك تعديل الحجم حسب الرغبة */
+    max-width: 80px; /* يمكنك تعديل الحجم حسب الرغبة */
     height: auto;
     border-radius: 8px; 
 }
