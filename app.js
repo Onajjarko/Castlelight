@@ -3,6 +3,7 @@ const neonElement = document.getElementById('customNeon');
 const textInput = document.getElementById('neonText');
 const colorSelect = document.getElementById('neonColor');
 const sizeInput = document.getElementById('neonSize');
+const fontSelect = document.getElementById('neonFont'); // تم إضافة عنصر الخط
 const priceDisplay = document.getElementById('price');
 
 // قائمة الألوان المتاحة لتسهيل حذف الفئات القديمة
@@ -42,19 +43,20 @@ function updateNeonSign() {
     const text = textInput.value.trim() || "اكتب هنا";
     const color = colorSelect.value;
     const size = sizeInput.value;
+    const font = fontSelect.value; // جلب الخط الجديد
 
     // 1. تحديث النص المعروض
     neonElement.textContent = text; 
     
     // 2. تغيير اللون عبر فئة CSS
-    // أولاً: نحذف جميع فئات الألوان القديمة (مثال: neon-red)
     availableColors.forEach(c => neonElement.classList.remove(`neon-${c}`));
-    
-    // ثانياً: نضيف الفئة اللونية الجديدة
     neonElement.classList.add(`neon-${color}`); 
 
     // 3. تحديث الحجم (بالـ CSS)
     neonElement.style.fontSize = `${size}px`; 
+    
+    // 4. تحديث الخط
+    neonElement.style.fontFamily = `'${font}', sans-serif`; 
     
     // بعد التحديث، يجب إعادة حساب السعر
     calculatePrice();
@@ -72,6 +74,9 @@ colorSelect.addEventListener('change', updateNeonSign);
 
 // عند تغيير الحجم (Range Slider)
 sizeInput.addEventListener('input', updateNeonSign);
+
+// عند تغيير الخط
+fontSelect.addEventListener('change', updateNeonSign);
 
 // تشغيل الدالة عند تحميل الصفحة لأول مرة
 window.onload = () => {
