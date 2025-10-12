@@ -1,8 +1,7 @@
 /* -------------------------------------- */
-/* تعريف خطوط النيون المخصصة (القديمة والجديدة) */
+/* تعريف الخطوط النيونيّة (المسارات النهائية) */
 /* -------------------------------------- */
 
-/* الخطوط القديمة (للتأكد من عملها) */
 @font-face { font-family: 'NeonClip'; src: url('./fonts/clip/Clip.ttf') format('truetype'); }
 @font-face { font-family: 'NeonDespairs'; src: url('./fonts/despairs/despairs-font-trial.ttf') format('truetype'); }
 @font-face { font-family: 'NeonIcklips'; src: url('./fonts/icklips/Icklips_.ttf') format('truetype'); }
@@ -11,60 +10,39 @@
 @font-face { font-family: 'NeonParty'; src: url('./fonts/partylicious/Partilicious.ttf') format('truetype'); }
 @font-face { font-family: 'NeonPicadilly'; src: url('./fonts/picadilly/Picadilly.ttf') format('truetype'); }
 
-
-/* -------------------------------------- */
-/* تعريف الخطوط الجديدة من مجلد castlefont (المسارات المأخوذة من الصورة) */
-/* -------------------------------------- */
-
-/* 1. خط Animal Chariot (من مجلد anima: chariot) */
-@font-face {
-    font-family: 'NeonAnimal'; 
-    src: url('./fonts/castlefont/anima_chariot/Animal_Chariot.ttf') format('truetype'); 
-}
-
-/* 2. خط Demather */
-@font-face {
-    font-family: 'NeonDemather';
-    src: url('./fonts/castlefont/Demather/Demather.otf') format('opentype'); 
-}
-
-/* 3. خط Floralis Couture */
-@font-face {
-    font-family: 'NeonFloralis';
-    src: url('./fonts/castlefont/floralis/Floralis_Couture.ttf') format('truetype'); 
-}
-
-/* 4. خط Neon 80s */
-@font-face {
-    font-family: 'Neon80s';
-    src: url('./fonts/castlefont/Neon80s/Neon.ttf') format('truetype'); 
-}
+/* الخطوط الجديدة */
+@font-face { font-family: 'NeonAnimal'; src: url('./fonts/castlefont/anima_chariot/Animal_Chariot.ttf') format('truetype'); }
+@font-face { font-family: 'NeonDemather'; src: url('./fonts/castlefont/Demather/Demather.otf') format('opentype'); }
+@font-face { font-family: 'NeonFloralis'; src: url('./fonts/castlefont/floralis/Floralis_Couture.ttf') format('truetype'); }
+@font-face { font-family: 'Neon80s'; src: url('./fonts/castlefont/Neon80s/Neon.ttf') format('truetype'); }
 
 
 /* -------------------------------------- */
-/* تنسيق الشعار وتنسيق الواجهة (باقي الكود) */
+/* تنسيق الواجهة (إعادة الخلفية الداكنة) */
 /* -------------------------------------- */
-
-.logo-container {
-    text-align: center;
-    padding-top: 20px;
-    margin-bottom: 20px;
-}
-
-.main-logo {
-    max-width: 80px; /* تم تصغير الحجم */
-    height: auto;
-    border-radius: 8px; 
-}
 
 body {
-    background-color: #121212;
+    background-color: #121212; /* الخلفية الداكنة */
     color: #f0f0f0;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 20px;
     direction: rtl;
     text-align: right;
+}
+
+/* ... بقية التنسيقات (مثل main-logo, container, neon-display, إلخ) ... */
+
+.logo-container {
+    text-align: center; 
+    padding-top: 20px;
+    margin-bottom: 20px;
+}
+
+.main-logo {
+    max-width: 80px; 
+    height: auto;
+    border-radius: 8px; 
 }
 
 .container {
@@ -82,13 +60,19 @@ h1 {
 .customizer-panel {
     display: flex;
     flex-wrap: wrap;
-    background-color: #1f1f1f;
+    background-color: #1f1f1f; /* خلفية لوحة التحكم الداكنة */
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
     min-height: 450px;
 }
-/* ... بقية تنسيقات الواجهة (controls-section, neon-display, image-grid, neon-sign) تبقى كما هي ... */
+
+.neon-display {
+    /* ... */
+    background-color: #000; /* خلفية مربع النيون الأسود */
+    /* ... */
+}
+/* ... (بقية تنسيقات الواجهة ومعرض الصور) ... */
 
 /* -------------------------------------- */
 /* فئات الألوان وتأثيرات النيون (كود التوهج) */
