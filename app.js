@@ -1,61 +1,83 @@
-// الثوابت لربط عناصر HTML
+// ===================================
+// 1. الثوابت الأساسية (Elements)
+// ===================================
+const neonText = document.getElementById('neonText');
+const neonFont = document.getElementById('neonFont');
+const neonColor = document.getElementById('neonColor');
+const neonSize = document.getElementById('neonSize');
 const neonElement = document.getElementById('customNeon');
-const textInput = document.getElementById('neonText');
-const colorSelect = document.getElementById('neonColor');
-const sizeInput = document.getElementById('neonSize');
-const fontSelect = document.getElementById('neonFont'); 
-// تم حذف const priceDisplay;
+const toggleButton = document.getElementById('toggleButton');
 
-// قائمة الألوان المتاحة لتسهيل حذف الفئات القديمة
-const availableColors = ['red', 'blue', 'green', 'pink', 'yellow'];
+// حالة التشغيل/الإيقاف الافتراضية
+let isNeonOn = true; 
 
-// -----------------------------------------------------------------
-// دالة حساب السعر تم حذفها بالكامل
-// -----------------------------------------------------------------
+// ===================================
+// 2. الدوال الرئيسية
+// ===================================
 
-// -----------------------------------------------------------------
-// 1. تحديث مكون النيون (ربط الإدخالات بفئات CSS)
-// -----------------------------------------------------------------
-
+/**
+ * دالة تحديث توقيع النيون بناءً على الإدخالات
+ */
 function updateNeonSign() {
-    const text = textInput.value.trim() || "اكتب هنا";
-    const color = colorSelect.value;
-    const size = sizeInput.value;
-    const font = fontSelect.value; 
+    const text = neonText.value;
+    const fontValue = neonFont.value;
+    const colorValue = neonColor.value;
+    const sizeValue = neonSize.value;
 
-    // 1. تحديث النص المعروض
-    neonElement.textContent = text; 
+    // تحديث النص
+    neonElement.textContent = text;
     
-    // 2. تغيير اللون عبر فئة CSS
-    availableColors.forEach(c => neonElement.classList.remove(`neon-${c}`));
-    neonElement.classList.add(`neon-${color}`); 
+    // تحديث الخط (باستخدام قيمة font-family المعرفة في CSS)
+    neonElement.style.fontFamily = `'${fontValue}', sans-serif`;
 
-    // 3. تحديث الحجم (بالـ CSS)
-    neonElement.style.fontSize = `${size}px`; 
+    // تحديث الحجم
+    neonElement.style.fontSize = `${sizeValue}px`;
+
+    // تحديث اللون (إزالة جميع فئات الألوان السابقة وإضافة الفئة الجديدة)
+    neonElement.className = 'neon-sign';
+    neonElement.classList.add(`neon-${colorValue}`);
     
-    // 4. تحديث الخط
-    neonElement.style.fontFamily = `'${font}', sans-serif`; 
-    
-    // تم حذف استدعاء calculatePrice()
+    // التأكد من تطبيق حالة التشغيل/الإيقاف
+    if (!isNeonOn) {
+        neonElement.classList.add('is-off');
+    }
 }
 
-// -----------------------------------------------------------------
-// 2. الاستماع لأحداث المستخدم (Listeners)
-// -----------------------------------------------------------------
+/**
+ * دالة تبديل حالة التشغيل/الإيقاف للوحة النيون
+ */
+function toggleNeon() {
+    isNeonOn = !isNeonOn; // عكس الحالة
 
-// عند إدخال نص جديد
-textInput.addEventListener('input', updateNeonSign);
+    if (isNeonOn) {
+        // حالة التشغيل (ON)
+        neonElement.classList.remove('is-off');
+        toggleButton.textContent = 'إيقاف';
+        toggleButton.classList.remove('off');
+        toggleButton.classList.add('on');
+        
+    } else {
+        // حالة الإيقاف (OFF)
+        neonElement.classList.add('is-off');
+        toggleButton.textContent = 'تشغيل';
+        toggleButton.classList.remove('on');
+        toggleButton.classList.add('off');
+    }
+}
 
-// عند تغيير اللون
-colorSelect.addEventListener('change', updateNeonSign);
 
-// عند تغيير الحجم (Range Slider)
-sizeInput.addEventListener('input', updateNeonSign);
+// ===================================
+// 3. ربط الأحداث (Listeners)
+// ===================================
 
-// عند تغيير الخط
-fontSelect.addEventListener('change', updateNeonSign);
+// ربط المستمعين لتحديث اللوحة في الوقت الفعلي
+neonText.addEventListener('input', updateNeonSign);
+neonFont.addEventListener('change', updateNeonSign);
+neonColor.addEventListener('change', updateNeonSign);
+neonSize.addEventListener('input', updateNeonSign);
 
-// تشغيل الدالة عند تحميل الصفحة لأول مرة
-window.onload = () => {
-    updateNeonSign(); 
-};
+// ربط مستمع لزر التشغيل/الإيقاف
+toggleButton.addEventListener('click', toggleNeon);
+
+// تشغيل التحديث الأولي عند تحميل الصفحة
+window.addEventListener('load', updateNeonSign);
