@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <link type="text/css" rel="stylesheet" href="../css/fontawesome/css/all.css" />
+        <link href="../css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <link href="../css/style.css" rel="stylesheet" type="text/css" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+
+    <style>
+        
+        :root {
+            --neon-color: #33ddff;
+            --neon-color2: #ff338f;
+        }
+        
+        body {
+            background-color: black;
+            color: white;
+            /* font-family: "Neon", sans-serif; */
+        }
+
+        h2 {
+            font-size: 3rem;
+            text-transform: uppercase;
+        }
+
+        i {
+            font-size: 8rem;
+        }
+
+        main {
+            min-height: 100vh;
+        }
+
+        .neon {
+            text-shadow: 0 0 0 transparent, 0 0 50px var(--neon-color), 0 0 10px var(--neon-color), 0 0 20px var(--neon-color), 0 0 50px var(--neon-color), 0 0 100px var(--neon-color), 0 0 150px var(--neon-color), 0 0 250px var(--neon-color);
+            animation: buzz 0.01s infinite alternate;
+            animation: flicker 14s infinite alternate;
+            /* animation: turn-on 4s 1 alternate; */
+            /* animation: flicker 14s infinite alternate, buzz 0.01s infinite alternate, turn-on 4s 1 alternate; */
+        }
+
+        .neon2 {
+            text-shadow: 0 0 0 transparent, 0 0 50px var(--neon-color2), 0 0 10px var(--neon-color2), 0 0 20px var(--neon-color2), 0 0 50px var(--neon-color2), 0 0 100px var(--neon-color2), 0 0 150px var(--neon-color2), 0 0 250px var(--neon-color2);
+            animation: buzz 0.01s infinite alternate;
+            /* animation: flicker 14s infinite alternate; */
+            /* animation: turn-on 4s 1 alternate; */
+            /* animation: flicker 14s infinite alternate, buzz 0.01s infinite alternate, turn-on 4s 1 alternate; */
+        }
+    </style>
+
+    <body>
+        <main class="row align-items-center justify-content-center py-4">
+            <section class="col-4 text-center">
+                <h2 class="neon buzz my-3" style="font-family: 'Picadilly', sans-serif;">Dresses.</h2>
+                <i class="fas fa-female neon buzz mx-5"></i>
+            </section>
+            <section class="col-4 text-center">
+                <h2 class="neon2 buzz my-3" style="font-family: 'Picadilly', sans-serif;">Pants.</h2>
+                <i class="fas fa-male neon2 buzz mx-5"></i>
+            </section>
+        </main>
+    </body>
+
+
+    <style>
+
+        @font-face {
+            font-family: "Clip";
+            src: url("../fonts/clip/Clip.TTF");
+        }
+
+        @font-face {
+            font-family: "Despairs";
+            src: url("../fonts/despairs/Despairs Font Trial/Despairs Trial.TTF");
+        }
+
+        @font-face {
+            font-family: "Icklips";
+            src: url("../fonts/icklips/Icklips_.TTF");
+        }
+
+        @font-face {
+            font-family: "Kosanon";
+            src: url("../fonts/kosannoncommercial/KosanNonCommercial.OTF");
+        }
+
+        @font-face {
+            font-family: "Neon";
+            src: url("../fonts/neon/NEON____.TTF");
+        }
+
+        @font-face {
+            font-family: "Partilicious";
+            src: url("../fonts/partylicious/Partilicious.TTF");
+        }
+
+        @font-face {
+            font-family: "Picadilly";
+            src: url("../fonts/picadilly/Picadilly.TTF");
+        }
+
+    </style>
+</html>
