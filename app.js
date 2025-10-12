@@ -3,7 +3,7 @@ const neonElement = document.getElementById('customNeon');
 const textInput = document.getElementById('neonText');
 const colorSelect = document.getElementById('neonColor');
 const sizeInput = document.getElementById('neonSize');
-const fontSelect = document.getElementById('neonFont'); // تم إضافة عنصر الخط
+const fontSelect = document.getElementById('neonFont'); 
 const priceDisplay = document.getElementById('price');
 
 // قائمة الألوان المتاحة لتسهيل حذف الفئات القديمة
@@ -19,19 +19,14 @@ const PRICE_PER_CHAR = 5;
 
 function calculatePrice() {
     const text = textInput.value.trim();
-    // إزالة المسافات وحساب عدد الأحرف
     const charCount = text.replace(/\s/g, '').length; 
-    
-    // حساب سعر التكلفة: السعر الأساسي + (عدد الأحرف * سعر الحرف)
     let total = BASE_PRICE + (charCount * PRICE_PER_CHAR);
     
-    // تعديل السعر حسب الحجم
     const sizeValue = parseInt(sizeInput.value); 
     const sizeFactor = 1 + ((sizeValue - 40) / 100); 
     
     total = total * sizeFactor;
 
-    // عرض السعر بالدينار الأردني (JOD) مع رقمين عشريين
     priceDisplay.textContent = `${total.toFixed(2)} JOD`;
 }
 
@@ -43,7 +38,7 @@ function updateNeonSign() {
     const text = textInput.value.trim() || "اكتب هنا";
     const color = colorSelect.value;
     const size = sizeInput.value;
-    const font = fontSelect.value; // جلب الخط الجديد
+    const font = fontSelect.value; 
 
     // 1. تحديث النص المعروض
     neonElement.textContent = text; 
@@ -55,7 +50,7 @@ function updateNeonSign() {
     // 3. تحديث الحجم (بالـ CSS)
     neonElement.style.fontSize = `${size}px`; 
     
-    // 4. تحديث الخط
+    // 4. تحديث الخط (الذي كان لا يعمل)
     neonElement.style.fontFamily = `'${font}', sans-serif`; 
     
     // بعد التحديث، يجب إعادة حساب السعر
