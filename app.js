@@ -4,34 +4,17 @@ const textInput = document.getElementById('neonText');
 const colorSelect = document.getElementById('neonColor');
 const sizeInput = document.getElementById('neonSize');
 const fontSelect = document.getElementById('neonFont'); 
-const priceDisplay = document.getElementById('price');
+// تم حذف const priceDisplay;
 
 // قائمة الألوان المتاحة لتسهيل حذف الفئات القديمة
 const availableColors = ['red', 'blue', 'green', 'pink', 'yellow'];
 
-// سعر القاعدة والتكلفة: يمكنك تعديلها حسب متطلباتك (بالدينار الأردني JOD)
-const BASE_PRICE = 50; 
-const PRICE_PER_CHAR = 5; 
-
 // -----------------------------------------------------------------
-// 1. الدالة الأساسية لحساب السعر
+// دالة حساب السعر تم حذفها بالكامل
 // -----------------------------------------------------------------
 
-function calculatePrice() {
-    const text = textInput.value.trim();
-    const charCount = text.replace(/\s/g, '').length; 
-    let total = BASE_PRICE + (charCount * PRICE_PER_CHAR);
-    
-    const sizeValue = parseInt(sizeInput.value); 
-    const sizeFactor = 1 + ((sizeValue - 40) / 100); 
-    
-    total = total * sizeFactor;
-
-    priceDisplay.textContent = `${total.toFixed(2)} JOD`;
-}
-
 // -----------------------------------------------------------------
-// 2. تحديث مكون النيون (ربط الإدخالات بفئات CSS)
+// 1. تحديث مكون النيون (ربط الإدخالات بفئات CSS)
 // -----------------------------------------------------------------
 
 function updateNeonSign() {
@@ -50,15 +33,14 @@ function updateNeonSign() {
     // 3. تحديث الحجم (بالـ CSS)
     neonElement.style.fontSize = `${size}px`; 
     
-    // 4. تحديث الخط (الذي كان لا يعمل)
+    // 4. تحديث الخط
     neonElement.style.fontFamily = `'${font}', sans-serif`; 
     
-    // بعد التحديث، يجب إعادة حساب السعر
-    calculatePrice();
+    // تم حذف استدعاء calculatePrice()
 }
 
 // -----------------------------------------------------------------
-// 3. الاستماع لأحداث المستخدم (Listeners)
+// 2. الاستماع لأحداث المستخدم (Listeners)
 // -----------------------------------------------------------------
 
 // عند إدخال نص جديد
