@@ -18,23 +18,13 @@
 
 
 /* -------------------------------------- */
-/* تنسيق رؤوس الصفحة والشعارات المتجاورة (اللوجو) */
+/* تنسيق الواجهة والخلفية الداكنة وتصغير اللوجو (لوجو واحد فقط) */
 /* -------------------------------------- */
 
-.header-branding {
-    /* وضع الشعار الرئيسي فوق العنوان (مثل موقع Custom Neon) */
-    display: flex;
-    flex-direction: row; /* تغيير ليكون الشعار في أقصى اليمين والشعارات الجانبية في أقصى اليسار */
-    justify-content: space-between; /* توزيع المساحة بين اللوجو والقسم الإضافي */
-    align-items: center;
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 20px 0 10px 0; 
-}
-
-.main-logo-container {
-    /* يظل اللوجو الرئيسي على اليمين */
-    order: 1; /* يضمن بقاءه على اليمين في وضع RTL */
+.logo-container {
+    text-align: center; 
+    padding-top: 20px;
+    margin-bottom: 20px;
 }
 
 .main-logo {
@@ -43,24 +33,7 @@
     border-radius: 8px; 
 }
 
-/* تنسيق الشعارات الإضافية كعدة مربعات صغيرة (تظهر على اليسار) */
-.secondary-logos {
-    display: flex;
-    gap: 15px; /* المسافة بين كل شعار وشعار */
-    align-items: center;
-    order: 2; /* يضمن بقاءه على اليسار في وضع RTL */
-}
-
-.secondary-logo-item {
-    max-width: 35px; /* حجم صغير للمربعات الجانبية */
-    height: auto;
-    border-radius: 4px; 
-    opacity: 0.8; 
-}
-
-/* -------------------------------------- */
-/* تنسيق الواجهة والخلفية الداكنة */
-/* -------------------------------------- */
+/* تم حذف تنسيقات .header-branding و .secondary-logos */
 
 body {
     background-color: #121212; /* الخلفية الداكنة */
@@ -228,6 +201,7 @@ h1 {
         0 0 50px #ff073a,
         0 0 80px rgba(255, 7, 58, 0.7);
 }
+/* ... بقية فئات الألوان تبقى كما هي ... */
 
 .neon-blue {
     color: #00ffff;
