@@ -1,3 +1,53 @@
+/* تعريف خطوط النيون المخصصة */
+
+/* 1. خط Clip */
+@font-face {
+    font-family: 'NeonClip';
+    src: url('fonts/clip/Clip') format('truetype'); 
+}
+
+/* 2. خط Despairs */
+@font-face {
+    font-family: 'NeonDespairs';
+    src: url('fonts/despairs/despairs-font-trial') format('truetype');
+}
+
+/* 3. خط Icklips */
+@font-face {
+    font-family: 'NeonIcklips';
+    src: url('fonts/icklips/Icklips_') format('truetype');
+}
+
+/* 4. خط KosanNonCommercial */
+@font-face {
+    font-family: 'NeonKosan';
+    src: url('fonts/kosannoncommercial/KosanNonCommercial') format('opentype');
+}
+
+/* 5. خط Neon */
+@font-face {
+    font-family: 'NeonRegular';
+    src: url('fonts/neon/NEON__') format('truetype');
+}
+
+/* 6. خط Partylicious */
+@font-face {
+    font-family: 'NeonParty';
+    src: url('fonts/partylicious/Partilicious') format('truetype');
+}
+
+/* 7. خط Picadilly */
+@font-face {
+    font-family: 'NeonPicadilly';
+    src: url('fonts/picadilly/Picadilly') format('truetype');
+}
+
+/* تعديل القاعدة لاستخدام خط افتراضي */
+.neon-sign { 
+    font-family: 'NeonRegular', 'Arial Black', sans-serif; /* هنا نستخدم الخط الافتراضي */
+    font-size: 40px; 
+    /* ... بقية التنسيقات ... */
+}
 body {
     background-color: #121212;
     color: #f0f0f0;
