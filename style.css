@@ -22,37 +22,40 @@
 /* -------------------------------------- */
 
 .header-branding {
-    /* استخدام فليكس بوكس لوضع اللوجو الرئيسي والشعارات الإضافية جنباً إلى جنب */
+    /* وضع الشعار الرئيسي فوق العنوان (مثل موقع Custom Neon) */
     display: flex;
+    flex-direction: row; /* تغيير ليكون الشعار في أقصى اليمين والشعارات الجانبية في أقصى اليسار */
     justify-content: space-between; /* توزيع المساحة بين اللوجو والقسم الإضافي */
     align-items: center;
     max-width: 1000px;
     margin: 0 auto;
-    padding: 20px 0;
+    padding: 20px 0 10px 0; 
 }
 
 .main-logo-container {
-    text-align: right; 
+    /* يظل اللوجو الرئيسي على اليمين */
+    order: 1; /* يضمن بقاءه على اليمين في وضع RTL */
 }
 
 .main-logo {
-    max-width: 80px; /* تصغير اللوجو الرئيسي */
+    max-width: 80px; /* تصغير اللوجو */
     height: auto;
     border-radius: 8px; 
 }
 
-/* تنسيق الشعارات الإضافية كعدة مربعات صغيرة */
+/* تنسيق الشعارات الإضافية كعدة مربعات صغيرة (تظهر على اليسار) */
 .secondary-logos {
     display: flex;
     gap: 15px; /* المسافة بين كل شعار وشعار */
     align-items: center;
+    order: 2; /* يضمن بقاءه على اليسار في وضع RTL */
 }
 
 .secondary-logo-item {
     max-width: 35px; /* حجم صغير للمربعات الجانبية */
     height: auto;
     border-radius: 4px; 
-    opacity: 0.7; 
+    opacity: 0.8; 
 }
 
 /* -------------------------------------- */
@@ -91,6 +94,7 @@ h1 {
     min-height: 450px;
 }
 
+/* قسم التحكم على اليمين */
 .controls-section {
     flex: 1;
     min-width: 300px;
@@ -98,6 +102,7 @@ h1 {
     margin-right: 20px; 
 }
 
+/* قسم العرض على اليسار */
 .neon-display {
     flex: 2;
     min-height: 350px;
