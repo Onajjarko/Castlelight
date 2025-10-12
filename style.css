@@ -61,18 +61,6 @@
     border-radius: 8px; 
 }
 
-.logo-container {
-    text-align: right; /* لتوسيط الصورة */
-    padding-top: 20px;
-    margin-bottom: 20px;
-}
-
-.main-logo {
-    max-width: 100px; /* يمكنك تعديل الحجم حسب الرغبة */
-    height: auto;
-    border-radius: 8px; 
-}
-
 
 /* -------------------------------------- */
 /* تنسيق الواجهة والخلفية (كود التوهج) */
