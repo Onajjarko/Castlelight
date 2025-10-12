@@ -27,7 +27,7 @@ function updateNeonSign() {
     // تحديث النص
     neonElement.textContent = text;
     
-    // تحديث الخط (باستخدام قيمة font-family المعرفة في CSS)
+    // تحديث الخط
     neonElement.style.fontFamily = `'${fontValue}', sans-serif`;
 
     // تحديث الحجم
@@ -37,7 +37,7 @@ function updateNeonSign() {
     neonElement.className = 'neon-sign';
     neonElement.classList.add(`neon-${colorValue}`);
     
-    // التأكد من تطبيق حالة التشغيل/الإيقاف
+    // التأكد من تطبيق حالة التشغيل/الإيقاف (إذا كانت مطفأة، يجب أن تظل مطفأة)
     if (!isNeonOn) {
         neonElement.classList.add('is-off');
     }
@@ -48,22 +48,11 @@ function updateNeonSign() {
  */
 function toggleNeon() {
     isNeonOn = !isNeonOn; // عكس الحالة
-/**
- * دالة تبديل حالة التشغيل/الإيقاف للوحة النيون
- */
-/**
- * دالة تبديل حالة التشغيل/الإيقاف للوحة النيون
- */
-function toggleNeon() {
-    isNeonOn = !isNeonOn; // عكس الحالة
 
     if (isNeonOn) {
         // حالة التشغيل (ON)
-        
-        // 1. إزالة فئة الإيقاف
-        neonElement.classList.remove('is-off'); 
-
-        // 2. إعادة تطبيق كل التنسيقات (اللون والخط والحجم) لضمان التوهج
+        neonElement.classList.remove('is-off');
+        // إعادة تطبيق كل التنسيقات لضمان التوهج
         updateNeonSign(); 
         
         toggleButton.textContent = 'إيقاف';
@@ -72,8 +61,6 @@ function toggleNeon() {
         
     } else {
         // حالة الإيقاف (OFF)
-        
-        // 1. إضافة فئة الإيقاف
         neonElement.classList.add('is-off');
         
         toggleButton.textContent = 'تشغيل';
@@ -81,6 +68,7 @@ function toggleNeon() {
         toggleButton.classList.add('off');
     }
 }
+
 
 // ===================================
 // 3. ربط الأحداث (Listeners)
