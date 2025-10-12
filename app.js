@@ -1,89 +1,86 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تطبيق مخصص لوحات النيون</title>
-    
-    <link rel="stylesheet" href="css/bootstrap.min.css"> 
-    
-    <link rel="stylesheet" href="style.css"> 
-    
-</head>
-<body>
-    
-    <div class="logo-container">
-        <img src="images/a.jpeg" alt="شعار المتجر" class="main-logo">
-    </div>
+// ===================================
+// 1. الثوابت الأساسية (Elements)
+// ===================================
+const neonText = document.getElementById('neonText');
+const neonFont = document.getElementById('neonFont');
+const neonColor = document.getElementById('neonColor');
+const neonSize = document.getElementById('neonSize');
+const neonElement = document.getElementById('customNeon');
+const toggleButton = document.getElementById('toggleButton');
 
-    <div class="container">
-        <h1>صمم لوحة النيون الخاصة بك</h1>
-        <div class="customizer-panel">
-            
-            <div class="controls-section">
-                
-                <div class="input-group">
-                    <label for="neonText">النص المطلوب:</label>
-                    <input type="text" id="neonText" value="اكتب هنا" maxlength="30">
-                </div>
+// حالة التشغيل/الإيقاف الافتراضية
+let isNeonOn = true; 
 
-                <div class="input-group">
-                    <label for="neonFont">اختيار الخط:</label>
-                    <select id="neonFont">
-                        <option value="NeonRegular" selected>Neon Regular</option>
-                        <option value="NeonClip">Clip</option>
-                        <option value="NeonDespairs">Despairs</option>
-                        <option value="NeonIcklips">Icklips</option>
-                        <option value="NeonKosan">Kosan</option>
-                        <option value="NeonParty">Partylicious</option>
-                        <option value="NeonPicadilly">Picadilly</option>
-                        
-                        <option value="NeonAnimal">Animal Chariot</option> 
-                        <option value="NeonDemather">Demather</option> 
-                        <option value="NeonFloralis">Floralis</option> 
-                        <option value="Neon80s">Neon 80s</option>
-                    </select>
-                </div>
-                
-                <div class="input-group">
-                    <label for="neonColor">لون النيون:</label>
-                    <select id="neonColor">
-                        <option value="red" selected>أحمر</option>
-                        <option value="blue">أزرق</option>
-                        <option value="green">أخضر</option>
-                        <option value="pink">وردي</option>
-                        <option value="yellow">أصفر</option>
-                    </select>
-                </div>
-                
-                <div class="input-group">
-                    <label for="neonSize">حجم الخط (تقريبي):</label>
-                    <input type="range" id="neonSize" min="20" max="60" value="40">
-                </div>
-                
-                <div class="input-group">
-                    <label>إضاءة اللوحة:</label>
-                    <button id="toggleButton" class="neon-button on">إيقاف</button>
-                </div>
-                
-            </div>
-            
-            <div class="neon-display">
-                <div id="customNeon" class="neon-sign neon-red">اكتب هنا</div>
-            </div>
-            
-        </div>
-    </div>
+// ===================================
+// 2. الدوال الرئيسية
+// ===================================
+
+/**
+ * دالة تحديث توقيع النيون بناءً على الإدخالات
+ */
+function updateNeonSign() {
+    const text = neonText.value;
+    const fontValue = neonFont.value;
+    const colorValue = neonColor.value;
+    const sizeValue = neonSize.value;
+
+    // تحديث النص
+    neonElement.textContent = text;
     
-    <div class="gallery-container">
-        <h2>أعمال سابقة وتصاميم جاهزة</h2>
-        <div class="image-grid">
-            <img src="images/desktop1signs.jpg" alt="تصميم مكتبي 1">
-            <img src="images/desktop2designs.jpg" alt="تصميم مكتبي 2">
-            <img src="images/mobile2designs.jpg" alt="تصميم جوال 2">
-            <img src="images/SignDiagramUK.png" alt="مخطط تصميم">
-        </div>
-    </div>
-    <script src="app.js" defer></script>
-</body>
-</html>
+    // تحديث الخط
+    neonElement.style.fontFamily = `'${fontValue}', sans-serif`;
+
+    // تحديث الحجم
+    neonElement.style.fontSize = `${sizeValue}px`;
+
+    // تحديث اللون (إزالة جميع فئات الألوان السابقة وإضافة الفئة الجديدة)
+    neonElement.className = 'neon-sign';
+    neonElement.classList.add(`neon-${colorValue}`);
+    
+    // التأكد من تطبيق حالة التشغيل/الإيقاف
+    if (!isNeonOn) {
+        neonElement.classList.add('is-off');
+    }
+}
+
+/**
+ * دالة تبديل حالة التشغيل/الإيقاف للوحة النيون
+ */
+function toggleNeon() {
+    isNeonOn = !isNeonOn; // عكس الحالة
+
+    if (isNeonOn) {
+        // حالة التشغيل (ON): إزالة الإيقاف وإعادة تطبيق التوهج
+        neonElement.classList.remove('is-off');
+        updateNeonSign(); 
+        
+        toggleButton.textContent = 'إيقاف';
+        toggleButton.classList.remove('off');
+        toggleButton.classList.add('on');
+        
+    } else {
+        // حالة الإيقاف (OFF): إضافة فئة الإيقاف
+        neonElement.classList.add('is-off');
+        
+        toggleButton.textContent = 'تشغيل';
+        toggleButton.classList.remove('on');
+        toggleButton.classList.add('off');
+    }
+}
+
+
+// ===================================
+// 3. ربط الأحداث (Listeners)
+// ===================================
+
+// ربط المستمعين لتحديث اللوحة في الوقت الفعلي
+neonText.addEventListener('input', updateNeonSign);
+neonFont.addEventListener('change', updateNeonSign);
+neonColor.addEventListener('change', updateNeonSign);
+neonSize.addEventListener('input', updateNeonSign);
+
+// ربط مستمع لزر التشغيل/الإيقاف
+toggleButton.addEventListener('click', toggleNeon);
+
+// تشغيل التحديث الأولي عند تحميل الصفحة
+window.addEventListener('load', updateNeonSign);
