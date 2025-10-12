@@ -51,14 +51,20 @@ function toggleNeon() {
 /**
  * دالة تبديل حالة التشغيل/الإيقاف للوحة النيون
  */
+/**
+ * دالة تبديل حالة التشغيل/الإيقاف للوحة النيون
+ */
 function toggleNeon() {
     isNeonOn = !isNeonOn; // عكس الحالة
 
     if (isNeonOn) {
         // حالة التشغيل (ON)
-        neonElement.classList.remove('is-off');
-        // إزالة اللون الرمادي المطفأ والعودة للألوان الزاهية
-        neonElement.style.color = ''; 
+        
+        // 1. إزالة فئة الإيقاف
+        neonElement.classList.remove('is-off'); 
+
+        // 2. إعادة تطبيق كل التنسيقات (اللون والخط والحجم) لضمان التوهج
+        updateNeonSign(); 
         
         toggleButton.textContent = 'إيقاف';
         toggleButton.classList.remove('off');
@@ -66,13 +72,9 @@ function toggleNeon() {
         
     } else {
         // حالة الإيقاف (OFF)
-        const activeColor = neonColor.value;
         
+        // 1. إضافة فئة الإيقاف
         neonElement.classList.add('is-off');
-        // هنا نجعل حبل النيون المطفأ يظهر بلون أغمق قليلاً من لون النيون
-        
-        // إذا كان اللون أحمر، اجعله رمادي مائل للأحمر (أو اترك التنسيق في CSS)
-        // الأسهل هو الاعتماد على الكود في style.css الذي يفرض اللون الرمادي
         
         toggleButton.textContent = 'تشغيل';
         toggleButton.classList.remove('on');
