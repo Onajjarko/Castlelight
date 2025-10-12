@@ -48,23 +48,37 @@ function updateNeonSign() {
  */
 function toggleNeon() {
     isNeonOn = !isNeonOn; // عكس الحالة
+/**
+ * دالة تبديل حالة التشغيل/الإيقاف للوحة النيون
+ */
+function toggleNeon() {
+    isNeonOn = !isNeonOn; // عكس الحالة
 
     if (isNeonOn) {
         // حالة التشغيل (ON)
         neonElement.classList.remove('is-off');
+        // إزالة اللون الرمادي المطفأ والعودة للألوان الزاهية
+        neonElement.style.color = ''; 
+        
         toggleButton.textContent = 'إيقاف';
         toggleButton.classList.remove('off');
         toggleButton.classList.add('on');
         
     } else {
         // حالة الإيقاف (OFF)
+        const activeColor = neonColor.value;
+        
         neonElement.classList.add('is-off');
+        // هنا نجعل حبل النيون المطفأ يظهر بلون أغمق قليلاً من لون النيون
+        
+        // إذا كان اللون أحمر، اجعله رمادي مائل للأحمر (أو اترك التنسيق في CSS)
+        // الأسهل هو الاعتماد على الكود في style.css الذي يفرض اللون الرمادي
+        
         toggleButton.textContent = 'تشغيل';
         toggleButton.classList.remove('on');
         toggleButton.classList.add('off');
     }
 }
-
 
 // ===================================
 // 3. ربط الأحداث (Listeners)
