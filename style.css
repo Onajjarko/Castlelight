@@ -1,5 +1,5 @@
 /* -------------------------------------- */
-/* تعريف خطوط النيون المخصصة (المسارات النهائية) */
+/* تعريف خطوط النيون المخصصة (المسارات النهائية والمصححة) */
 /* -------------------------------------- */
 
 @font-face { font-family: 'NeonClip'; src: url('./fonts/clip/Clip.ttf') format('truetype'); }
@@ -10,7 +10,7 @@
 @font-face { font-family: 'NeonParty'; src: url('./fonts/partylicious/Partilicious.ttf') format('truetype'); }
 @font-face { font-family: 'NeonPicadilly'; src: url('./fonts/picadilly/Picadilly.ttf') format('truetype'); }
 
-/* الخطوط الجديدة (المسارات المصححة) */
+/* الخطوط الجديدة */
 @font-face { font-family: 'NeonAnimal'; src: url('./fonts/castlefont/anima_chariot/Animal_Chariot.ttf') format('truetype'); }
 @font-face { font-family: 'NeonDemather'; src: url('./fonts/castlefont/Demather/Demather.otf') format('opentype'); }
 @font-face { font-family: 'NeonFloralis'; src: url('./fonts/castlefont/floralis/Floralis_Couture.ttf') format('truetype'); }
@@ -18,7 +18,7 @@
 
 
 /* -------------------------------------- */
-/* تنسيق الواجهة والخلفية الداكنة */
+/* تنسيق الواجهة والخلفية الداكنة وتصغير اللوجو */
 /* -------------------------------------- */
 
 .logo-container {
@@ -28,7 +28,7 @@
 }
 
 .main-logo {
-    max-width: 80px; 
+    max-width: 80px; /* تصغير اللوجو */
     height: auto;
     border-radius: 8px; 
 }
@@ -160,13 +160,13 @@ h1 {
 }
 
 .neon-button.on {
-    background-color: #00ff99; /* لون التشغيل */
+    background-color: #00ff99; 
     color: #121212;
     box-shadow: 0 0 10px #00ff99, 0 0 20px #00ff99 inset;
 }
 
 .neon-button.off {
-    background-color: #444; /* لون الإيقاف */
+    background-color: #444; 
     color: #aaa;
     box-shadow: none;
 }
@@ -186,9 +186,8 @@ h1 {
 
 /* فئة إيقاف التشغيل: إلغاء التوهج */
 .neon-sign.is-off {
-    color: #666; /* لون خافت عند الإيقاف */
+    color: #666 !important; /* لون رمادي خافت عند الإيقاف */
     text-shadow: none !important; /* إلغاء التوهج بالقوة */
-    color: #666 !impotant; /*
 }
 
 /* فئات الألوان */
@@ -201,7 +200,7 @@ h1 {
         0 0 50px #ff073a,
         0 0 80px rgba(255, 7, 58, 0.7);
 }
-
+/* ... بقية فئات الألوان تبقى كما هي ... */
 .neon-blue {
     color: #00ffff;
     text-shadow: 
