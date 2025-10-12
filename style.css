@@ -1,6 +1,7 @@
 /* -------------------------------------- */
-/* تعريف الخطوط النيون المخصصة (المسارات النهائية والمصححة) */
+/* تعريف خطوط النيون المخصصة (المسارات النهائية والمصححة) */
 /* -------------------------------------- */
+
 @font-face { font-family: 'NeonClip'; src: url('./fonts/clip/Clip.ttf') format('truetype'); }
 @font-face { font-family: 'NeonDespairs'; src: url('./fonts/despairs/despairs-font-trial.ttf') format('truetype'); }
 @font-face { font-family: 'NeonIcklips'; src: url('./fonts/icklips/Icklips_.ttf') format('truetype'); }
@@ -17,20 +18,46 @@
 
 
 /* -------------------------------------- */
-/* تنسيق الواجهة والخلفية الداكنة وتصغير اللوجو */
+/* تنسيق رؤوس الصفحة والشعارات المتجاورة (اللوجو) */
 /* -------------------------------------- */
 
-.logo-container {
-    text-align: center; 
-    padding-top: 20px;
-    margin-bottom: 20px;
+.header-branding {
+    /* استخدام فليكس بوكس لوضع اللوجو الرئيسي والشعارات الإضافية جنباً إلى جنب */
+    display: flex;
+    justify-content: space-between; /* توزيع المساحة بين اللوجو والقسم الإضافي */
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.main-logo-container {
+    text-align: right; 
 }
 
 .main-logo {
-    max-width: 80px; /* تصغير اللوجو */
+    max-width: 80px; /* تصغير اللوجو الرئيسي */
     height: auto;
     border-radius: 8px; 
 }
+
+/* تنسيق الشعارات الإضافية كعدة مربعات صغيرة */
+.secondary-logos {
+    display: flex;
+    gap: 15px; /* المسافة بين كل شعار وشعار */
+    align-items: center;
+}
+
+.secondary-logo-item {
+    max-width: 35px; /* حجم صغير للمربعات الجانبية */
+    height: auto;
+    border-radius: 4px; 
+    opacity: 0.7; 
+}
+
+/* -------------------------------------- */
+/* تنسيق الواجهة والخلفية الداكنة */
+/* -------------------------------------- */
 
 body {
     background-color: #121212; /* الخلفية الداكنة */
@@ -64,15 +91,13 @@ h1 {
     min-height: 450px;
 }
 
-/* قسم التحكم على اليمين */
 .controls-section {
     flex: 1;
     min-width: 300px;
     padding-left: 0; 
-    margin-right: 20px; /* فصل بين العرض والتحكم */
+    margin-right: 20px; 
 }
 
-/* قسم العرض على اليسار */
 .neon-display {
     flex: 2;
     min-height: 350px;
@@ -147,7 +172,7 @@ h1 {
 
 
 /* -------------------------------------- */
-/* تنسيق زر التشغيل/الإيقاف */
+/* تنسيق زر التشغيل/الإيقاف والتوهج */
 /* -------------------------------------- */
 
 .neon-button {
@@ -173,11 +198,6 @@ h1 {
     color: #aaa;
     box-shadow: none;
 }
-
-
-/* -------------------------------------- */
-/* فئات الألوان وتأثيرات النيون (التوهج) */
-/* -------------------------------------- */
 
 .neon-sign { 
     font-family: 'NeonRegular', sans-serif; 
