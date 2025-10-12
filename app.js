@@ -26,7 +26,6 @@ function calculatePrice() {
     
     // تعديل السعر حسب الحجم
     const sizeValue = parseInt(sizeInput.value); 
-    // حجم 40 هو الأساس (SizeInput range: 20-60). زيادة 1% لكل نقطة فوق 40
     const sizeFactor = 1 + ((sizeValue - 40) / 100); 
     
     total = total * sizeFactor;
@@ -48,7 +47,7 @@ function updateNeonSign() {
     neonElement.textContent = text; 
     
     // 2. تغيير اللون عبر فئة CSS
-    // أولاً: نحذف جميع فئات الألوان القديمة
+    // أولاً: نحذف جميع فئات الألوان القديمة (مثال: neon-red)
     availableColors.forEach(c => neonElement.classList.remove(`neon-${c}`));
     
     // ثانياً: نضيف الفئة اللونية الجديدة
@@ -76,6 +75,5 @@ sizeInput.addEventListener('input', updateNeonSign);
 
 // تشغيل الدالة عند تحميل الصفحة لأول مرة
 window.onload = () => {
-    // التأكد من تطبيق فئات CSS الافتراضية
     updateNeonSign(); 
 };
