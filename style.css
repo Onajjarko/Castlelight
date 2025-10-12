@@ -1,4 +1,6 @@
-/* تعريف خطوط النيون المخصصة */
+/* -------------------------------------- */
+/* تعريف خطوط النيون المخصصة (المسارات الدقيقة) */
+/* -------------------------------------- */
 
 /* 1. خط Clip */
 @font-face {
@@ -42,12 +44,11 @@
     src: url('fonts/picadilly/Picadilly') format('truetype');
 }
 
-/* تعديل القاعدة لاستخدام خط افتراضي */
-.neon-sign { 
-    font-family: 'NeonRegular', 'Arial Black', sans-serif; /* هنا نستخدم الخط الافتراضي */
-    font-size: 40px; 
-    /* ... بقية التنسيقات ... */
-}
+
+/* -------------------------------------- */
+/* تنسيق الواجهة والخلفية */
+/* -------------------------------------- */
+
 body {
     background-color: #121212;
     color: #f0f0f0;
@@ -57,7 +58,7 @@ body {
     direction: rtl;
     text-align: right;
 }
-
+/* ... بقية تنسيق الواجهة ... */
 .container {
     max-width: 1000px;
     margin: 0 auto;
@@ -94,7 +95,7 @@ h1 {
     border: 1px solid #333;
     border-radius: 8px;
     margin-left: 20px;
-    background-color: #000; /* الخلفية السوداء لمربع النيون */
+    background-color: #000;
     overflow: hidden; 
 }
 
@@ -141,7 +142,7 @@ h1 {
 /* -------------------------------------- */
 
 .neon-sign { 
-    font-family: 'Arial Black', sans-serif; 
+    font-family: 'NeonRegular', sans-serif; /* الخط الافتراضي */
     font-size: 40px; 
     text-align: center;
     transition: all 0.2s ease-in-out; 
