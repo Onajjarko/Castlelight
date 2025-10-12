@@ -1,89 +1,245 @@
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تطبيق مخصص لوحات النيون</title>
-    
-    <link rel="stylesheet" href="css/bootstrap.min.css"> 
-    
-    <link rel="stylesheet" href="style.css"> 
-    
-</head>
-<body>
-    
-    <div class="logo-container">
-        <img src="images/a.jpeg" alt="شعار المتجر" class="main-logo">
-    </div>
+/* -------------------------------------- */
+/* تعريف الخطوط النيون المخصصة (المسارات النهائية والمصححة) */
+/* -------------------------------------- */
+@font-face { font-family: 'NeonClip'; src: url('./fonts/clip/Clip.ttf') format('truetype'); }
+@font-face { font-family: 'NeonDespairs'; src: url('./fonts/despairs/despairs-font-trial.ttf') format('truetype'); }
+@font-face { font-family: 'NeonIcklips'; src: url('./fonts/icklips/Icklips_.ttf') format('truetype'); }
+@font-face { font-family: 'NeonKosan'; src: url('./fonts/kosannoncommercial/KosanNonCommercial.otf') format('opentype'); }
+@font-face { font-family: 'NeonRegular'; src: url('./fonts/neon/NEON__.ttf') format('truetype'); }
+@font-face { font-family: 'NeonParty'; src: url('./fonts/partylicious/Partilicious.ttf') format('truetype'); }
+@font-face { font-family: 'NeonPicadilly'; src: url('./fonts/picadilly/Picadilly.ttf') format('truetype'); }
 
-    <div class="container">
-        <h1>صمم لوحة النيون الخاصة بك</h1>
-        <div class="customizer-panel">
-            
-            <div class="controls-section">
-                
-                <div class="input-group">
-                    <label for="neonText">النص المطلوب:</label>
-                    <input type="text" id="neonText" value="اكتب هنا" maxlength="30">
-                </div>
+/* الخطوط الجديدة */
+@font-face { font-family: 'NeonAnimal'; src: url('./fonts/castlefont/anima_chariot/Animal_Chariot.ttf') format('truetype'); }
+@font-face { font-family: 'NeonDemather'; src: url('./fonts/castlefont/Demather/Demather.otf') format('opentype'); }
+@font-face { font-family: 'NeonFloralis'; src: url('./fonts/castlefont/floralis/Floralis_Couture.ttf') format('truetype'); }
+@font-face { font-family: 'Neon80s'; src: url('./fonts/castlefont/Neon80s/Neon.ttf') format('truetype'); }
 
-                <div class="input-group">
-                    <label for="neonFont">اختيار الخط:</label>
-                    <select id="neonFont">
-                        <option value="NeonRegular" selected>Neon Regular</option>
-                        <option value="NeonClip">Clip</option>
-                        <option value="NeonDespairs">Despairs</option>
-                        <option value="NeonIcklips">Icklips</option>
-                        <option value="NeonKosan">Kosan</option>
-                        <option value="NeonParty">Partylicious</option>
-                        <option value="NeonPicadilly">Picadilly</option>
-                        
-                        <option value="NeonAnimal">Animal Chariot</option> 
-                        <option value="NeonDemather">Demather</option> 
-                        <option value="NeonFloralis">Floralis</option> 
-                        <option value="Neon80s">Neon 80s</option>
-                    </select>
-                </div>
-                
-                <div class="input-group">
-                    <label for="neonColor">لون النيون:</label>
-                    <select id="neonColor">
-                        <option value="red" selected>أحمر</option>
-                        <option value="blue">أزرق</option>
-                        <option value="green">أخضر</option>
-                        <option value="pink">وردي</option>
-                        <option value="yellow">أصفر</option>
-                    </select>
-                </div>
-                
-                <div class="input-group">
-                    <label for="neonSize">حجم الخط (تقريبي):</label>
-                    <input type="range" id="neonSize" min="20" max="60" value="40">
-                </div>
-                
-                <div class="input-group">
-                    <label>إضاءة اللوحة:</label>
-                    <button id="toggleButton" class="neon-button on">إيقاف</button>
-                </div>
-                
-            </div>
-            
-            <div class="neon-display">
-                <div id="customNeon" class="neon-sign neon-red">اكتب هنا</div>
-            </div>
-            
-        </div>
-    </div>
-    
-    <div class="gallery-container">
-        <h2>أعمال سابقة وتصاميم جاهزة</h2>
-        <div class="image-grid">
-            <img src="images/desktop1signs.jpg" alt="تصميم مكتبي 1">
-            <img src="images/desktop2designs.jpg" alt="تصميم مكتبي 2">
-            <img src="images/mobile2designs.jpg" alt="تصميم جوال 2">
-            <img src="images/SignDiagramUK.png" alt="مخطط تصميم">
-        </div>
-    </div>
-    <script src="app.js" defer></script>
-</body>
-</html>
+
+/* -------------------------------------- */
+/* تنسيق الواجهة والخلفية الداكنة وتصغير اللوجو */
+/* -------------------------------------- */
+
+.logo-container {
+    text-align: center; 
+    padding-top: 20px;
+    margin-bottom: 20px;
+}
+
+.main-logo {
+    max-width: 80px; /* تصغير اللوجو */
+    height: auto;
+    border-radius: 8px; 
+}
+
+body {
+    background-color: #121212; /* الخلفية الداكنة */
+    color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    direction: rtl;
+    text-align: right;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    color: #fff;
+    margin-bottom: 30px;
+    margin-top: 10px;
+}
+
+.customizer-panel {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #1f1f1f; 
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    min-height: 450px;
+}
+
+/* قسم التحكم على اليمين */
+.controls-section {
+    flex: 1;
+    min-width: 300px;
+    padding-left: 0; 
+    margin-right: 20px; /* فصل بين العرض والتحكم */
+}
+
+/* قسم العرض على اليسار */
+.neon-display {
+    flex: 2;
+    min-height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #333;
+    border-radius: 8px;
+    margin-left: 20px;
+    margin-right: 0;
+    background-color: #000; /* خلفية مربع النيون الأسود */
+    overflow: hidden; 
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.input-group input[type="text"],
+.input-group select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #555;
+    background-color: #2a2a2a;
+    color: #fff;
+}
+
+/* تنسيق معرض الصور */
+.gallery-container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #1f1f1f;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.gallery-container h2 {
+    text-align: center;
+    color: #00ff99;
+    margin-bottom: 25px;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 15px;
+    justify-items: center;
+}
+
+.image-grid img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s;
+}
+
+.image-grid img:hover {
+    transform: scale(1.03);
+    border: 1px solid #00ff99;
+}
+
+
+/* -------------------------------------- */
+/* تنسيق زر التشغيل/الإيقاف */
+/* -------------------------------------- */
+
+.neon-button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.neon-button.on {
+    background-color: #00ff99; 
+    color: #121212;
+    box-shadow: 0 0 10px #00ff99, 0 0 20px #00ff99 inset;
+}
+
+.neon-button.off {
+    background-color: #444; 
+    color: #aaa;
+    box-shadow: none;
+}
+
+
+/* -------------------------------------- */
+/* فئات الألوان وتأثيرات النيون (التوهج) */
+/* -------------------------------------- */
+
+.neon-sign { 
+    font-family: 'NeonRegular', sans-serif; 
+    font-size: 40px; 
+    text-align: center;
+    transition: all 0.2s ease-in-out; 
+    white-space: nowrap; 
+}
+
+/* فئة إيقاف التشغيل: إلغاء التوهج */
+.neon-sign.is-off {
+    color: #666 !important; 
+    text-shadow: none !important; 
+}
+
+/* فئات الألوان */
+.neon-red {
+    color: #ff073a;
+    text-shadow: 
+        0 0 5px #ff073a, 
+        0 0 15px #ff073a, 
+        0 0 30px #ff073a, 
+        0 0 50px #ff073a,
+        0 0 80px rgba(255, 7, 58, 0.7);
+}
+
+.neon-blue {
+    color: #00ffff;
+    text-shadow: 
+        0 0 5px #00ffff, 
+        0 0 15px #00ffff, 
+        0 0 30px #00ffff, 
+        0 0 50px #00ffff,
+        0 0 80px rgba(0, 255, 255, 0.7);
+}
+
+.neon-green {
+    color: #39ff14;
+    text-shadow: 
+        0 0 5px #39ff14, 
+        0 0 15px #39ff14, 
+        0 0 30px #39ff14, 
+        0 0 50px #39ff14,
+        0 0 80px rgba(57, 255, 20, 0.7);
+}
+
+.neon-pink {
+    color: #ff6ec4;
+    text-shadow: 
+        0 0 5px #ff6ec4, 
+        0 0 15px #ff6ec4, 
+        0 0 30px #ff6ec4, 
+        0 0 50px #ff6ec4,
+        0 0 80px rgba(255, 110, 196, 0.7);
+}
+
+.neon-yellow {
+    color: #ffff33;
+    text-shadow: 
+        0 0 5px #ffff33, 
+        0 0 15px #ffff33, 
+        0 0 30px #ffff33, 
+        0 0 50px #ffff33,
+        0 0 80px rgba(255, 255, 51, 0.7);
+}
