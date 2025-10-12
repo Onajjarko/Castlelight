@@ -1,52 +1,52 @@
 /* -------------------------------------- */
-/* تعريف خطوط النيون المخصصة (المسارات المطلقة لتفادي خطأ 404) */
+/* تعريف خطوط النيون المخصصة (مع إضافة الامتدادات .ttf و .otf) */
 /* -------------------------------------- */
 
 /* 1. خط Clip */
 @font-face {
     font-family: 'NeonClip';
-    src: url('/Castlelight/fonts/clip/Clip.ttf') format('truetype'); 
+    src: url('fonts/clip/Clip.ttf') format('truetype'); 
 }
 
 /* 2. خط Despairs */
 @font-face {
     font-family: 'NeonDespairs';
-    src: url('/Castlelight/fonts/despairs/despairs-font-trial.ttf') format('truetype');
+    src: url('fonts/despairs/despairs-font-trial.ttf') format('truetype');
 }
 
 /* 3. خط Icklips */
 @font-face {
     font-family: 'NeonIcklips';
-    src: url('/Castlelight/fonts/icklips/Icklips_.ttf') format('truetype');
+    src: url('fonts/icklips/Icklips_.ttf') format('truetype');
 }
 
 /* 4. خط KosanNonCommercial */
 @font-face {
     font-family: 'NeonKosan';
-    src: url('/Castlelight/fonts/kosannoncommercial/KosanNonCommercial.ttf') format('opentype');
+    src: url('fonts/kosannoncommercial/KosanNonCommercial.otf') format('opentype'); /* انتبه: .otf */
 }
 
 /* 5. خط Neon */
 @font-face {
     font-family: 'NeonRegular';
-    src: url('/Castlelight/fonts/neon/NEON____.TTF') format('truetype');
+    src: url('fonts/neon/NEON__.ttf') format('truetype');
 }
 
 /* 6. خط Partylicious */
 @font-face {
     font-family: 'NeonParty';
-    src: url('/Castlelight/fonts/partylicious/Partilicious.ttf') format('truetype');
+    src: url('fonts/partylicious/Partilicious.ttf') format('truetype');
 }
 
 /* 7. خط Picadilly */
 @font-face {
     font-family: 'NeonPicadilly';
-    src: url('/Castlelight/fonts/picadilly/Picadilly,ttf') format('truetype');
+    src: url('fonts/picadilly/Picadilly.ttf') format('truetype');
 }
 
 
 /* -------------------------------------- */
-/* تنسيق الواجهة والخلفية */
+/* تنسيق الواجهة والخلفية (كود التوهج) */
 /* -------------------------------------- */
 
 body {
