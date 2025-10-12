@@ -188,6 +188,7 @@ h1 {
 .neon-sign.is-off {
     color: #666; /* لون خافت عند الإيقاف */
     text-shadow: none !important; /* إلغاء التوهج بالقوة */
+    color: #666 !impotant; /*
 }
 
 /* فئات الألوان */
