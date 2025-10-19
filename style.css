@@ -327,59 +327,54 @@ h1 {
 /* فئات الألوان - تطبيق النمط النيوني القوي الجديد */
 /* -------------------------------------- */
 
-.neon-red {
-    color: #ff073a;
-    text-shadow: 
-        0 0 5px #ff6699, 
-        0 0 10px #ff073a,
-        0 0 15px #ff073a,
-        0 0 20px #ff073a,
-        0 0 25px #ff073a,
-        0 0 30px #ff073a;
+.neon-CustomRed {
+    color: #FF3366;
+    text-shadow: 0 0 5px #ff6699, 0 0 10px #FF3366, 0 0 15px #FF3366, 0 0 25px #FF3366;
 }
 
-.neon-blue {
-    color: #00ffff;
-    text-shadow: 
-        0 0 5px #99ffff, 
-        0 0 10px #00ffff,
-        0 0 15px #00ffff,
-        0 0 20px #00ffff,
-        0 0 25px #00ffff,
-        0 0 30px #00ffff;
+.neon-CustomPink {
+    color: #FF6EC4;
+    text-shadow: 0 0 5px #ff99ff, 0 0 10px #FF6EC4, 0 0 15px #FF6EC4, 0 0 25px #FF6EC4;
 }
 
-.neon-green {
-    color: #39ff14;
-    text-shadow: 
-        0 0 5px #99ff99, 
-        0 0 10px #39ff14,
-        0 0 15px #39ff14,
-        0 0 20px #39ff14,
-        0 0 25px #39ff14,
-        0 0 30px #39ff14;
+.neon-DeepPink {
+    color: #FF0099;
+    text-shadow: 0 0 5px #ff66cc, 0 0 10px #FF0099, 0 0 15px #FF0099, 0 0 25px #FF0099;
 }
 
-.neon-pink {
-    color: #ff6ec4;
-    text-shadow: 
-        0 0 5px #ff99ff, 
-        0 0 10px #ff6ec4,
-        0 0 15px #ff6ec4,
-        0 0 20px #ff6ec4,
-        0 0 25px #ff6ec4,
-        0 0 30px #ff6ec4;
+.neon-Purple {
+    color: #9933FF;
+    text-shadow: 0 0 5px #cc99ff, 0 0 10px #9933FF, 0 0 15px #9933FF, 0 0 25px #9933FF;
 }
 
-.neon-yellow {
-    color: #ffff33;
-    text-shadow: 
-        0 0 5px #ffff99, 
-        0 0 10px #ffff33,
-        0 0 15px #ffff33,
-        0 0 20px #ffff33,
-        0 0 25px #ffff33,
-        0 0 30px #ffff33;
+.neon-ElectricBlue {
+    color: #0099FF;
+    text-shadow: 0 0 5px #66ccff, 0 0 10px #0099FF, 0 0 15px #0099FF, 0 0 25px #0099FF;
+}
+
+.neon-IceBlue {
+    color: #33CCFF;
+    text-shadow: 0 0 5px #99e6ff, 0 0 10px #33CCFF, 0 0 15px #33CCFF, 0 0 25px #33CCFF;
+}
+
+.neon-DeepGreen {
+    color: #33CC00;
+    text-shadow: 0 0 5px #99ff66, 0 0 10px #33CC00, 0 0 15px #33CC00, 0 0 25px #33CC00;
+}
+
+.neon-CustomYellow {
+    color: #FFFF33;
+    text-shadow: 0 0 5px #ffff99, 0 0 10px #FFFF33, 0 0 15px #FFFF33, 0 0 25px #FFFF33;
+}
+
+.neon-WarmWhite {
+    color: #FFFFAA; /* لون أبيض دافئ */
+    text-shadow: 0 0 5px #ffffff, 0 0 10px #FFFFAA, 0 0 15px #FFFFAA, 0 0 25px #FFFFAA;
+}
+
+.neon-White {
+    color: #FFFFFF;
+    text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 15px #ffffff, 0 0 25px #ffffff;
 }
 
 
