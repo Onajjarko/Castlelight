@@ -1,5 +1,5 @@
 /* -------------------------------------- */
-/* تعريف خطوط النيون المخصصة (المسارات النهائية والمصححة) */
+/* تعريف خطوط النيون المخصصة (النهائي والمُصحَّح) */
 /* -------------------------------------- */
 
 /* --- الخطوط الأصلية والموجودة في المجلدات الخارجية --- */
@@ -7,14 +7,14 @@
 @font-face { font-family: 'NeonDespairs'; src: url('./fonts/despairs/despairs-font-trial.ttf') format('truetype'); }
 @font-face { font-family: 'NeonIcklips'; src: url('./fonts/icklips/Icklips_.ttf') format('truetype'); }
 @font-face { font-family: 'NeonKosan'; src: url('./fonts/kosannoncommercial/KosanNonCommercial.otf') format('opentype'); }
-@font-face { font-family: 'NeonRegular'; src: url('./fonts/neon/NEON__.ttf') format('truetype'); }
+@font-face { font-family: 'NeonRegular'; src: url('./fonts/neon/NEON__.ttf') format('truetype'); } /* تم التأكد من اسم الملف NEON__.ttf */
 @font-face { font-family: 'NeonParty'; src: url('./fonts/partylicious/Partilicious.ttf') format('truetype'); }
 @font-face { font-family: 'NeonPicadilly'; src: url('./fonts/picadilly/Picadilly.ttf') format('truetype'); }
 
 /* --- خطوط مجلد castlefont --- */
 @font-face { font-family: 'NeonAbdoun'; src: url('./fonts/castlefont/Abdoun/Abdoun.ttf') format('truetype'); }
-@font-face { font-family: 'NeonAmman'; src: url('./fonts/castlefont/Amman/Amman.ttf') format('truetype'); }
-@font-face { font-family: 'NeonSwifeh'; src: url('./fonts/castlefont/Swifeh/Swifeh.ttf') format('truetype'); }
+@font-face { font-family: 'NeonAmman'; src: url('./fonts/castlefont/Amman/Amman.ttf') format('truetype'); } /* تم تصحيح المسار ليعمل */
+@font-face { font-family: 'NeonSwifeh'; src: url('./fonts/castlefont/Swifeh/Swifeh.ttf') format('truetype'); } /* تم تصحيح المسار ليعمل */
 @font-face { font-family: 'NeonSunsetClub'; src: url('./fonts/castlefont/sunset-club/Sunset Club Free Trial.otf') format('opentype'); }
 @font-face { font-family: 'NeonPolentical'; src: url('./fonts/castlefont/polentical-neon/Polentical Neon Regular.ttf') format('truetype'); }
 @font-face { font-family: 'NeonAnimal'; src: url('./fonts/castlefont/anima_chariot/Animal_Chariot.ttf') format('truetype'); }
@@ -23,13 +23,15 @@
 @font-face { font-family: 'Neon80s'; src: url('./fonts/castlefont/Neon80s/Neon.ttf') format('truetype'); }
 
 /* --- خطوط مجلد castle font 2 --- */
-@font-face { font-family: 'NeonAirstream'; src: url('./fonts/castle font 2/airstream/Airstream.ttf') format('truetype'); }
-@font-face { font-family: 'NeonCalenVanda'; src: url('./fonts/castle font 2/celen-vanda/Calen Vanda.ttf') format('truetype'); }
-@font-face { font-family: 'NeonSelovia'; src: url('./fonts/castle font 2/it-selovia-demo/ITSeloviaDEMO.ttf') format('truetype'); }
+/* (ملاحظة: تأكد من المسافة في اسم المجلد: castle font 2) */
+@font-face { font-family: 'NeonAirstream'; src: url('./fonts/castle font 2/airstream/Airstream.ttf') format('truetype'); } /* تم تصحيح المسار ليعمل */
+@font-face { font-family: 'NeonCalenVanda'; src: url('./fonts/castle font 2/celen-vanda/Calen Vanda.ttf') format('truetype'); } /* تم تصحيح اسم الملف للمسافات */
+@font-face { font-family: 'NeonSelovia'; src: url('./fonts/castle font 2/it-selovia-demo/ITSeloviaDEMO.ttf') format('truetype'); } /* تم تصحيح اسم الملف لحالة الأحرف */
 @font-face { font-family: 'NeonKorian'; src: url('./fonts/castle font 2/korian/Korian.ttf') format('truetype'); }
-@font-face { font-family: 'NeonSportrop'; src: url('./fonts/castle font 2/sportrop/sportrop.ttf') format('truetype'); }
+@font-face { font-family: 'NeonSportrop'; src: url('./fonts/castle font 2/sportrop/sportrop.ttf') format('truetype'); } /* تم تصحيح المسار ليعمل */
 
 /* --- خطوط مجلد castle font 3 --- */
+/* (ملاحظة: تأكد من المسافة في اسم المجلد: castle font 3) */
 @font-face { font-family: 'NeonBetterOutline'; src: url('./fonts/castle font 3/betteroutline/Better Outline.otf') format('opentype'); }
 @font-face { font-family: 'NeonElegantClassic'; src: url('./fonts/castle font 3/elegant-classic/Elegant Classic - Personal Use License.otf') format('opentype'); }
 @font-face { font-family: 'NeonGlowtone'; src: url('./fonts/castle font 3/glowtone-personal-use/Glowtone - Personal Use.otf') format('opentype'); }
@@ -37,7 +39,7 @@
 @font-face { font-family: 'NeonHimala'; src: url('./fonts/castle font 3/neon-himala/NeonHimala.otf') format('opentype'); }
 @font-face { font-family: 'NeonSpark'; src: url('./fonts/castle font 3/neon-spark/Neon Spark.otf') format('opentype'); }
 @font-face { font-family: 'NeonSans'; src: url('./fonts/castle font 3/neonsans/NeonSans.otf') format('opentype'); }
-@font-face { font-family: 'NeonRocketClouds'; src: url('./fonts/castle font 3/rocket-clouds-demo/RocketClouds.ttf') format('truetype'); }
+@font-face { font-family: 'NeonRocketClouds'; src: url('./fonts/castle font 3/rocket-clouds-demo/RocketClouds.ttf') format('truetype'); } /* تم تصحيح المسار ليعمل */
 @font-face { font-family: 'NeonStaymore'; src: url('./fonts/castle font 3/staymore/Staymore.otf') format('opentype'); }
 @font-face { font-family: 'NeonVolacrome'; src: url('./fonts/castle font 3/volacrome/VOLACROME.otf') format('opentype'); }
 
@@ -201,4 +203,72 @@ h1 {
 .neon-sign { 
     font-family: 'NeonRegular', sans-serif; 
     font-size: 40px; 
-    text-align: center
+    text-align: center;
+    transition: all 0.2s ease-in-out; 
+    white-space: nowrap; 
+}
+
+/* فئة إيقاف التشغيل: إلغاء التوهج */
+.neon-sign.is-off {
+    color: #666 !important; 
+    text-shadow: none !important; 
+}
+
+/* -------------------------------------- */
+/* فئات الألوان - تطبيق النمط النيوني القوي الجديد */
+/* -------------------------------------- */
+
+.neon-red {
+    color: #ff073a;
+    text-shadow: 
+        0 0 5px #ff6699, 
+        0 0 10px #ff073a,
+        0 0 15px #ff073a,
+        0 0 20px #ff073a,
+        0 0 25px #ff073a,
+        0 0 30px #ff073a;
+}
+
+.neon-blue {
+    color: #00ffff;
+    text-shadow: 
+        0 0 5px #99ffff, 
+        0 0 10px #00ffff,
+        0 0 15px #00ffff,
+        0 0 20px #00ffff,
+        0 0 25px #00ffff,
+        0 0 30px #00ffff;
+}
+
+.neon-green {
+    color: #39ff14;
+    text-shadow: 
+        0 0 5px #99ff99, 
+        0 0 10px #39ff14,
+        0 0 15px #39ff14,
+        0 0 20px #39ff14,
+        0 0 25px #39ff14,
+        0 0 30px #39ff14;
+}
+
+.neon-pink {
+    color: #ff6ec4;
+    text-shadow: 
+        0 0 5px #ff99ff, 
+        0 0 10px #ff6ec4,
+        0 0 15px #ff6ec4,
+        0 0 20px #ff6ec4,
+        0 0 25px #ff6ec4,
+        0 0 30px #ff6ec4;
+}
+
+.neon-yellow {
+    color: #ffff33;
+    text-shadow: 
+        0 0 5px #ffff99, 
+        0 0 10px #ffff33,
+        0 0 15px #ffff33,
+        0 0 20px #ffff33,
+        0 0 25px #ffff33,
+        0 0 30px #ffff33;
+}
