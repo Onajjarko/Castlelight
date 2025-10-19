@@ -2,12 +2,12 @@
 // 1. الثوابت الأساسية (Elements)
 // ===================================
 const neonText = document.getElementById('neonText');
-const fontGrid = document.getElementById('fontSelectionGrid'); // شبكة الخطوط الجديدة
-const neonColor = document.getElementById('neonColor');
+const fontOptions = document.querySelectorAll('#fontSelectionGrid .font-option'); // أزرار الخطوط
+const colorOptions = document.querySelectorAll('.color-option'); // أزرار الألوان
 const neonSize = document.getElementById('neonSize');
-const neonElement = document.getElementById('customNeon');
+const neonElement = document.getElementById('customNeon'); // العنصر المستهدف للتمرير
 const toggleButton = document.getElementById('toggleButton');
-const fontOptions = document.querySelectorAll('.font-option'); // جميع أزرار الخطوط
+const accordionHeaders = document.querySelectorAll('.accordion-header'); // رؤوس الأكورديون
 
 // حالة التشغيل/الإيقاف الافتراضية
 let isNeonOn = true; 
@@ -21,13 +21,15 @@ let isNeonOn = true;
  */
 function updateNeonSign() {
     const text = neonText.value;
-    const colorValue = neonColor.value;
     const sizeValue = neonSize.value;
 
-    // الحصول على الخط المختار حاليًا من الزر النشط في الشبكة
+    // الحصول على الخط المختار حاليًا
     const activeFontElement = document.querySelector('.font-option.active');
-    // الخط الافتراضي هو 'NeonClip'
     const fontValue = activeFontElement ? activeFontElement.getAttribute('data-font') : 'NeonClip'; 
+    
+    // الحصول على اللون المختار حاليًا
+    const activeColorElement = document.querySelector('.color-option.active');
+    const colorValue = activeColorElement ? activeColorElement.getAttribute('data-color') : 'red'; 
 
     // تحديث النص
     neonElement.textContent = text;
@@ -62,7 +64,6 @@ function toggleNeon() {
         toggleButton.textContent = 'إيقاف';
         toggleButton.classList.remove('off');
         toggleButton.classList.add('on');
-        
     } else {
         // حالة الإيقاف (OFF)
         neonElement.classList.add('is-off');
@@ -73,31 +74,42 @@ function toggleNeon() {
     }
 }
 
+
 /**
- * معالج النقر على أزرار الخطوط
- * @param {Event} event - حدث النقر
+ * معالج النقر على أزرار الخطوط (مع التمرير)
  */
 function handleFontClick(event) {
-    // إزالة حالة النشاط من جميع الأزرار
     fontOptions.forEach(option => option.classList.remove('active'));
-    
-    // إضافة حالة النشاط للزر الذي تم النقر عليه
     event.target.classList.add('active');
-    
-    // تحديث لوحة النيون بالخط الجديد
     updateNeonSign();
+    
+    // 💡 الحل لتمرير شاشة الموبايل للأعلى فوراً 
+    neonElement.scrollIntoView({ behavior: 'smooth', block: 'start' }); // block: 'start' يضعها في أعلى النافذة
 }
+
+/**
+ * معالج النقر على أزرار الألوان
+ */
+function handleColorClick(event) {
+    colorOptions.forEach(option => option.classList.remove('active'));
+    event.target.classList.add('active');
+    updateNeonSign();
+    
+    // 💡 التمرير للأعلى بعد اختيار اللون أيضاً
+    neonElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
 
 // ===================================
 // 3. ربط الأحداث (Listeners)
 // ===================================
 
-// ربط المستمعين لتحديث اللوحة في الوقت الفعلي
+// ربط إدخال النص والحجم
 neonText.addEventListener('input', updateNeonSign);
-neonColor.addEventListener('change', updateNeonSign);
 neonSize.addEventListener('input', updateNeonSign);
+toggleButton.addEventListener('click', toggleNeon);
 
-// ربط مستمع لشبكة الخطوط
+// ربط مستمع لشبكة الخطوط والألوان
 fontOptions.forEach(option => {
     // تطبيق الخط على الزر نفسه لعرض شكل الخط داخله
     const fontName = option.getAttribute('data-font');
@@ -107,9 +119,29 @@ fontOptions.forEach(option => {
     option.addEventListener('click', handleFontClick);
 });
 
+colorOptions.forEach(option => {
+    option.addEventListener('click', handleColorClick);
+});
 
-// ربط مستمع لزر التشغيل/الإيقاف
-toggleButton.addEventListener('click', toggleNeon);
+// ربط منطق الأكورديون
+accordionHeaders.forEach(header => {
+    header.addEventListener('click', () => {
+        const targetId = header.getAttribute('data-target');
+        const targetBody = document.getElementById(targetId);
+        
+        // إغلاق كل الأقسام الأخرى وإزالة التحديد النشط
+        accordionHeaders.forEach(h => {
+            const body = document.getElementById(h.getAttribute('data-target'));
+            h.classList.remove('active');
+            body.classList.remove('expanded');
+        });
+        
+        // فتح/إغلاق القسم الحالي
+        header.classList.toggle('active');
+        targetBody.classList.toggle('expanded');
+    });
+});
+
 
 // تشغيل التحديث الأولي عند تحميل الصفحة
 window.addEventListener('load', updateNeonSign);
