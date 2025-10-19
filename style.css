@@ -127,7 +127,57 @@ h1 {
 }
 
 /* -------------------------------------- */
-/* تنسيق شبكة اختيار الخطوط الجديدة (بدلاً من القائمة المنسدلة) */
+/* تنسيقات الأكورديون (Accordion) */
+/* -------------------------------------- */
+
+.custom-accordion {
+    border: 1px solid #333;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.accordion-header {
+    background-color: #2a2a2a;
+    padding: 15px;
+    border-bottom: 1px solid #333;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 8px; /* لتظهر الحواف المستديرة عند الإغلاق */
+}
+
+.accordion-header.active {
+    background-color: #1f1f1f; 
+    color: #00ff99;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.accordion-body {
+    padding: 15px;
+    background-color: #1f1f1f;
+    display: none; /* يتم التحكم بها بـ JS */
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+.accordion-body.expanded {
+    display: block;
+}
+
+.accordion-arrow {
+    transition: transform 0.3s;
+}
+
+.accordion-header.active .accordion-arrow {
+    transform: rotate(180deg);
+}
+
+
+/* -------------------------------------- */
+/* تنسيق شبكة اختيار الخطوط الجديدة */
 /* -------------------------------------- */
 
 .font-grid {
@@ -199,6 +249,37 @@ h1 {
     box-shadow: 0 0 8px rgba(0, 123, 255, 0.7);
 }
 
+/* -------------------------------------- */
+/* تنسيق شبكة الألوان الجديدة */
+/* -------------------------------------- */
+
+.color-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(40px, 1fr)); /* تصغير حجم المربعات قليلاً */
+    gap: 10px;
+    padding: 5px 0;
+}
+
+.color-option {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border 0.2s, box-shadow 0.2s;
+    margin: 5px auto;
+}
+
+.color-option:hover {
+    border-color: #fff;
+}
+
+.color-option.active {
+    /* دائرة بيضاء داخل حدود زرقاء للتحديد */
+    border-color: #fff; 
+    box-shadow: 0 0 0 4px #007bff; /* ظل خارجي أزرق للتحديد */
+}
+
 
 /* -------------------------------------- */
 /* تنسيق زر التشغيل/الإيقاف والتوهج */
@@ -229,7 +310,7 @@ h1 {
 }
 
 .neon-sign { 
-    font-family: 'NeonClip', sans-serif; /* تم تغيير الخط الافتراضي إلى NeonClip */
+    font-family: 'NeonClip', sans-serif; 
     font-size: 40px; 
     text-align: center;
     transition: all 0.2s ease-in-out; 
