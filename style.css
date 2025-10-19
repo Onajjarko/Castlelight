@@ -329,52 +329,52 @@ h1 {
 
 .neon-CustomRed {
     color: #FF3366;
-    text-shadow: 0 0 5px #ff6699, 0 0 10px #FF3366, 0 0 15px #FF3366, 0 0 25px #FF3366;
+    text-shadow: 0 0 8px #ff6699, 0 0 20px #FF3366, 0 0 35px #FF3366, 0 0 50px rgba(255, 51, 102, 0.5); /* تم تطبيق تأثير النيون الأكثر انتشاراً */
 }
 
 .neon-CustomPink {
     color: #FF6EC4;
-    text-shadow: 0 0 5px #ff99ff, 0 0 10px #FF6EC4, 0 0 15px #FF6EC4, 0 0 25px #FF6EC4;
+    text-shadow: 0 0 8px #ff99ff, 0 0 20px #FF6EC4, 0 0 35px #FF6EC4, 0 0 50px rgba(255, 110, 196, 0.5);
 }
 
 .neon-DeepPink {
     color: #FF0099;
-    text-shadow: 0 0 5px #ff66cc, 0 0 10px #FF0099, 0 0 15px #FF0099, 0 0 25px #FF0099;
+    text-shadow: 0 0 8px #ff66cc, 0 0 20px #FF0099, 0 0 35px #FF0099, 0 0 50px rgba(255, 0, 153, 0.5);
 }
 
 .neon-Purple {
     color: #9933FF;
-    text-shadow: 0 0 5px #cc99ff, 0 0 10px #9933FF, 0 0 15px #9933FF, 0 0 25px #9933FF;
+    text-shadow: 0 0 8px #cc99ff, 0 0 20px #9933FF, 0 0 35px #9933FF, 0 0 50px rgba(153, 51, 255, 0.5);
 }
 
 .neon-ElectricBlue {
     color: #0099FF;
-    text-shadow: 0 0 5px #66ccff, 0 0 10px #0099FF, 0 0 15px #0099FF, 0 0 25px #0099FF;
+    text-shadow: 0 0 8px #66ccff, 0 0 20px #0099FF, 0 0 35px #0099FF, 0 0 50px rgba(0, 153, 255, 0.5);
 }
 
 .neon-IceBlue {
     color: #33CCFF;
-    text-shadow: 0 0 5px #99e6ff, 0 0 10px #33CCFF, 0 0 15px #33CCFF, 0 0 25px #33CCFF;
+    text-shadow: 0 0 8px #99e6ff, 0 0 20px #33CCFF, 0 0 35px #33CCFF, 0 0 50px rgba(51, 204, 255, 0.5);
 }
 
 .neon-DeepGreen {
     color: #33CC00;
-    text-shadow: 0 0 5px #99ff66, 0 0 10px #33CC00, 0 0 15px #33CC00, 0 0 25px #33CC00;
+    text-shadow: 0 0 8px #99ff66, 0 0 20px #33CC00, 0 0 35px #33CC00, 0 0 50px rgba(51, 204, 0, 0.5);
 }
 
 .neon-CustomYellow {
     color: #FFFF33;
-    text-shadow: 0 0 5px #ffff99, 0 0 10px #FFFF33, 0 0 15px #FFFF33, 0 0 25px #FFFF33;
+    text-shadow: 0 0 8px #ffff99, 0 0 20px #FFFF33, 0 0 35px #FFFF33, 0 0 50px rgba(255, 255, 51, 0.5);
 }
 
 .neon-WarmWhite {
     color: #FFFFAA; /* لون أبيض دافئ */
-    text-shadow: 0 0 5px #ffffff, 0 0 10px #FFFFAA, 0 0 15px #FFFFAA, 0 0 25px #FFFFAA;
+    text-shadow: 0 0 8px #ffffff, 0 0 20px #FFFFAA, 0 0 35px #FFFFAA, 0 0 50px rgba(255, 255, 170, 0.5);
 }
 
 .neon-White {
     color: #FFFFFF;
-    text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 15px #ffffff, 0 0 25px #ffffff;
+    text-shadow: 0 0 8px #ffffff, 0 0 20px #ffffff, 0 0 35px #ffffff, 0 0 50px rgba(255, 255, 255, 0.5);
 }
 
 
