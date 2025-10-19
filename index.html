@@ -31,57 +31,67 @@
                     <input type="text" id="neonText" value="اكتب هنا" maxlength="30">
                 </div>
 
-                <div class="input-group">
-                    <label>اختيار الخط:</label>
-                    <div id="fontSelectionGrid" class="font-grid">
+                <div class="custom-accordion">
+                    <div class="accordion-header active" data-target="font-body">
+                        2. اختيار الخط
+                        <span class="accordion-arrow">^</span>
+                    </div>
+                    <div id="font-body" class="accordion-body expanded">
+                        <div id="fontSelectionGrid" class="font-grid">
+                            
+                            <div class="font-option active" data-font="NeonClip">Clip</div>
+                            <div class="font-option" data-font="NeonDespairs">Despairs</div>
+                            <div class="font-option" data-font="NeonIcklips">Icklips</div>
+                            <div class="font-option" data-font="NeonKosan">Kosan</div>
+                            <div class="font-option" data-font="NeonParty">Partylicious</div>
+                            <div class="font-option" data-font="NeonPicadilly">Picadilly</div>
+                            
+                            <div class="font-option" data-font="NeonAbdoun">Abdoun</div>
+                            <div class="font-option" data-font="NeonAmman">Amman</div>
+                            <div class="font-option" data-font="NeonSwifeh">Swifeh</div>
+                            <div class="font-option" data-font="NeonSunsetClub">Sunset Club</div>
+                            <div class="font-option" data-font="NeonPolentical">Polentical Neon</div>
+                            <div class="font-option" data-font="NeonDemather">Demather</div> 
+                            <div class="font-option" data-font="NeonFloralis">Floralis</div> 
+                            <div class="font-option" data-font="Neon80s">Neon 80s</div>
+                            
+                            <div class="font-option" data-font="NeonCalenVanda">Calen Vanda</div>
+                            <div class="font-option" data-font="NeonSelovia">Selovia Demo</div>
+                            <div class="font-option" data-font="NeonKorian">Korian</div>
+                            <div class="font-option" data-font="NeonSportrop">Sportrop</div>
+                            
+                            <div class="font-option" data-font="NeonBetterOutline">Better Outline</div>
+                            <div class="font-option" data-font="NeonElegantClassic">Elegant Classic</div>
+                            <div class="font-option" data-font="NeonGlowtone">Glowtone</div>
+                            <div class="font-option" data-font="NeonBines">Neon Bines</div>
+                            <div class="font-option" data-font="NeonSpark">Neon Spark</div>
+                            <div class="font-option" data-font="NeonSans">Neon Sans</div>
+                            <div class="font-option" data-font="NeonStaymore">Staymore</div>
+                            <div class="font-option" data-font="NeonVolacrome">Volacrome</div>
+
+                        </div>
+                    </div>
+
+                    <div class="accordion-header" data-target="color-body">
+                        3. اللون والحجم
+                        <span class="accordion-arrow">></span>
+                    </div>
+                    <div id="color-body" class="accordion-body">
                         
-                        <div class="font-option active" data-font="NeonClip">Clip</div>
-                        <div class="font-option" data-font="NeonDespairs">Despairs</div>
-                        <div class="font-option" data-font="NeonIcklips">Icklips</div>
-                        <div class="font-option" data-font="NeonKosan">Kosan</div>
-                        <div class="font-option" data-font="NeonParty">Partylicious</div>
-                        <div class="font-option" data-font="NeonPicadilly">Picadilly</div>
+                        <div class="color-grid">
+                            <div class="color-option active" data-color="red" style="background-color: #ff073a;"></div>
+                            <div class="color-option" data-color="blue" style="background-color: #00ffff;"></div>
+                            <div class="color-option" data-color="green" style="background-color: #39ff14;"></div>
+                            <div class="color-option" data-color="pink" style="background-color: #ff6ec4;"></div>
+                            <div class="color-option" data-color="yellow" style="background-color: #ffff33;"></div>
+                            </div>
                         
-                        <div class="font-option" data-font="NeonAbdoun">Abdoun</div>
-                        <div class="font-option" data-font="NeonAmman">Amman</div>
-                        <div class="font-option" data-font="NeonSwifeh">Swifeh</div>
-                        <div class="font-option" data-font="NeonSunsetClub">Sunset Club</div>
-                        <div class="font-option" data-font="NeonPolentical">Polentical Neon</div>
-                        <div class="font-option" data-font="NeonDemather">Demather</div> 
-                        <div class="font-option" data-font="NeonFloralis">Floralis</div> 
-                        <div class="font-option" data-font="Neon80s">Neon 80s</div>
-                        
-                        <div class="font-option" data-font="NeonCalenVanda">Calen Vanda</div>
-                        <div class="font-option" data-font="NeonSelovia">Selovia Demo</div>
-                        <div class="font-option" data-font="NeonKorian">Korian</div>
-                        <div class="font-option" data-font="NeonSportrop">Sportrop</div>
-                        
-                        <div class="font-option" data-font="NeonBetterOutline">Better Outline</div>
-                        <div class="font-option" data-font="NeonElegantClassic">Elegant Classic</div>
-                        <div class="font-option" data-font="NeonGlowtone">Glowtone</div>
-                        <div class="font-option" data-font="NeonBines">Neon Bines</div>
-                        <div class="font-option" data-font="NeonSpark">Neon Spark</div>
-                        <div class="font-option" data-font="NeonSans">Neon Sans</div>
-                        <div class="font-option" data-font="NeonStaymore">Staymore</div>
-                        <div class="font-option" data-font="NeonVolacrome">Volacrome</div>
+                        <div class="input-group" style="margin-top: 20px;">
+                            <label for="neonSize">حجم الخط (تقريبي):</label>
+                            <input type="range" id="neonSize" min="20" max="60" value="40">
+                        </div>
 
                     </div>
-                </div>
-                
-                <div class="input-group">
-                    <label for="neonColor">لون النيون:</label>
-                    <select id="neonColor">
-                        <option value="red" selected>أحمر</option>
-                        <option value="blue">أزرق</option>
-                        <option value="green">أخضر</option>
-                        <option value="pink">وردي</option>
-                        <option value="yellow">أصفر</option>
-                    </select>
-                </div>
-                
-                <div class="input-group">
-                    <label for="neonSize">حجم الخط (تقريبي):</label>
-                    <input type="range" id="neonSize" min="20" max="60" value="40">
                 </div>
                 
                 <div class="input-group">
@@ -117,5 +127,3 @@
   </div>
 </div>
 </html>
-.(":)
-
