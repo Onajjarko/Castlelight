@@ -9,6 +9,11 @@ const neonElement = document.getElementById('customNeon'); // العنصر ال�
 const toggleButton = document.getElementById('toggleButton');
 const accordionHeaders = document.querySelectorAll('.accordion-header'); // رؤوس الأكورديون
 
+// عناصر الخلفية الجديدة
+const neonDisplay = neonElement.parentElement; 
+const backgroundOptions = document.querySelectorAll('#backgroundSelection .color-option');
+
+
 // حالة التشغيل/الإيقاف الافتراضية
 let isNeonOn = true; 
 
@@ -28,8 +33,8 @@ function updateNeonSign() {
     const fontValue = activeFontElement ? activeFontElement.getAttribute('data-font') : 'NeonClip'; 
     
     // الحصول على اللون المختار حاليًا
-    const activeColorElement = document.querySelector('.color-option.active');
-    const colorValue = activeColorElement ? activeColorElement.getAttribute('data-color') : 'CustomRed'; // تم تغيير الافتراضي للون الجديد
+    const activeColorElement = document.querySelector('.color-option.active[data-color]'); // استثناء أزرار الخلفية
+    const colorValue = activeColorElement ? activeColorElement.getAttribute('data-color') : 'CustomRed'; 
 
     // تحديث النص
     neonElement.textContent = text;
@@ -84,7 +89,7 @@ function handleFontClick(event) {
     updateNeonSign();
     
     // 💡 الحل لتمرير شاشة الموبايل للأعلى فوراً 
-    neonElement.scrollIntoView({ behavior: 'smooth', block: 'start' }); // block: 'start' يضعها في أعلى النافذة
+    neonElement.scrollIntoView({ behavior: 'smooth', block: 'start' }); 
 }
 
 /**
@@ -100,6 +105,30 @@ function handleColorClick(event) {
 }
 
 
+/**
+ * معالج النقر على أزرار الخلفية (جديد)
+ */
+function handleBackgroundClick(event) {
+    const clickedOption = event.currentTarget;
+    const selectedBg = clickedOption.getAttribute('data-bg');
+    
+    // إزالة فئة active من كل الخيارات
+    backgroundOptions.forEach(opt => opt.classList.remove('active'));
+    
+    // إضافة فئة active للزر المختار
+    clickedOption.classList.add('active');
+    
+    // إزالة جميع فئات الخلفية السابقة أولاً
+    neonDisplay.classList.remove('bg-black', 'bg-brick-wall', 'bg-concrete');
+    
+    // إضافة الفئة الجديدة
+    neonDisplay.classList.add(selectedBg);
+    
+    // التمرير للأعلى بعد اختيار الخلفية
+    neonElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+
 // ===================================
 // 3. ربط الأحداث (Listeners)
 // ===================================
@@ -111,19 +140,23 @@ toggleButton.addEventListener('click', toggleNeon);
 
 // ربط مستمع لشبكة الخطوط والألوان
 fontOptions.forEach(option => {
-    // تطبيق الخط على الزر نفسه لعرض شكل الخط داخله
     const fontName = option.getAttribute('data-font');
     option.style.fontFamily = `'${fontName}', sans-serif`;
-    
-    // ربط مستمع النقر
     option.addEventListener('click', handleFontClick);
 });
 
-colorOptions.forEach(option => {
+// ملاحظة: تم فصل مستمع الألوان عن الخلفيات
+document.querySelectorAll('#color-body .color-option').forEach(option => {
     option.addEventListener('click', handleColorClick);
 });
 
-// ربط منطق الأكورديون
+// ربط مستمع لأزرار الخلفية الجديدة
+backgroundOptions.forEach(option => {
+    option.addEventListener('click', handleBackgroundClick);
+});
+
+
+// ربط منطق الأكورديون (بقي كما هو)
 accordionHeaders.forEach(header => {
     header.addEventListener('click', () => {
         const targetId = header.getAttribute('data-target');
