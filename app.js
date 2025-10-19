@@ -29,7 +29,7 @@ function updateNeonSign() {
     
     // الحصول على اللون المختار حاليًا
     const activeColorElement = document.querySelector('.color-option.active');
-    const colorValue = activeColorElement ? activeColorElement.getAttribute('data-color') : 'red'; 
+    const colorValue = activeColorElement ? activeColorElement.getAttribute('data-color') : 'CustomRed'; // تم تغيير الافتراضي للون الجديد
 
     // تحديث النص
     neonElement.textContent = text;
