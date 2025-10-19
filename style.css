@@ -24,7 +24,7 @@
 
 /* --- خطوط مجلد castle font 2 --- */
 /* (تم حذف NeonAirstream) */
-@font-face { font-family: 'NeonCalenVanda'; src: url('./fonts/castle font 2/celen-vanda/Calen Vanda.otf') format('opentype'); }
+@font-face { font-family: 'NeonCalenVanda'; src: url('./fonts/castle font 2/calen-vanda/Calen Vanda.otf') format('opentype'); }
 @font-face { font-family: 'NeonSelovia'; src: url('./fonts/castle font 2/it-selovia-demo/ITSeloviaDEMO-Italic.otf') format('opentype'); }
 @font-face { font-family: 'NeonKorian'; src: url('./fonts/castle font 2/korian/Korian.ttf') format('truetype'); }
 @font-face { font-family: 'NeonSportrop'; src: url('./fonts/castle font 2/sportrop/sportrop.ttf') format('truetype'); }
