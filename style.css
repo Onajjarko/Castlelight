@@ -73,3 +73,269 @@ h1 {
     color: #fff;
     margin-bottom: 30px;
     margin-top: 10px;
+}
+
+.customizer-panel {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #1f1f1f; 
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    min-height: 450px;
+}
+
+.controls-section {
+    flex: 1;
+    min-width: 300px;
+    padding-left: 0; 
+    margin-right: 20px; 
+}
+
+.neon-display {
+    flex: 2;
+    min-height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #333;
+    border-radius: 8px;
+    margin-left: 20px;
+    margin-right: 0;
+    background-color: #000; /* خلفية مربع النيون الأسود */
+    overflow: hidden; 
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.input-group input[type="text"],
+.input-group select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #555;
+    background-color: #2a2a2a;
+    color: #fff;
+}
+
+/* -------------------------------------- */
+/* تنسيق شبكة اختيار الخطوط الجديدة (بدلاً من القائمة المنسدلة) */
+/* -------------------------------------- */
+
+.font-grid {
+    display: grid;
+    /* 3 أعمدة متساوية */
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); 
+    gap: 10px;
+    padding: 5px 0;
+}
+
+.font-option {
+    padding: 12px 5px;
+    border: 1px solid #444; /* حدود رمادية */
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    background-color: #2a2a2a; /* خلفية داكنة */
+    color: #fff;
+    
+    /* يتم تطبيق الخط المختار برمجياً من JavaScript */
+    font-size: 15px; 
+    overflow: hidden; 
+    white-space: nowrap; 
+    text-overflow: ellipsis; 
+}
+
+/* تنسيق الخطوط: يتم تطبيق اسم الخط على الزر لعرضه بشكل صحيح */
+.font-option[data-font="NeonClip"] { font-family: 'NeonClip', sans-serif; }
+.font-option[data-font="NeonDespairs"] { font-family: 'NeonDespairs', sans-serif; }
+.font-option[data-font="NeonIcklips"] { font-family: 'NeonIcklips', sans-serif; }
+.font-option[data-font="NeonKosan"] { font-family: 'NeonKosan', sans-serif; }
+.font-option[data-font="NeonParty"] { font-family: 'NeonParty', sans-serif; }
+.font-option[data-font="NeonPicadilly"] { font-family: 'NeonPicadilly', sans-serif; }
+.font-option[data-font="NeonAbdoun"] { font-family: 'NeonAbdoun', sans-serif; }
+.font-option[data-font="NeonAmman"] { font-family: 'NeonAmman', sans-serif; }
+.font-option[data-font="NeonSwifeh"] { font-family: 'NeonSwifeh', sans-serif; }
+.font-option[data-font="NeonSunsetClub"] { font-family: 'NeonSunsetClub', sans-serif; }
+.font-option[data-font="NeonPolentical"] { font-family: 'NeonPolentical', sans-serif; }
+.font-option[data-font="NeonDemather"] { font-family: 'NeonDemather', sans-serif; }
+.font-option[data-font="NeonFloralis"] { font-family: 'NeonFloralis', sans-serif; }
+.font-option[data-font="Neon80s"] { font-family: 'Neon80s', sans-serif; }
+.font-option[data-font="NeonCalenVanda"] { font-family: 'NeonCalenVanda', sans-serif; }
+.font-option[data-font="NeonSelovia"] { font-family: 'NeonSelovia', sans-serif; }
+.font-option[data-font="NeonKorian"] { font-family: 'NeonKorian', sans-serif; }
+.font-option[data-font="NeonSportrop"] { font-family: 'NeonSportrop', sans-serif; }
+.font-option[data-font="NeonBetterOutline"] { font-family: 'NeonBetterOutline', sans-serif; }
+.font-option[data-font="NeonElegantClassic"] { font-family: 'NeonElegantClassic', sans-serif; }
+.font-option[data-font="NeonGlowtone"] { font-family: 'NeonGlowtone', sans-serif; }
+.font-option[data-font="NeonBines"] { font-family: 'NeonBines', sans-serif; }
+.font-option[data-font="NeonSpark"] { font-family: 'NeonSpark', sans-serif; }
+.font-option[data-font="NeonSans"] { font-family: 'NeonSans', sans-serif; }
+.font-option[data-font="NeonStaymore"] { font-family: 'NeonStaymore', sans-serif; }
+.font-option[data-font="NeonVolacrome"] { font-family: 'NeonVolacrome', sans-serif; }
+
+
+/* النمط عند المرور بالفأرة */
+.font-option:hover {
+    border-color: #00ff99; /* حدود نيون خضراء عند المرور */
+    background-color: #333;
+}
+
+/* النمط عند اختيار الخط (Active State) */
+.font-option.active {
+    background-color: #007bff; /* خلفية زرقاء (مثل الصورة) */
+    border-color: #007bff;
+    color: #fff;
+    font-weight: bold;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.7);
+}
+
+
+/* -------------------------------------- */
+/* تنسيق زر التشغيل/الإيقاف والتوهج */
+/* -------------------------------------- */
+
+.neon-button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.neon-button.on {
+    background-color: #00ff99; 
+    color: #121212;
+    box-shadow: 0 0 10px #00ff99, 0 0 20px #00ff99 inset;
+}
+
+.neon-button.off {
+    background-color: #444; 
+    color: #aaa;
+    box-shadow: none;
+}
+
+.neon-sign { 
+    font-family: 'NeonClip', sans-serif; /* تم تغيير الخط الافتراضي إلى NeonClip */
+    font-size: 40px; 
+    text-align: center;
+    transition: all 0.2s ease-in-out; 
+    white-space: nowrap; 
+}
+
+/* فئة إيقاف التشغيل: إلغاء التوهج */
+.neon-sign.is-off {
+    color: #666 !important; 
+    text-shadow: none !important; 
+}
+
+/* -------------------------------------- */
+/* فئات الألوان - تطبيق النمط النيوني القوي الجديد */
+/* -------------------------------------- */
+
+.neon-red {
+    color: #ff073a;
+    text-shadow: 
+        0 0 5px #ff6699, 
+        0 0 10px #ff073a,
+        0 0 15px #ff073a,
+        0 0 20px #ff073a,
+        0 0 25px #ff073a,
+        0 0 30px #ff073a;
+}
+
+.neon-blue {
+    color: #00ffff;
+    text-shadow: 
+        0 0 5px #99ffff, 
+        0 0 10px #00ffff,
+        0 0 15px #00ffff,
+        0 0 20px #00ffff,
+        0 0 25px #00ffff,
+        0 0 30px #00ffff;
+}
+
+.neon-green {
+    color: #39ff14;
+    text-shadow: 
+        0 0 5px #99ff99, 
+        0 0 10px #39ff14,
+        0 0 15px #39ff14,
+        0 0 20px #39ff14,
+        0 0 25px #39ff14,
+        0 0 30px #39ff14;
+}
+
+.neon-pink {
+    color: #ff6ec4;
+    text-shadow: 
+        0 0 5px #ff99ff, 
+        0 0 10px #ff6ec4,
+        0 0 15px #ff6ec4,
+        0 0 20px #ff6ec4,
+        0 0 25px #ff6ec4,
+        0 0 30px #ff6ec4;
+}
+
+.neon-yellow {
+    color: #ffff33;
+    text-shadow: 
+        0 0 5px #ffff99, 
+        0 0 10px #ffff33,
+        0 0 15px #ffff33,
+        0 0 20px #ffff33,
+        0 0 25px #ffff33,
+        0 0 30px #ffff33;
+}
+
+
+/* تنسيق معرض الصور */
+.gallery-container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #1f1f1f;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.gallery-container h2 {
+    text-align: center;
+    color: #00ff99;
+    margin-bottom: 25px;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 15px;
+    justify-items: center;
+}
+
+.image-grid img {
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s;
+}
+
+.image-grid img:hover {
+    transform: scale(1.03);
+    border: 1px solid #00ff99;
+}
