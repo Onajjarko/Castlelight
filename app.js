@@ -2,11 +2,12 @@
 // 1. الثوابت الأساسية (Elements)
 // ===================================
 const neonText = document.getElementById('neonText');
-const neonFont = document.getElementById('neonFont');
+const fontGrid = document.getElementById('fontSelectionGrid'); // شبكة الخطوط الجديدة
 const neonColor = document.getElementById('neonColor');
 const neonSize = document.getElementById('neonSize');
 const neonElement = document.getElementById('customNeon');
 const toggleButton = document.getElementById('toggleButton');
+const fontOptions = document.querySelectorAll('.font-option'); // جميع أزرار الخطوط
 
 // حالة التشغيل/الإيقاف الافتراضية
 let isNeonOn = true; 
@@ -20,9 +21,13 @@ let isNeonOn = true;
  */
 function updateNeonSign() {
     const text = neonText.value;
-    const fontValue = neonFont.value;
     const colorValue = neonColor.value;
     const sizeValue = neonSize.value;
+
+    // الحصول على الخط المختار حاليًا من الزر النشط في الشبكة
+    const activeFontElement = document.querySelector('.font-option.active');
+    // الخط الافتراضي هو 'NeonClip'
+    const fontValue = activeFontElement ? activeFontElement.getAttribute('data-font') : 'NeonClip'; 
 
     // تحديث النص
     neonElement.textContent = text;
@@ -50,7 +55,7 @@ function toggleNeon() {
     isNeonOn = !isNeonOn; // عكس الحالة
 
     if (isNeonOn) {
-        // حالة التشغيل (ON): إزالة الإيقاف وإعادة تطبيق التوهج
+        // حالة التشغيل (ON)
         neonElement.classList.remove('is-off');
         updateNeonSign(); 
         
@@ -59,7 +64,7 @@ function toggleNeon() {
         toggleButton.classList.add('on');
         
     } else {
-        // حالة الإيقاف (OFF): إضافة فئة الإيقاف
+        // حالة الإيقاف (OFF)
         neonElement.classList.add('is-off');
         
         toggleButton.textContent = 'تشغيل';
@@ -68,6 +73,20 @@ function toggleNeon() {
     }
 }
 
+/**
+ * معالج النقر على أزرار الخطوط
+ * @param {Event} event - حدث النقر
+ */
+function handleFontClick(event) {
+    // إزالة حالة النشاط من جميع الأزرار
+    fontOptions.forEach(option => option.classList.remove('active'));
+    
+    // إضافة حالة النشاط للزر الذي تم النقر عليه
+    event.target.classList.add('active');
+    
+    // تحديث لوحة النيون بالخط الجديد
+    updateNeonSign();
+}
 
 // ===================================
 // 3. ربط الأحداث (Listeners)
@@ -75,9 +94,19 @@ function toggleNeon() {
 
 // ربط المستمعين لتحديث اللوحة في الوقت الفعلي
 neonText.addEventListener('input', updateNeonSign);
-neonFont.addEventListener('change', updateNeonSign);
 neonColor.addEventListener('change', updateNeonSign);
 neonSize.addEventListener('input', updateNeonSign);
+
+// ربط مستمع لشبكة الخطوط
+fontOptions.forEach(option => {
+    // تطبيق الخط على الزر نفسه لعرض شكل الخط داخله
+    const fontName = option.getAttribute('data-font');
+    option.style.fontFamily = `'${fontName}', sans-serif`;
+    
+    // ربط مستمع النقر
+    option.addEventListener('click', handleFontClick);
+});
+
 
 // ربط مستمع لزر التشغيل/الإيقاف
 toggleButton.addEventListener('click', toggleNeon);
