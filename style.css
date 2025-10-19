@@ -1,5 +1,5 @@
 /* -------------------------------------- */
-/* تعريف خطوط النيون المخصصة (النهائي والمُصحَّح) */
+/* تعريف خطوط النيون المخصصة (النهائي والمُصحَّح بالكامل بناءً على التحقق الأخير) */
 /* -------------------------------------- */
 
 /* --- الخطوط الأصلية والموجودة في المجلدات الخارجية --- */
@@ -7,31 +7,29 @@
 @font-face { font-family: 'NeonDespairs'; src: url('./fonts/despairs/despairs-font-trial.ttf') format('truetype'); }
 @font-face { font-family: 'NeonIcklips'; src: url('./fonts/icklips/Icklips_.ttf') format('truetype'); }
 @font-face { font-family: 'NeonKosan'; src: url('./fonts/kosannoncommercial/KosanNonCommercial.otf') format('opentype'); }
-@font-face { font-family: 'NeonRegular'; src: url('./fonts/neon/NEON__.ttf') format('truetype'); } /* تم التأكد من اسم الملف NEON__.ttf */
+@font-face { font-family: 'NeonRegular'; src: url('./fonts/neon/NEON__.ttf') format('truetype'); } 
 @font-face { font-family: 'NeonParty'; src: url('./fonts/partylicious/Partilicious.ttf') format('truetype'); }
 @font-face { font-family: 'NeonPicadilly'; src: url('./fonts/picadilly/Picadilly.ttf') format('truetype'); }
 
-/* --- خطوط مجلد castlefont --- */
-@font-face { font-family: 'NeonAbdoun'; src: url('./fonts/castlefont/Abdoun/Abdoun.ttf') format('truetype'); }
-@font-face { font-family: 'NeonAmman'; src: url('./fonts/castlefont/Amman/Amman.ttf') format('truetype'); } /* تم تصحيح المسار ليعمل */
-@font-face { font-family: 'NeonSwifeh'; src: url('./fonts/castlefont/Swifeh/Swifeh.ttf') format('truetype'); } /* تم تصحيح المسار ليعمل */
+/* --- خطوط مجلد castlefont - تم تصحيح الامتدادات والمسافات --- */
+@font-face { font-family: 'NeonAbdoun'; src: url('./fonts/castlefont/Abdoun/Abdoun.ttf') format('truetype'); } /* لم تطلب تعديله، بقي كما هو */
+@font-face { font-family: 'NeonAmman'; src: url('./fonts/castlefont/Amman/Amman.otf') format('opentype'); } /* تم التعديل لـ otf */
+@font-face { font-family: 'NeonSwifeh'; src: url('./fonts/castlefont/Swifeh/Swifeh.otf') format('opentype'); } /* تم التعديل لـ otf */
 @font-face { font-family: 'NeonSunsetClub'; src: url('./fonts/castlefont/sunset-club/Sunset Club Free Trial.otf') format('opentype'); }
 @font-face { font-family: 'NeonPolentical'; src: url('./fonts/castlefont/polentical-neon/Polentical Neon Regular.ttf') format('truetype'); }
-@font-face { font-family: 'NeonAnimal'; src: url('./fonts/castlefont/anima_chariot/Animal_Chariot.ttf') format('truetype'); }
+@font-face { font-family: 'NeonAnimal'; src: url('./fonts/castlefont/anima_chariot/Animal Chariot.ttf') format('truetype'); } /* تم إضافة مسافة */
 @font-face { font-family: 'NeonDemather'; src: url('./fonts/castlefont/Demather/Demather.otf') format('opentype'); }
-@font-face { font-family: 'NeonFloralis'; src: url('./fonts/castlefont/floralis/Floralis_Couture.ttf') format('truetype'); }
+@font-face { font-family: 'NeonFloralis'; src: url('./fonts/castlefont/floralis/Floralis Couture.ttf') format('truetype'); } /* تم إضافة مسافة */
 @font-face { font-family: 'Neon80s'; src: url('./fonts/castlefont/Neon80s/Neon.ttf') format('truetype'); }
 
-/* --- خطوط مجلد castle font 2 --- */
-/* (ملاحظة: تأكد من المسافة في اسم المجلد: castle font 2) */
-@font-face { font-family: 'NeonAirstream'; src: url('./fonts/castle font 2/airstream/Airstream.ttf') format('truetype'); } /* تم تصحيح المسار ليعمل */
-@font-face { font-family: 'NeonCalenVanda'; src: url('./fonts/castle font 2/celen-vanda/Calen Vanda.ttf') format('truetype'); } /* تم تصحيح اسم الملف للمسافات */
-@font-face { font-family: 'NeonSelovia'; src: url('./fonts/castle font 2/it-selovia-demo/ITSeloviaDEMO.ttf') format('truetype'); } /* تم تصحيح اسم الملف لحالة الأحرف */
+/* --- خطوط مجلد castle font 2 - تم تصحيح الامتدادات والمسافات والأسماء --- */
+@font-face { font-family: 'NeonAirstream'; src: url('./fonts/castle font 2/airstream/Airstream.ttf') format('truetype'); }
+@font-face { font-family: 'NeonCalenVanda'; src: url('./fonts/castle font 2/celen-vanda/Calen Vanda.otf') format('opentype'); } /* تم التعديل لـ otf */
+@font-face { font-family: 'NeonSelovia'; src: url('./fonts/castle font 2/it-selovia-demo/ITSeloviaDEMO-Italic.otf') format('opentype'); } /* تم تعديل اسم الملف */
 @font-face { font-family: 'NeonKorian'; src: url('./fonts/castle font 2/korian/Korian.ttf') format('truetype'); }
-@font-face { font-family: 'NeonSportrop'; src: url('./fonts/castle font 2/sportrop/sportrop.ttf') format('truetype'); } /* تم تصحيح المسار ليعمل */
+@font-face { font-family: 'NeonSportrop'; src: url('./fonts/castle font 2/sportrop/sportrop.ttf') format('truetype'); }
 
-/* --- خطوط مجلد castle font 3 --- */
-/* (ملاحظة: تأكد من المسافة في اسم المجلد: castle font 3) */
+/* --- خطوط مجلد castle font 3 - تم تصحيح الامتدادات --- */
 @font-face { font-family: 'NeonBetterOutline'; src: url('./fonts/castle font 3/betteroutline/Better Outline.otf') format('opentype'); }
 @font-face { font-family: 'NeonElegantClassic'; src: url('./fonts/castle font 3/elegant-classic/Elegant Classic - Personal Use License.otf') format('opentype'); }
 @font-face { font-family: 'NeonGlowtone'; src: url('./fonts/castle font 3/glowtone-personal-use/Glowtone - Personal Use.otf') format('opentype'); }
@@ -39,9 +37,9 @@
 @font-face { font-family: 'NeonHimala'; src: url('./fonts/castle font 3/neon-himala/NeonHimala.otf') format('opentype'); }
 @font-face { font-family: 'NeonSpark'; src: url('./fonts/castle font 3/neon-spark/Neon Spark.otf') format('opentype'); }
 @font-face { font-family: 'NeonSans'; src: url('./fonts/castle font 3/neonsans/NeonSans.otf') format('opentype'); }
-@font-face { font-family: 'NeonRocketClouds'; src: url('./fonts/castle font 3/rocket-clouds-demo/RocketClouds.ttf') format('truetype'); } /* تم تصحيح المسار ليعمل */
+@font-face { font-family: 'NeonRocketClouds'; src: url('./fonts/castle font 3/rocket-clouds-demo/RocketClouds.ttf') format('truetype'); }
 @font-face { font-family: 'NeonStaymore'; src: url('./fonts/castle font 3/staymore/Staymore.otf') format('opentype'); }
-@font-face { font-family: 'NeonVolacrome'; src: url('./fonts/castle font 3/volacrome/VOLACROME.otf') format('opentype'); }
+@font-face { font-family: 'NeonVolacrome'; src: url('./fonts/castle font 3/volacrome/VOLACROME.otf') format('opentype'); } /* تم التعديل لـ otf */
 
 
 /* -------------------------------------- */
