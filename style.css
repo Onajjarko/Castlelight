@@ -52,7 +52,6 @@
     height: auto;
     border-radius: 8px; 
     transition: all 0.3s;
-    /* إبقاء توهج خفيف للوجو */
     box-shadow: 0 0 5px #00ff99, 0 0 10px #00ff99; 
 }
 
@@ -74,7 +73,6 @@ body {
 }
 
 h1 {
-    /* العنوان الرئيسي داكن ليظهر على الخلفية الفاتحة */
     text-align: center;
     color: #333333; 
     margin-bottom: 30px;
@@ -98,7 +96,7 @@ h1 {
     margin-right: 20px; 
 }
 
-/* حاوية عرض النيون - لا تزال سوداء لعرض النيون بشكل أفضل */
+/* حاوية عرض النيون - تم التعديل على الخلفية لتبدو متدرجة رمادية غامقة */
 .neon-display {
     flex: 2;
     min-height: 350px;
@@ -109,7 +107,8 @@ h1 {
     border-radius: 8px;
     margin-left: 20px;
     margin-right: 0;
-    background-color: #000; 
+    /* الخلفية المتدرجة الجديدة */
+    background: linear-gradient(135deg, #212529 0%, #0c0d0f 100%);
     overflow: hidden; 
     filter: brightness(1.1); 
     background-size: cover;
@@ -128,7 +127,8 @@ h1 {
 }
 
 .bg-black {
-    background-color: #000;
+    /* تم تغييرها لتعود إلى الخلفية المتدرجة الجديدة */
+    background: linear-gradient(135deg, #212529 0%, #0c0d0f 100%);
     background-image: none;
 }
 
@@ -148,9 +148,9 @@ h1 {
     width: 100%;
     padding: 10px;
     border-radius: 5px;
-    border: 1px solid #aaa; /* حدود أفتح */
-    background-color: #fff; /* خلفية الإدخال بيضاء */
-    color: #333333; /* لون نص الإدخال داكن */
+    border: 1px solid #aaa; 
+    background-color: #fff; 
+    color: #333333; 
 }
 
 /* -------------------------------------- */
@@ -158,35 +158,35 @@ h1 {
 /* -------------------------------------- */
 
 .custom-accordion {
-    border: 1px solid #aaa; /* حدود أفتح */
+    border: 1px solid #aaa; 
     border-radius: 8px;
     margin-bottom: 20px;
 }
 
 .accordion-header {
-    background-color: #ffffff; /* خلفية فاتحة */
+    background-color: #ffffff; 
     padding: 15px;
-    border-bottom: 1px solid #ccc; /* حدود أفتح */
+    border-bottom: 1px solid #ccc; 
     cursor: pointer;
     font-weight: bold;
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-radius: 8px; 
-    color: #333333; /* نص داكن */
+    color: #333333; 
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
 }
 
 .accordion-header.active {
-    background-color: #FFF0F5; /* لون نشط زهري فاتح */
-    color: #007bff; /* لون أزرق لتمييز النشط */
+    background-color: #FFF0F5; 
+    color: #007bff; 
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
 }
 
 .accordion-body {
     padding: 15px;
-    background-color: #FFF0F5; /* خلفية الجسم زهري فاتح */
+    background-color: #FFF0F5; 
     display: none; 
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
@@ -221,13 +221,13 @@ h1 {
 
 .font-option {
     padding: 12px 5px;
-    border: 1px solid #aaa; /* حدود أفتح */
+    border: 1px solid #aaa; 
     border-radius: 8px;
     text-align: center;
     cursor: pointer;
     transition: all 0.2s;
-    background-color: #ffffff; /* خلفية بيضاء */
-    color: #333333; /* نص داكن */
+    background-color: #ffffff; 
+    color: #333333; 
     font-size: 15px; 
     overflow: hidden; 
     white-space: nowrap; 
@@ -250,61 +250,39 @@ h1 {
     transform: rotate(5deg);
 }
 
+
 /* تنسيق الخطوط: يتم تطبيق اسم الخط على الزر لعرضه بشكل صحيح */
 .font-option[data-font="NeonClip"] { font-family: 'NeonClip', sans-serif; }
 .font-option[data-font="NeonDespairs"] { font-family: 'NeonDespairs', sans-serif; }
 .font-option[data-font="NeonIcklips"] { font-family: 'NeonIcklips', sans-serif; }
-@font-face { font-family: 'NeonKosan'; src: url('./fonts/kosannoncommercial/KosanNonCommercial.otf') format('opentype'); }
 .font-option[data-font="NeonKosan"] { font-family: 'NeonKosan', sans-serif; }
-@font-face { font-family: 'NeonParty'; src: url('./fonts/partylicious/Partilicious.ttf') format('truetype'); }
 .font-option[data-font="NeonParty"] { font-family: 'NeonParty', sans-serif; }
-@font-face { font-family: 'NeonPicadilly'; src: url('./fonts/picadilly/Picadilly.ttf') format('truetype'); }
 .font-option[data-font="NeonPicadilly"] { font-family: 'NeonPicadilly', sans-serif; }
-@font-face { font-family: 'NeonAbdoun'; src: url('./fonts/castlefont/Abdoun/Abdoun.ttf') format('truetype'); }
 .font-option[data-font="NeonAbdoun"] { font-family: 'NeonAbdoun', sans-serif; }
-@font-face { font-family: 'NeonAmman'; src: url('./fonts/castlefont/Amman/Amman.otf') format('opentype'); }
 .font-option[data-font="NeonAmman"] { font-family: 'NeonAmman', sans-serif; }
-@font-face { font-family: 'NeonSwifeh'; src: url('./fonts/castlefont/Swifeh/Swifeh.otf') format('opentype'); }
 .font-option[data-font="NeonSwifeh"] { font-family: 'NeonSwifeh', sans-serif; }
-@font-face { font-family: 'NeonSunsetClub'; src: url('./fonts/castlefont/sunset-club/Sunset Club Free Trial.otf') format('opentype'); }
 .font-option[data-font="NeonSunsetClub"] { font-family: 'NeonSunsetClub', sans-serif; }
-@font-face { font-family: 'NeonPolentical'; src: url('./fonts/castlefont/polentical-neon/Polentical Neon Regular.ttf') format('truetype'); }
 .font-option[data-font="NeonPolentical"] { font-family: 'NeonPolentical', sans-serif; }
-@font-face { font-family: 'NeonDemather'; src: url('./fonts/castlefont/Demather/Demather.otf') format('opentype'); }
 .font-option[data-font="NeonDemather"] { font-family: 'NeonDemather', sans-serif; }
-@font-face { font-family: 'NeonFloralis'; src: url('./fonts/castlefont/floralis/Floralis Couture.ttf') format('truetype'); }
 .font-option[data-font="NeonFloralis"] { font-family: 'NeonFloralis', sans-serif; }
-@font-face { font-family: 'Neon80s'; src: url('./fonts/castlefont/Neon80s/Neon.ttf') format('truetype'); }
 .font-option[data-font="Neon80s"] { font-family: 'Neon80s', sans-serif; }
-@font-face { font-family: 'NeonCalenVanda'; src: url('./fonts/castle font 2/celen-vanda/Calen Vanda.otf') format('opentype'); }
 .font-option[data-font="NeonCalenVanda"] { font-family: 'NeonCalenVanda', sans-serif; }
-@font-face { font-family: 'NeonSelovia'; src: url('./fonts/castle font 2/it-selovia-demo/ITSeloviaDEMO-Italic.otf') format('opentype'); }
 .font-option[data-font="NeonSelovia"] { font-family: 'NeonSelovia', sans-serif; }
-@font-face { font-family: 'NeonKorian'; src: url('./fonts/castle font 2/korian/Korian.ttf') format('truetype'); }
 .font-option[data-font="NeonKorian"] { font-family: 'NeonKorian', sans-serif; }
-@font-face { font-family: 'NeonSportrop'; src: url('./fonts/castle font 2/sportrop/Sportrop.ttf') format('truetype'); }
 .font-option[data-font="NeonSportrop"] { font-family: 'NeonSportrop', sans-serif; }
-@font-face { font-family: 'NeonBetterOutline'; src: url('./fonts/castle font 3/betteroutline/Better Outline.otf') format('opentype'); }
 .font-option[data-font="NeonBetterOutline"] { font-family: 'NeonBetterOutline', sans-serif; }
-@font-face { font-family: 'NeonElegantClassic'; src: url('./fonts/castle font 3/elegant-classic/Elegant Classic - Personal Use License.otf') format('opentype'); }
 .font-option[data-font="NeonElegantClassic"] { font-family: 'NeonElegantClassic', sans-serif; }
-@font-face { font-family: 'NeonGlowtone'; src: url('./fonts/castle font 3/glowtone-personal-use/Glowtone - Personal Use.otf') format('opentype'); }
 .font-option[data-font="NeonGlowtone"] { font-family: 'NeonGlowtone', sans-serif; }
-@font-face { font-family: 'NeonBines'; src: url('./fonts/castle font 3/neon-bines/NeonBines.otf') format('opentype'); }
 .font-option[data-font="NeonBines"] { font-family: 'NeonBines', sans-serif; }
-@font-face { font-family: 'NeonSpark'; src: url('./fonts/castle font 3/neon-spark/Neon Spark.otf') format('opentype'); }
 .font-option[data-font="NeonSpark"] { font-family: 'NeonSpark', sans-serif; }
-@font-face { font-family: 'NeonSans'; src: url('./fonts/castle font 3/neonsans/NeonSans.otf') format('opentype'); }
 .font-option[data-font="NeonSans"] { font-family: 'NeonSans', sans-serif; }
-@font-face { font-family: 'NeonStaymore'; src: url('./fonts/castle font 3/staymore/Staymore.otf') format('opentype'); }
 .font-option[data-font="NeonStaymore"] { font-family: 'NeonStaymore', sans-serif; }
-@font-face { font-family: 'NeonVolacrome'; src: url('./fonts/castle font 3/volacrome/VOLACROME.otf') format('opentype'); }
 .font-option[data-font="NeonVolacrome"] { font-family: 'NeonVolacrome', sans-serif; }
 
 
 /* النمط عند المرور بالفأرة */
 .font-option:hover {
-    border-color: #007bff; /* نيون أزرق */
+    border-color: #007bff; 
     background-color: #f0f0f0;
 }
 
@@ -333,7 +311,7 @@ h1 {
     height: 40px;
     border-radius: 50%;
     cursor: pointer;
-    border: 2px solid #333; /* حدود داكنة على خلفية فاتحة */
+    border: 2px solid #333; 
     transition: border 0.2s, box-shadow 0.2s;
     margin: 5px auto;
 }
@@ -371,13 +349,14 @@ h1 {
 }
 
 .neon-button.off {
-    background-color: #ccc; /* لون رمادي فاتح ليظهر على الخلفية الزهرية */
-    color: #444; /* نص داكن */
+    background-color: #ccc; 
+    color: #444; 
     box-shadow: none;
 }
 
 .neon-sign { 
-    filter: blur(0.5px) contrast(1.1); 
+    /* إزالة الـ Blur من هنا وتطبيقه فقط عند الحاجة */
+    /* filter: blur(0.5px) contrast(1.1); */ 
     font-family: 'NeonClip', sans-serif; 
     font-size: 40px; 
     text-align: center;
@@ -387,8 +366,40 @@ h1 {
 
 /* فئة إيقاف التشغيل: إلغاء التوهج */
 .neon-sign.is-off {
-    color: #888 !important; /* لون رمادي داكن ليظهر على الأسود داخل الشاشة */
+    color: #888 !important; 
     text-shadow: none !important; 
+}
+
+/* -------------------------------------- */
+/* الرسوم المتحركة (Animation) لتأثير النبض البنفسجي */
+/* -------------------------------------- */
+@keyframes pulsate-purple {
+    
+  100% {
+      /* النسخة الأقوى من التوهج */
+      text-shadow:
+      0 0 4px #fff,
+      0 0 11px #fff,
+      0 0 19px #fff,
+      0 0 40px #bc13fe,
+      0 0 80px #bc13fe,
+      0 0 90px #bc13fe,
+      0 0 100px #bc13fe,
+      0 0 150px #bc13fe;
+  }
+  
+  0% {
+      /* النسخة الأضعف من التوهج */
+      text-shadow:
+      0 0 2px #fff,
+      0 0 4px #fff,
+      0 0 6px #fff,
+      0 0 10px #bc13fe,
+      0 0 45px #bc13fe,
+      0 0 55px #bc13fe,
+      0 0 70px #bc13fe,
+      0 0 80px #bc13fe;
+  }
 }
 
 /* -------------------------------------- */
@@ -411,8 +422,19 @@ h1 {
 }
 
 .neon-Purple {
-    color: #9933FF;
-    text-shadow: 0 0 8px #cc99ff, 0 0 20px #9933FF, 0 0 35px #9933FF, 0 0 50px rgba(153, 51, 255, 0.5);
+    color: #9933FF; /* اللون الأساسي */
+    /* تطبيق الظل الابتدائي */
+    text-shadow: 
+        0 0 2px #fff,
+        0 0 4px #fff,
+        0 0 6px #fff,
+        0 0 10px #bc13fe,
+        0 0 45px #bc13fe,
+        0 0 55px #bc13fe,
+        0 0 70px #bc13fe,
+        0 0 80px #bc13fe;
+    /* تطبيق النبض */
+    animation: pulsate-purple 1.5s infinite alternate; 
 }
 
 .neon-ElectricBlue {
@@ -455,14 +477,14 @@ h1 {
     max-width: 1000px;
     margin: 40px auto;
     padding: 20px;
-    background-color: rgba(255, 255, 255, 0.9); /* خلفية بيضاء شفافة للمعرض */
+    background-color: rgba(255, 255, 255, 0.9); 
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .gallery-container h2 {
     text-align: center;
-    color: #007bff; /* عنوان المعرض باللون الأزرق لتمييزه */
+    color: #007bff; 
     margin-bottom: 25px;
 }
 
@@ -479,7 +501,7 @@ h1 {
     text-align: center; 
     padding: 0;
     margin-bottom: 20px;
-    background-color: #f0f0f0; /* خلفية فاتحة لمربع الشرح */
+    background-color: #f0f0f0; 
     border-radius: 6px;
     overflow: hidden; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -500,8 +522,8 @@ h1 {
     margin: 0;
     padding: 10px 15px;
     font-size: 14px;
-    color: #333333; /* لون النص داكن */
-    background-color: #f0f0f0; /* خلفية الشرح فاتحة */
+    color: #333333; 
+    background-color: #f0f0f0; 
     font-weight: 500;
     min-height: 40px; 
     display: flex;
