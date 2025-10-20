@@ -36,6 +36,20 @@
 @font-face { font-family: 'NeonStaymore'; src: url('./fonts/castle font 3/staymore/Staymore.otf') format('opentype'); }
 @font-face { font-family: 'NeonVolacrome'; src: url('./fonts/castle font 3/volacrome/VOLACROME.otf') format('opentype'); }
 
+/* -------------------------------------- */
+/* تنسيق خلفية الفيديو (المدمج حديثاً) */
+/* -------------------------------------- */
+#bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -2; /* وضع الفيديو خلف كل شيء */
+  filter: brightness(0.6) grayscale(0.2); /* لجعل الخلفية أغمق وأقل تشتيتاً */
+}
+
 
 /* -------------------------------------- */
 /* تنسيق الواجهة والخلفية الفاتحة الجديدة */
@@ -57,7 +71,7 @@
 
 body {
     /* تغيير الخلفية إلى الزهري الفاتح */
-    background-color: #FFF0F5; 
+    background-color: transparent; /* جعل خلفية body شفافة لرؤية الفيديو */
     /* تغيير لون النص الأساسي ليصبح داكناً */
     color: #333333; 
     font-family: Arial, sans-serif;
@@ -65,18 +79,25 @@ body {
     padding: 20px;
     direction: rtl;
     text-align: right;
+    min-height: 100vh; /* مهم لتغطية كل المساحة */
+    position: relative; /* مهم لـ z-index */
+    z-index: -1;
 }
 
 .container {
     max-width: 1000px;
     margin: 0 auto;
+    /* جعل المحتوى الرئيسي أعلى من الفيديو */
+    position: relative; 
+    z-index: 1;
 }
 
 h1 {
     text-align: center;
-    color: #333333; 
+    color: #ffffff; /* تغيير اللون للأبيض ليناسب الفيديو الخلفية */
     margin-bottom: 30px;
     margin-top: 10px;
+    text-shadow: 0 0 5px #000;
 }
 
 .customizer-panel {
@@ -87,6 +108,7 @@ h1 {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     min-height: 450px;
+    display: flex; /* للتأكد من المحاذاة */
 }
 
 .controls-section {
@@ -355,8 +377,6 @@ h1 {
 }
 
 .neon-sign { 
-    /* إزالة الـ Blur من هنا وتطبيقه فقط عند الحاجة */
-    /* filter: blur(0.5px) contrast(1.1); */ 
     font-family: 'NeonClip', sans-serif; 
     font-size: 40px; 
     text-align: center;
@@ -480,6 +500,8 @@ h1 {
     background-color: rgba(255, 255, 255, 0.9); 
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative; /* مهم لجعله أعلى من الفيديو */
+    z-index: 1;
 }
 
 .gallery-container h2 {
