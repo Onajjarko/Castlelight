@@ -58,8 +58,8 @@
 }
 
 body {
-    background-color: #121212; /* الخلفية الداكنة */
-    color: #f0f0f0;
+    background-color: #FFF0F5; /* الخلفية الداكنة */
+    color: #333333;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 20px;
@@ -82,10 +82,11 @@ h1 {
 .customizer-panel {
     display: flex;
     flex-wrap: wrap;
-    background-color: #1f1f1f; 
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #333333; /*
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     min-height: 450px;
 }
 
