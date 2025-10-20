@@ -2,14 +2,14 @@
 // 1. الثوابت الأساسية (Elements)
 // ===================================
 const neonText = document.getElementById('neonText');
-const fontOptions = document.querySelectorAll('#fontSelectionGrid .font-option'); // أزرار الخطوط
-const colorOptions = document.querySelectorAll('.color-option'); // أزرار الألوان
+const fontOptions = document.querySelectorAll('#fontSelectionGrid .font-option'); 
+const colorOptions = document.querySelectorAll('.color-option'); 
 const neonSize = document.getElementById('neonSize');
-const neonElement = document.getElementById('customNeon'); // العنصر المستهدف للتمرير
+const neonElement = document.getElementById('customNeon'); 
 const toggleButton = document.getElementById('toggleButton');
-const accordionHeaders = document.querySelectorAll('.accordion-header'); // رؤوس الأكورديون
+const accordionHeaders = document.querySelectorAll('.accordion-header'); 
 
-// عناصر الخلفية الجديدة
+// عناصر الخلفية 
 const neonDisplay = neonElement.parentElement; 
 const backgroundOptions = document.querySelectorAll('#backgroundSelection .color-option');
 
@@ -25,31 +25,33 @@ let isNeonOn = true;
  * دالة تحديث توقيع النيون بناءً على الإدخالات
  */
 function updateNeonSign() {
-    const text = neonText.value;
+    const text = neonText.value || 'اكتب هنا';
     const sizeValue = neonSize.value;
 
-    // الحصول على الخط المختار حاليًا
-    const activeFontElement = document.querySelector('.font-option.active');
+    // الحصول على الخط واللون المختار حاليًا
+    const activeFontElement = document.querySelector('#fontSelectionGrid .font-option.active');
     const fontValue = activeFontElement ? activeFontElement.getAttribute('data-font') : 'NeonClip'; 
     
-    // الحصول على اللون المختار حاليًا
-    const activeColorElement = document.querySelector('.color-option.active[data-color]'); // استثناء أزرار الخلفية
+    const activeColorElement = document.querySelector('#color-body .color-option.active');
     const colorValue = activeColorElement ? activeColorElement.getAttribute('data-color') : 'CustomRed'; 
 
-    // تحديث النص
+    // 1. تحديث النص والحجم
     neonElement.textContent = text;
-    
-    // تحديث الخط
-    neonElement.style.fontFamily = `'${fontValue}', sans-serif`;
-
-    // تحديث الحجم
     neonElement.style.fontSize = `${sizeValue}px`;
 
-    // تحديث اللون (إزالة جميع فئات الألوان السابقة وإضافة الفئة الجديدة)
-    neonElement.className = 'neon-sign';
-    neonElement.classList.add(`neon-${colorValue}`);
+    // 2. تحديث الكلاسات (المُعدَّل الرئيسي لحفظ فئة الخط)
     
-    // التأكد من تطبيق حالة التشغيل/الإيقاف
+    // إزالة جميع فئات النيون والخطوط القديمة والحفاظ على الفئة الأساسية 'neon-sign'
+    // يتم فلترة الكلاسات لحذف أي كلاس يبدأ بـ 'neon-' (الألوان) أو 'Neon' (الخطوط)
+    neonElement.className = neonElement.className.split(' ')
+        .filter(c => c === 'neon-sign' || c === 'is-off' || !c.startsWith('neon-') && !c.startsWith('Neon'))
+        .join(' ');
+
+    // 3. إضافة الكلاسات الجديدة
+    neonElement.classList.add(`neon-${colorValue}`);
+    neonElement.classList.add(fontValue);
+    
+    // 4. التأكد من تطبيق حالة التشغيل/الإيقاف
     if (!isNeonOn) {
         neonElement.classList.add('is-off');
     }
@@ -81,14 +83,14 @@ function toggleNeon() {
 
 
 /**
- * معالج النقر على أزرار الخطوط (مع التمرير)
+ * معالج النقر على أزرار الخطوط 
  */
 function handleFontClick(event) {
     fontOptions.forEach(option => option.classList.remove('active'));
-    event.target.classList.add('active');
+    event.currentTarget.classList.add('active'); 
     updateNeonSign();
     
-    // 💡 الحل لتمرير شاشة الموبايل للأعلى فوراً 
+    // 💡 التمرير للأعلى
     neonElement.scrollIntoView({ behavior: 'smooth', block: 'start' }); 
 }
 
@@ -96,17 +98,17 @@ function handleFontClick(event) {
  * معالج النقر على أزرار الألوان
  */
 function handleColorClick(event) {
-    colorOptions.forEach(option => option.classList.remove('active'));
-    event.target.classList.add('active');
+    document.querySelectorAll('#color-body .color-option').forEach(option => option.classList.remove('active'));
+    event.currentTarget.classList.add('active'); 
     updateNeonSign();
     
-    // 💡 التمرير للأعلى بعد اختيار اللون أيضاً
+    // 💡 التمرير للأعلى بعد اختيار اللون
     neonElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
 
 /**
- * معالج النقر على أزرار الخلفية (جديد)
+ * معالج النقر على أزرار الخلفية 
  */
 function handleBackgroundClick(event) {
     const clickedOption = event.currentTarget;
@@ -118,7 +120,7 @@ function handleBackgroundClick(event) {
     // إضافة فئة active للزر المختار
     clickedOption.classList.add('active');
     
-    // إزالة جميع فئات الخلفية السابقة أولاً
+    // إزالة جميع فئات الخلفية السابقة أولاً (التي تبدأ بـ bg-)
     neonDisplay.classList.remove('bg-black', 'bg-brick-wall', 'bg-concrete');
     
     // إضافة الفئة الجديدة
@@ -141,11 +143,11 @@ toggleButton.addEventListener('click', toggleNeon);
 // ربط مستمع لشبكة الخطوط والألوان
 fontOptions.forEach(option => {
     const fontName = option.getAttribute('data-font');
-    option.style.fontFamily = `'${fontName}', sans-serif`;
+    option.style.fontFamily = `'${fontName}', sans-serif`; 
     option.addEventListener('click', handleFontClick);
 });
 
-// ملاحظة: تم فصل مستمع الألوان عن الخلفيات
+// ربط مستمع لأزرار الألوان
 document.querySelectorAll('#color-body .color-option').forEach(option => {
     option.addEventListener('click', handleColorClick);
 });
@@ -156,17 +158,19 @@ backgroundOptions.forEach(option => {
 });
 
 
-// ربط منطق الأكورديون (بقي كما هو)
+// ربط منطق الأكورديون 
 accordionHeaders.forEach(header => {
     header.addEventListener('click', () => {
         const targetId = header.getAttribute('data-target');
         const targetBody = document.getElementById(targetId);
         
-        // إغلاق كل الأقسام الأخرى وإزالة التحديد النشط
+        // إغلاق كل الأقسام الأخرى
         accordionHeaders.forEach(h => {
             const body = document.getElementById(h.getAttribute('data-target'));
-            h.classList.remove('active');
-            body.classList.remove('expanded');
+            if (h !== header) { 
+                h.classList.remove('active');
+                body.classList.remove('expanded');
+            }
         });
         
         // فتح/إغلاق القسم الحالي
@@ -177,4 +181,11 @@ accordionHeaders.forEach(header => {
 
 
 // تشغيل التحديث الأولي عند تحميل الصفحة
-window.addEventListener('load', updateNeonSign);
+window.addEventListener('load', () => {
+    // تفعيل الخيارات الافتراضية
+    document.querySelector('#fontSelectionGrid .font-option').classList.add('active');
+    document.querySelector('#color-body .color-option').classList.add('active');
+    document.querySelector('#backgroundSelection .color-option').classList.add('active');
+    
+    updateNeonSign();
+});
