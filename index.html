@@ -9,14 +9,72 @@
     
     <link rel="stylesheet" href="style.css"> 
     
-    </head>
+    <link rel="preload" as="image" href="images/bg-brick-wall.jpg">
+    <link rel="preload" as="image" href="images/bg-concrete.jpg">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Neonderthaw&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet">
+
+    <svg width="0" height="0" style="position: absolute;">
+      <defs>
+        <filter id="liquidglass1" x="0%" y="0%" width="100%" height="100%" filterUnits="objectBoundingBox">
+          <feTurbulence type="fractalNoise" baseFrequency="0.001 0.005" numOctaves="1" seed="17" result="turbulence" />
+          <feComponentTransfer in="turbulence" result="mapped">
+            <feFuncR type="gamma" amplitude="1" exponent="10" offset="0.5" />
+            <feFuncG type="gamma" amplitude="0" exponent="1" offset="0" />
+            <feFuncB type="gamma" amplitude="0" exponent="1" offset="0.5" />
+          </feComponentTransfer>
+          <feGaussianBlur in="turbulence" stdDeviation="3" result="softMap" />
+          <feSpecularLighting in="softMap" surfaceScale="5" specularConstant="1" specularExponent="100" lighting-color="white" result="specLight">
+            <fePointLight x="-200" y="-200" z="300" />
+          </feSpecularLighting>
+          <feComposite in="specLight" operator="arithmetic" k1="0" k2="1" k3="1" k4="0" result="litImage" />
+          <feDisplacementMap in="SourceGraphic" in2="softMap" scale="200" xChannelSelector="R" yChannelSelector="G" />
+        </filter>
+        <filter id="liquidglass2" x="-50%" y="-50%" width="200%" height="200%">
+          <feTurbulence baseFrequency="0.012 0.018" numOctaves="3" result="turbulence" seed="1" type="fractalNoise" />
+          <feColorMatrix in="turbulence" type="saturate" values="0" result="grayscale" />
+          <feDisplacementMap in="SourceGraphic" in2="grayscale" scale="30" result="displaced1" />
+          <feTurbulence baseFrequency="0.025 0.035" numOctaves="2" result="turbulence2" seed="2" type="fractalNoise" />
+          <feColorMatrix in="turbulence2" type="saturate" values="0" result="grayscale2" />
+          <feDisplacementMap in="displaced1" in2="grayscale2" scale="20" result="displaced2" />
+          <feOffset in="displaced2" dx="-1" dy="0" result="offsetR" />
+          <feOffset in="displaced2" dx="1" dy="0" result="offsetB" />
+          <feColorMatrix in="offsetR" type="matrix" result="redChannel" values="1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0" />
+          <feColorMatrix in="displaced2" type="matrix" result="greenChannel" values="0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0" />
+          <feColorMatrix in="offsetB" type="matrix" result="blueChannel" values="0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0" />
+          <feComposite in="redChannel" in2="greenChannel" operator="arithmetic" k1="0" k2="1" k3="1" k4="0" result="rg" />
+          <feComposite in="rg" in2="blueChannel" operator="arithmetic" k1="0" k2="1" k3="1" k4="0" result="rgb" />
+          <feGaussianBlur in="rgb" stdDeviation="0.8" />
+      </defs>
+    </svg>
+    
+</head>
 <body>
     
     <video autoplay muted loop id="bg-video">
-        <source src="https://unionassurances.ca/wp-content/uploads/2025/09/assurancevehiculeantiqueunionassurances_looping.mp4" type="video/mp4">
-        Your browser does not support the video tag.
+      <source src="https://unionassurances.ca/wp-content/uploads/2025/09/assurancevehiculeantiqueUnionAssurances_looping.mp4">
     </video>
 
+    <div class="neon-wrapper">
+        <div class="neoncontainer">
+          <div class="neon">
+            <span class="">N</span>
+            <span class="neon-flicker1">E</span>
+            <span class="">O</span>
+            <span class="">E</span>
+            <span class="">N</span>
+            <span class="neon-flicker3"></span>
+            <span class="neon-flicker2"></span>
+            <span class=""></span>
+          </div>
+          <div class="flux">
+            castle light
+          </div>
+        </div>
+    </div>
+    
+    
     <div class="logo-container">
         <img src="images/a.jpeg" alt="شعار المتجر" class="main-logo"> 
     </div>
@@ -26,14 +84,14 @@
         <div class="customizer-panel">
             
             <div class="neon-display bg-black"> 
-                <div id="customNeon" class="neon-sign neon-CustomRed">اكتب هنا</div>
+                <div id="customNeon" class="neon-sign neon-CustomRed">Your Text</div>
             </div>
 
             <div class="controls-section">
                 
                 <div class="input-group">
                     <label for="neonText">النص المطلوب:</label>
-                    <input type="text" id="neonText" value="اكتب هنا" maxlength="30">
+                    <input type="text" id="neonText" value="Your Text" maxlength="30">
                 </div>
 
                 <div class="custom-accordion">
@@ -116,7 +174,13 @@
 
                 <div class="input-group">
                     <label>إضاءة اللوحة:</label>
-                    <button id="toggleButton" class="neon-button on">إيقاف</button>
+                    <button id="toggleButton" class="neon-button on">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        إيقاف
+                    </button>
                 </div>
                 
             </div>
@@ -129,57 +193,56 @@
         <div class="image-grid">
             <div class="gallery-item">
                 <img src="images/1.jpeg" alt="تصميم نيون مخصص 1">
-                <p class="caption">من أعمالنا في الفحيص</p>
+                <p class="caption">لوحة بخط أنيق وتصميم عصري</p>
             </div>
             <div class="gallery-item">
                 <img src="images/2.jpeg" alt="تصميم نيون مخصص 2">
-                <p class="caption">من اعمالنا في الفحيص</p>
+                <p class="caption">نيون أزرق لغرفة المعيشة</p>
             </div>
             <div class="gallery-item">
                 <img src="images/3.jpeg" alt="تصميم نيون مخصص 3">
-                <p class="caption"> اجعل لوحتك تتكلم عنك</p>
+                <p class="caption">تصميم مخصص لمحل تجاري</p>
             </div>
             <div class="gallery-item">
                 <img src="images/4.jpeg" alt="تصميم نيون مخصص 4">
-                <p class="caption">من اعمالنا في خلدا</p>
+                <p class="caption">تصميم اقتباس بخط عريض</p>
             </div>
             
             <div class="gallery-item">
                 <img src="images/5.jpeg" alt="تصميم نيون مخصص 5">
-                <p class="caption">عشاق القهوه</p>
+                <p class="caption">لوحة بكلمات محفزة</p>
             </div>
             <div class="gallery-item">
                 <img src="images/6.jpeg" alt="تصميم نيون مخصص 6">
-                <p class="caption">ألوان ساحره</p>
+                <p class="caption">تصميم بألوان مختلطة</p>
             </div>
             <div class="gallery-item">
                 <img src="images/7.jpeg" alt="تصميم نيون مخصص 7">
-                <p class="caption">للمناسبات</p>
+                <p class="caption">توقيع نيون بخط اليد</p>
             </div>
             <div class="gallery-item">
                 <img src="images/8.jpeg" alt="تصميم نيون مخصص 8">
-                <p class="caption">خلد ذكرياتك مع لوحتك المفضله أ</p>
+                <p class="caption">لون أبيض دافئ للمناسبات</p>
             </div>
             
             <div class="gallery-item">
                 <img src="images/9.jpeg" alt="تصميم نيون مخصص 9">
-                <p class="caption">سوف نبقى معا</p>
+                <p class="caption">خلفية داكنة مع نيون أصفر</p>
             </div>
             <div class="gallery-item">
-                <img src="images/10.jpeg" alt="تصميم باللون الصحراوي">
-                <p class="caption">تصميم باللون الصحراوي</p>
+                <img src="images/10.jpeg" alt="تصميم نيون مخصص 10">
+                <p class="caption">تصميم باللون البنفسجي</p>
             </div>
             <div class="gallery-item">
                 <img src="images/11.jpeg" alt="تصميم نيون مخصص 11">
-                <p class="caption">من أعمالنا في المفرق</p>
+                <p class="caption">تصميم نيون لغرفة الألعاب</p>
             </div>
             <div class="gallery-item">
                 <img src="images/12.jpeg" alt="تصميم نيون مخصص 12">
-                <p class="caption">على جاهزيه دائما لطلباتكم</p>
+                <p class="caption">نيون أحمر لغرفة النوم</p>
             </div>
         </div>
     </div>
     <script src="app.js" defer></script>
 </body>
 </html>
-
