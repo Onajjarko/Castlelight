@@ -2,17 +2,16 @@
 // 1. الثوابت الأساسية (Elements)
 // ===================================
 const neonText = document.getElementById('neonText');
-const fontOptions = document.querySelectorAll('#fontSelectionGrid .font-option'); 
-const colorOptions = document.querySelectorAll('.color-option'); 
+const fontOptions = document.querySelectorAll('#fontSelectionGrid .font-option'); // أزرار الخطوط
+const colorOptions = document.querySelectorAll('#color-body .color-option'); // أزرار الألوان (داخل قسم اللون)
 const neonSize = document.getElementById('neonSize');
-const neonElement = document.getElementById('customNeon'); 
+const neonElement = document.getElementById('customNeon'); // العنصر المستهدف للنص النيوني
 const toggleButton = document.getElementById('toggleButton');
-const accordionHeaders = document.querySelectorAll('.accordion-header'); 
+const accordionHeaders = document.querySelectorAll('.accordion-header'); // رؤوس الأكورديون
 
-// عناصر الخلفية 
-const neonDisplay = neonElement.parentElement; 
+// عناصر الخلفية الجديدة
+const neonDisplay = neonElement.parentElement; // الحاوية الأبوية لعرض النيون
 const backgroundOptions = document.querySelectorAll('#backgroundSelection .color-option');
-
 
 // حالة التشغيل/الإيقاف الافتراضية
 let isNeonOn = true; 
@@ -25,33 +24,35 @@ let isNeonOn = true;
  * دالة تحديث توقيع النيون بناءً على الإدخالات
  */
 function updateNeonSign() {
-    const text = neonText.value || 'اكتب هنا';
+    const text = neonText.value;
     const sizeValue = neonSize.value;
 
-    // الحصول على الخط واللون المختار حاليًا
-    const activeFontElement = document.querySelector('#fontSelectionGrid .font-option.active');
+    // 1. الحصول على الخط المختار حاليًا
+    const activeFontElement = document.querySelector('.font-option.active');
+    // إذا لم يكن هناك خط نشط، استخدم 'NeonClip' كافتراضي
     const fontValue = activeFontElement ? activeFontElement.getAttribute('data-font') : 'NeonClip'; 
     
+    // 2. الحصول على اللون المختار حاليًا
     const activeColorElement = document.querySelector('#color-body .color-option.active');
+    // إذا لم يكن هناك لون نشط، استخدم 'CustomRed' كافتراضي
     const colorValue = activeColorElement ? activeColorElement.getAttribute('data-color') : 'CustomRed'; 
 
-    // 1. تحديث النص والحجم
+    // تحديث النص
     neonElement.textContent = text;
+    
+    // تحديث الخط
+    // هذا هو الحل لمشكلة توقف الخط: التأكد من تطبيقه دائمًا مع أي تغيير
+    neonElement.style.fontFamily = `'${fontValue}', sans-serif`;
+
+    // تحديث الحجم
     neonElement.style.fontSize = `${sizeValue}px`;
 
-    // 2. تحديث الكلاسات (المُعدَّل الرئيسي لحفظ فئة الخط)
-    
-    // إزالة جميع فئات النيون والخطوط القديمة والحفاظ على الفئة الأساسية 'neon-sign'
-    // يتم فلترة الكلاسات لحذف أي كلاس يبدأ بـ 'neon-' (الألوان) أو 'Neon' (الخطوط)
-    neonElement.className = neonElement.className.split(' ')
-        .filter(c => c === 'neon-sign' || c === 'is-off' || !c.startsWith('neon-') && !c.startsWith('Neon'))
-        .join(' ');
-
-    // 3. إضافة الكلاسات الجديدة
+    // تحديث اللون (إزالة جميع فئات الألوان السابقة وإضافة الفئة الجديدة)
+    // هذا يحافظ على التوهج الصحيح (بما في ذلك نبض اللون البنفسجي)
+    neonElement.className = 'neon-sign';
     neonElement.classList.add(`neon-${colorValue}`);
-    neonElement.classList.add(fontValue);
     
-    // 4. التأكد من تطبيق حالة التشغيل/الإيقاف
+    // التأكد من تطبيق حالة التشغيل/الإيقاف
     if (!isNeonOn) {
         neonElement.classList.add('is-off');
     }
@@ -66,7 +67,7 @@ function toggleNeon() {
     if (isNeonOn) {
         // حالة التشغيل (ON)
         neonElement.classList.remove('is-off');
-        updateNeonSign(); 
+        updateNeonSign(); // إعادة تحديث النيون بالتوهج الكامل
         
         toggleButton.textContent = 'إيقاف';
         toggleButton.classList.remove('off');
@@ -83,27 +84,47 @@ function toggleNeon() {
 
 
 /**
- * معالج النقر على أزرار الخطوط 
+ * معالج النقر على أزرار الخطوط (تم التعديل)
  */
 function handleFontClick(event) {
-    fontOptions.forEach(option => option.classList.remove('active'));
-    event.currentTarget.classList.add('active'); 
-    updateNeonSign();
-    
-    // 💡 التمرير للأعلى
-    neonElement.scrollIntoView({ behavior: 'smooth', block: 'start' }); 
+    if (event.target.classList.contains('font-option')) {
+        
+        // 1. إزالة الفئة 'active' من الخط المختار سابقًا
+        const currentActiveFont = document.querySelector('.font-option.active');
+        if (currentActiveFont) {
+            currentActiveFont.classList.remove('active');
+        }
+
+        // 2. إضافة الفئة 'active' للخط الجديد
+        event.target.classList.add('active');
+
+        // 3. تحديث النيون (تطبيق الخط، اللون، الحجم)
+        updateNeonSign(); 
+        
+        // التمرير للأعلى بعد الاختيار
+        neonElement.scrollIntoView({ behavior: 'smooth', block: 'start' }); 
+    }
 }
 
 /**
- * معالج النقر على أزرار الألوان
+ * معالج النقر على أزرار الألوان (تم التعديل)
  */
 function handleColorClick(event) {
-    document.querySelectorAll('#color-body .color-option').forEach(option => option.classList.remove('active'));
-    event.currentTarget.classList.add('active'); 
-    updateNeonSign();
-    
-    // 💡 التمرير للأعلى بعد اختيار اللون
-    neonElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    if (event.target.classList.contains('color-option')) {
+        
+        // 1. إزالة الفئة 'active' من اللون المختار سابقًا
+        const currentColorOptions = document.querySelectorAll('#color-body .color-option');
+        currentColorOptions.forEach(option => option.classList.remove('active'));
+        
+        // 2. إضافة الفئة 'active' للون الجديد
+        event.target.classList.add('active');
+        
+        // 3. تحديث النيون
+        updateNeonSign();
+        
+        // التمرير للأعلى بعد اختيار اللون
+        neonElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
 }
 
 
@@ -120,7 +141,7 @@ function handleBackgroundClick(event) {
     // إضافة فئة active للزر المختار
     clickedOption.classList.add('active');
     
-    // إزالة جميع فئات الخلفية السابقة أولاً (التي تبدأ بـ bg-)
+    // إزالة جميع فئات الخلفية السابقة أولاً
     neonDisplay.classList.remove('bg-black', 'bg-brick-wall', 'bg-concrete');
     
     // إضافة الفئة الجديدة
@@ -140,19 +161,20 @@ neonText.addEventListener('input', updateNeonSign);
 neonSize.addEventListener('input', updateNeonSign);
 toggleButton.addEventListener('click', toggleNeon);
 
-// ربط مستمع لشبكة الخطوط والألوان
+// ربط مستمع لشبكة الخطوط 
 fontOptions.forEach(option => {
+    // تطبيق الخط مباشرة على الزر (للعرض في الواجهة)
     const fontName = option.getAttribute('data-font');
-    option.style.fontFamily = `'${fontName}', sans-serif`; 
+    option.style.fontFamily = `'${fontName}', sans-serif`;
     option.addEventListener('click', handleFontClick);
 });
 
-// ربط مستمع لأزرار الألوان
+// ربط مستمع لشبكة الألوان 
 document.querySelectorAll('#color-body .color-option').forEach(option => {
     option.addEventListener('click', handleColorClick);
 });
 
-// ربط مستمع لأزرار الخلفية الجديدة
+// ربط مستمع لأزرار الخلفية 
 backgroundOptions.forEach(option => {
     option.addEventListener('click', handleBackgroundClick);
 });
@@ -164,13 +186,11 @@ accordionHeaders.forEach(header => {
         const targetId = header.getAttribute('data-target');
         const targetBody = document.getElementById(targetId);
         
-        // إغلاق كل الأقسام الأخرى
+        // إغلاق كل الأقسام الأخرى وإزالة التحديد النشط
         accordionHeaders.forEach(h => {
             const body = document.getElementById(h.getAttribute('data-target'));
-            if (h !== header) { 
-                h.classList.remove('active');
-                body.classList.remove('expanded');
-            }
+            h.classList.remove('active');
+            body.classList.remove('expanded');
         });
         
         // فتح/إغلاق القسم الحالي
@@ -181,11 +201,4 @@ accordionHeaders.forEach(header => {
 
 
 // تشغيل التحديث الأولي عند تحميل الصفحة
-window.addEventListener('load', () => {
-    // تفعيل الخيارات الافتراضية
-    document.querySelector('#fontSelectionGrid .font-option').classList.add('active');
-    document.querySelector('#color-body .color-option').classList.add('active');
-    document.querySelector('#backgroundSelection .color-option').classList.add('active');
-    
-    updateNeonSign();
-});
+window.addEventListener('load', updateNeonSign);
