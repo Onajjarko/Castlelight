@@ -222,7 +222,7 @@ h1 {
 /* الأكواد المتقدمة التي تم دمجها كـ ميزات إضافية (لتغطية DINER) */
 /* -------------------------------------- */
 
-/* تنسيق ظهور عنوان CASTLE LIGHT neon (تكبير وتغطية DINER) */
+//* تنسيق ظهور عنوان CASTLE LIGHT neon (إزالة التغطية السوداء والاعتماد على SVG Filter) */
 .neon-wrapper {
     position: absolute;
     top: 50%;
@@ -231,11 +231,31 @@ h1 {
     z-index: 10; 
     text-align: center;
     pointer-events: none; 
-    /* خلفية سوداء صلبة لضمان مسح كلمة DINER بالكامل */
-    background: #000000; 
+    
+    /* 💡 التعديل الحاسم: إزالة الخلفية السوداء الصلبة */
+    background: transparent; 
     padding: 10px 40px; 
     border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); 
+    box-shadow: none; 
+}
+.neoncontainer { padding: 0; }
+.neon {
+    font-size: 5em; 
+    font-family: 'Neon80s', sans-serif; 
+    color: #00ff99;
+    /* زيادة التوهج ليتغلب على DINER */
+    text-shadow: 
+        0 0 10px #00ff99, 0 0 50px #00ff99, 0 0 100px #00ff99, 0 0 150px rgba(0, 255, 153, 1); 
+    white-space: nowrap; display: block; line-height: 1.2;
+}
+.flux {
+    font-size: 3em; 
+    font-family: 'NeonPolentical', sans-serif; 
+    color: #ff9900;
+    /* زيادة التوهج ليتغلب على DINER */
+    text-shadow: 
+        0 0 10px #ff9900, 0 0 50px #ff9900, 0 0 100px #ff9900, 0 0 150px rgba(255, 153, 0, 1);
+    white-space: nowrap; display: block;
 }
 .neoncontainer { padding: 0; }
 .neon {
