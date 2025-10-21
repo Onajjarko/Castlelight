@@ -181,3 +181,5 @@ accordionHeaders.forEach(header => {
 
 // تشغيل التحديث الأولي عند تحميل الصفحة
 window.addEventListener('load', updateNeonSign);
+
+
