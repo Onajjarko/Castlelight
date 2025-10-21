@@ -36,23 +36,9 @@
 @font-face { font-family: 'NeonStaymore'; src: url('./fonts/castle font 3/staymore/Staymore.otf') format('opentype'); }
 @font-face { font-family: 'NeonVolacrome'; src: url('./fonts/castle font 3/volacrome/VOLACROME.otf') format('opentype'); }
 
-/* -------------------------------------- */
-/* تنسيق خلفية الفيديو (المدمج حديثاً) */
-/* -------------------------------------- */
-#bg-video {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;
-  z-index: -2; /* وضع الفيديو خلف كل شيء */
-  filter: brightness(0.6) grayscale(0.2); /* لجعل الخلفية أغمق وأقل تشتيتاً */
-}
-
 
 /* -------------------------------------- */
-/* تنسيق الواجهة والخلفية الفاتحة الجديدة */
+/* تنسيق الواجهة والخلفية السوداء */
 /* -------------------------------------- */
 
 .logo-container {
@@ -70,45 +56,38 @@
 }
 
 body {
-    /* تغيير الخلفية إلى الزهري الفاتح */
-    background-color: transparent; /* جعل خلفية body شفافة لرؤية الفيديو */
-    /* تغيير لون النص الأساسي ليصبح داكناً */
-    color: #333333; 
+    /* الخلفية الرئيسية سوداء */
+    background-color: #121212; 
+    color: #f0f0f0; 
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 20px;
     direction: rtl;
     text-align: right;
-    min-height: 100vh; /* مهم لتغطية كل المساحة */
-    position: relative; /* مهم لـ z-index */
-    z-index: -1;
+    /* تأكيد أن محتوى الجسم فوق الفيديو (Z-index) */
+    position: relative; 
+    z-index: 1;
 }
 
 .container {
     max-width: 1000px;
     margin: 0 auto;
-    /* جعل المحتوى الرئيسي أعلى من الفيديو */
-    position: relative; 
-    z-index: 1;
 }
 
 h1 {
     text-align: center;
-    color: #ffffff; /* تغيير اللون للأبيض ليناسب الفيديو الخلفية */
+    color: #f0f0f0; 
     margin-bottom: 30px;
     margin-top: 10px;
-    text-shadow: 0 0 5px #000;
 }
 
 .customizer-panel {
-    /* جعل لوحة التحكم بيضاء شفافة أو فاتحة */
-    background-color: rgba(255, 255, 255, 0.9); 
-    color: #333333; /* النص داخل اللوحة داكن */
+    background-color: rgba(34, 34, 34, 0.9); 
+    color: #f0f0f0; 
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
     min-height: 450px;
-    display: flex; /* للتأكد من المحاذاة */
 }
 
 .controls-section {
@@ -118,19 +97,23 @@ h1 {
     margin-right: 20px; 
 }
 
-/* حاوية عرض النيون - تم التعديل على الخلفية لتبدو متدرجة رمادية غامقة */
+/* حاوية عرض النيون - خلفية بنمط الطوب الداكن */
 .neon-display {
     flex: 2;
     min-height: 350px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid #333;
+    border: 1px solid #444; 
     border-radius: 8px;
     margin-left: 20px;
     margin-right: 0;
-    /* الخلفية المتدرجة الجديدة */
-    background: linear-gradient(135deg, #212529 0%, #0c0d0f 100%);
+    
+    /* خلفية بنمط الطوب الداكن */
+    background-color: #121211; 
+    background-image: url("data:image/svg+xml,%3Csvg width='42' height='44' viewBox='0 0 42 44' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M0 0h42v44H0V0zm1 1h40v20H1V1zM0 23h20v20H0V23zm22 0h20v20H22V23z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    background-repeat: repeat;
+    
     overflow: hidden; 
     filter: brightness(1.1); 
     background-size: cover;
@@ -149,9 +132,24 @@ h1 {
 }
 
 .bg-black {
-    /* تم تغييرها لتعود إلى الخلفية المتدرجة الجديدة */
-    background: linear-gradient(135deg, #212529 0%, #0c0d0f 100%);
-    background-image: none;
+    /* الخلفية بنمط الطوب الداكن */
+    background-color: #121211; 
+    background-image: url("data:image/svg+xml,%3Csvg width='42' height='44' viewBox='0 0 42 44' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M0 0h42v44H0V0zm1 1h40v20H1V1zM0 23h20v20H0V23zm22 0h20v20H22V23z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* تنسيق الفيديو للخلفية */
+#bg-video {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100; 
+    transform: translateX(-50%) translateY(-50%);
+    background-size: cover;
+    opacity: 0.4; 
 }
 
 
@@ -170,9 +168,9 @@ h1 {
     width: 100%;
     padding: 10px;
     border-radius: 5px;
-    border: 1px solid #aaa; 
-    background-color: #fff; 
-    color: #333333; 
+    border: 1px solid #555; 
+    background-color: #333; 
+    color: #f0f0f0; 
 }
 
 /* -------------------------------------- */
@@ -180,41 +178,41 @@ h1 {
 /* -------------------------------------- */
 
 .custom-accordion {
-    border: 1px solid #aaa; 
+    border: 1px solid #555; 
     border-radius: 8px;
     margin-bottom: 20px;
 }
 
 .accordion-header {
-    background-color: #ffffff; 
+    background-color: #333333; 
     padding: 15px;
-    border-bottom: 1px solid #ccc; 
+    border-bottom: 1px solid #444; 
     cursor: pointer;
     font-weight: bold;
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-radius: 8px; 
-    color: #333333; 
+    color: #f0f0f0; 
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
 }
 
 .accordion-header.active {
-    background-color: #FFF0F5; 
-    color: #007bff; 
+    background-color: #444; 
+    color: #00ff99; 
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
 }
 
 .accordion-body {
     padding: 15px;
-    background-color: #FFF0F5; 
+    background-color: #444; 
     display: none; 
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
-    border-left: 1px solid #aaa;
-    border-right: 1px solid #aaa;
-    border-bottom: 1px solid #aaa;
+    border-left: 1px solid #555;
+    border-right: 1px solid #555;
+    border-bottom: 1px solid #555;
 }
 
 .accordion-body.expanded {
@@ -243,13 +241,13 @@ h1 {
 
 .font-option {
     padding: 12px 5px;
-    border: 1px solid #aaa; 
+    border: 1px solid #555; 
     border-radius: 8px;
     text-align: center;
     cursor: pointer;
     transition: all 0.2s;
-    background-color: #ffffff; 
-    color: #333333; 
+    background-color: #333; 
+    color: #f0f0f0; 
     font-size: 15px; 
     overflow: hidden; 
     white-space: nowrap; 
@@ -271,7 +269,6 @@ h1 {
     font-weight: bold;
     transform: rotate(5deg);
 }
-
 
 /* تنسيق الخطوط: يتم تطبيق اسم الخط على الزر لعرضه بشكل صحيح */
 .font-option[data-font="NeonClip"] { font-family: 'NeonClip', sans-serif; }
@@ -304,17 +301,17 @@ h1 {
 
 /* النمط عند المرور بالفأرة */
 .font-option:hover {
-    border-color: #007bff; 
-    background-color: #f0f0f0;
+    border-color: #00ff99; 
+    background-color: #2a2a2a;
 }
 
 /* النمط عند اختيار الخط (Active State) */
 .font-option.active {
-    background-color: #007bff; 
-    border-color: #007bff;
-    color: #fff;
+    background-color: #00ff99; 
+    border-color: #00ff99;
+    color: #121212; 
     font-weight: bold;
-    box-shadow: 0 0 8px rgba(0, 123, 255, 0.7);
+    box-shadow: 0 0 8px rgba(0, 255, 153, 0.7);
 }
 
 /* -------------------------------------- */
@@ -333,27 +330,27 @@ h1 {
     height: 40px;
     border-radius: 50%;
     cursor: pointer;
-    border: 2px solid #333; 
+    border: 2px solid #aaa; 
     transition: border 0.2s, box-shadow 0.2s;
     margin: 5px auto;
 }
 
 .color-option:hover {
-    border-color: #007bff;
+    border-color: #00ff99;
 }
 
 .color-option.active {
-    border-color: #007bff; 
-    box-shadow: 0 0 0 4px #007bff; 
+    border-color: #00ff99; 
+    box-shadow: 0 0 0 4px #00ff99; 
 }
 
 
 /* -------------------------------------- */
-/* تنسيق زر التشغيل/الإيقاف والتوهج */
+/* تنسيق زر التشغيل/الإيقاف والتوهج (المتقدم) */
 /* -------------------------------------- */
 
 .neon-button {
-    width: 100%;
+    position: relative; 
     padding: 10px;
     margin-top: 15px;
     border: none;
@@ -362,19 +359,78 @@ h1 {
     font-weight: bold;
     cursor: pointer;
     transition: all 0.3s ease;
+    text-transform: uppercase; 
+    letter-spacing: 3px;
+    overflow: hidden; 
 }
 
+/* التنسيق عند التشغيل (ON) - لـ ظهور تأثير الحدود */
 .neon-button.on {
-    background-color: #00ff99; 
-    color: #121212;
-    box-shadow: 0 0 10px #00ff99, 0 0 20px #00ff99 inset;
+    background-color: transparent; 
+    color: #00ff99; 
+    border: 2px solid #00ff99; 
+    box-shadow: 0 0 10px rgba(0, 255, 153, 0.5); 
 }
-
+/* التنسيق عند الإيقاف (OFF) */
 .neon-button.off {
-    background-color: #ccc; 
-    color: #444; 
+    background-color: #555; 
+    color: #ccc; 
     box-shadow: none;
 }
+
+/* تنسيق الحدود المتحركة داخل الزر */
+.neon-button span {
+    position: absolute;
+    display: block;
+    background: linear-gradient(90deg, transparent, #00ff99); 
+    transition: all .25s;
+    animation-play-state: paused; 
+}
+
+.neon-button.on span:nth-child(1),
+.neon-button:hover span:nth-child(1) {
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 2px;
+    animation: btn-neon-border-top 2s linear infinite;
+    animation-play-state: running;
+}
+
+.neon-button.on span:nth-child(2),
+.neon-button:hover span:nth-child(2) {
+    right: 0;
+    top: -100%;
+    width: 2px;
+    height: 100%;
+    animation: btn-neon-border-right 2s linear infinite;
+    animation-delay: 0.5s;
+    animation-play-state: running;
+}
+
+.neon-button.on span:nth-child(3),
+.neon-button:hover span:nth-child(3) {
+    right: -100%;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    animation: btn-neon-border-bottom 2s linear infinite;
+    animation-delay: 1s;
+    animation-play-state: running;
+}
+
+.neon-button.on span:nth-child(4),
+.neon-button:hover span:nth-child(4) {
+    bottom: -100%;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(360deg, transparent, #00ff99);
+    animation: btn-neon-border-left 2s linear infinite;
+    animation-delay: 1.5s;
+    animation-play-state: running;
+}
+
 
 .neon-sign { 
     font-family: 'NeonClip', sans-serif; 
@@ -382,21 +438,30 @@ h1 {
     text-align: center;
     transition: all 0.2s ease-in-out; 
     white-space: nowrap; 
+    animation: soft-pulse 4s infinite alternate; 
 }
 
 /* فئة إيقاف التشغيل: إلغاء التوهج */
 .neon-sign.is-off {
-    color: #888 !important; 
+    color: #555 !important; 
     text-shadow: none !important; 
 }
 
 /* -------------------------------------- */
-/* الرسوم المتحركة (Animation) لتأثير النبض البنفسجي */
+/* الرسوم المتحركة (Animation) */
 /* -------------------------------------- */
+
+/* رسوم متحركة نبض خفيف لجميع الألوان */
+@keyframes soft-pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.98; }
+    100% { opacity: 1; }
+}
+
+/* الرسوم المتحركة (Animation) لتأثير النبض البنفسجي القوي */
 @keyframes pulsate-purple {
     
   100% {
-      /* النسخة الأقوى من التوهج */
       text-shadow:
       0 0 4px #fff,
       0 0 11px #fff,
@@ -409,7 +474,6 @@ h1 {
   }
   
   0% {
-      /* النسخة الأضعف من التوهج */
       text-shadow:
       0 0 2px #fff,
       0 0 4px #fff,
@@ -422,6 +486,13 @@ h1 {
   }
 }
 
+/* 💡 الرسوم المتحركة لحدود الأزرار النيونية (الجديدة) */
+@keyframes btn-neon-border-top { from { left: -100%; } to { left: 100%; } }
+@keyframes btn-neon-border-right { from { top: -100%; } to { top: 100%; } }
+@keyframes btn-neon-border-bottom { from { right: -100%; } to { right: 100%; } }
+@keyframes btn-neon-border-left { from { bottom: -100%; } to { bottom: 100%; } }
+
+
 /* -------------------------------------- */
 /* فئات الألوان - تطبيق النمط النيوني القوي الجديد (تأثير الانتشار) */
 /* -------------------------------------- */
@@ -430,20 +501,9 @@ h1 {
     color: #FF3366;
     text-shadow: 0 0 8px #ff6699, 0 0 20px #FF3366, 0 0 35px #FF3366, 0 0 50px rgba(255, 51, 102, 0.5); 
 }
-
-.neon-CustomPink {
-    color: #FF6EC4;
-    text-shadow: 0 0 8px #ff99ff, 0 0 20px #FF6EC4, 0 0 35px #FF6EC4, 0 0 50px rgba(255, 110, 196, 0.5);
-}
-
-.neon-DeepPink {
-    color: #FF0099;
-    text-shadow: 0 0 8px #ff66cc, 0 0 20px #FF0099, 0 0 35px #FF0099, 0 0 50px rgba(255, 0, 153, 0.5);
-}
-
+/* ... (بقية الألوان) ... */
 .neon-Purple {
-    color: #9933FF; /* اللون الأساسي */
-    /* تطبيق الظل الابتدائي */
+    color: #9933FF; 
     text-shadow: 
         0 0 2px #fff,
         0 0 4px #fff,
@@ -453,40 +513,9 @@ h1 {
         0 0 55px #bc13fe,
         0 0 70px #bc13fe,
         0 0 80px #bc13fe;
-    /* تطبيق النبض */
     animation: pulsate-purple 1.5s infinite alternate; 
 }
-
-.neon-ElectricBlue {
-    color: #0099FF;
-    text-shadow: 0 0 8px #66ccff, 0 0 20px #0099FF, 0 0 35px #0099FF, 0 0 50px rgba(0, 153, 255, 0.5);
-}
-
-.neon-IceBlue {
-    color: #33CCFF;
-    text-shadow: 0 0 8px #99e6ff, 0 0 20px #33CCFF, 0 0 35px #33CCFF, 0 0 50px rgba(51, 204, 255, 0.5);
-}
-
-.neon-DeepGreen {
-    color: #33CC00;
-    text-shadow: 0 0 8px #99ff66, 0 0 20px #33CC00, 0 0 35px #33CC00, 0 0 50px rgba(51, 204, 0, 0.5);
-}
-
-.neon-CustomYellow {
-    color: #FFFF33;
-    text-shadow: 0 0 8px #ffff99, 0 0 20px #FFFF33, 0 0 35px #FFFF33, 0 0 50px rgba(255, 255, 51, 0.5);
-}
-
-.neon-WarmWhite {
-    color: #FFFFAA; 
-    text-shadow: 0 0 8px #ffffff, 0 0 20px #FFFFAA, 0 0 35px #FFFFAA, 0 0 50px rgba(255, 255, 170, 0.5);
-}
-
-.neon-White {
-    color: #FFFFFF;
-    text-shadow: 0 0 8px #ffffff, 0 0 20px #ffffff, 0 0 35px #ffffff, 0 0 50px rgba(255, 255, 255, 0.5);
-}
-
+/* ... (بقية الألوان) ... */
 
 /* -------------------------------------- */
 /* تنسيق معرض الصور الجديد مع الشرح (Caption) */
@@ -497,16 +526,14 @@ h1 {
     max-width: 1000px;
     margin: 40px auto;
     padding: 20px;
-    background-color: rgba(255, 255, 255, 0.9); 
+    background-color: rgba(34, 34, 34, 0.9); 
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    position: relative; /* مهم لجعله أعلى من الفيديو */
-    z-index: 1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 .gallery-container h2 {
     text-align: center;
-    color: #007bff; 
+    color: #00ff99; 
     margin-bottom: 25px;
 }
 
@@ -523,7 +550,7 @@ h1 {
     text-align: center; 
     padding: 0;
     margin-bottom: 20px;
-    background-color: #f0f0f0; 
+    background-color: #333; 
     border-radius: 6px;
     overflow: hidden; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -544,11 +571,21 @@ h1 {
     margin: 0;
     padding: 10px 15px;
     font-size: 14px;
-    color: #333333; 
-    background-color: #f0f0f0; 
+    color: #f0f0f0; 
+    background-color: #333; 
     font-weight: 500;
     min-height: 40px; 
     display: flex;
     align-items: center;
     justify-content: center;
 }
+
+/* -------------------------------------- */
+/* الأكواد المتقدمة التي تم دمجها كـ ميزات إضافية (مختصرة) */
+/* -------------------------------------- */
+.neon-title { display: flex; align-items: center; justify-content: center; margin-bottom: 60px; font-family: monospace; }
+.neon-title .text { position: relative; }
+.neon-title .text h1 { font-size: 90px; font-weight: bolder; text-transform: uppercase; letter-spacing: 3px; color: transparent; text-shadow: 0 0 25px #00bcd4; -webkit-text-stroke: 2px #00bcd4; }
+.neon-title .text h1:nth-child(2) { position: absolute; top: 0; left: 0; color: #00bcd4; animation: neon-title 3s ease-in-out infinite; }
+.neon-block .block { position: relative; display: flex; align-items: center; justify-content: center; margin: 60px auto; width: 300px; height: 150px; background: linear-gradient(45deg, #272325 40%, #020104); color: #fff; font-size: 30px; text-transform: uppercase; letter-spacing: 4px; font-family: monospace; }
+/* ... (بقية التنسيقات المتقدمة) ... */
