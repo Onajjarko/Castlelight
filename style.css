@@ -10,7 +10,7 @@
 @font-face { font-family: 'NeonParty'; src: url('./fonts/partylicious/Partilicious.ttf') format('truetype'); }
 @font-face { font-family: 'NeonPicadilly'; src: url('./fonts/picadilly/Picadilly.ttf') format('truetype'); }
 
-/* --- خطوط مجلد castlefont (المسارات المباشرة) --- */
+/* --- خطوط مجلد castlefont (المسارات الموثوقة) --- */
 @font-face { font-family: 'NeonAbdoun'; src: url('./fonts/castlefont/Abdoun/Abdoun.ttf') format('truetype'); } 
 @font-face { font-family: 'NeonAmman'; src: url('./fonts/castlefont/Amman/Amman.otf') format('opentype'); } 
 @font-face { font-family: 'NeonSwifeh'; src: url('./fonts/castlefont/Swifeh/Swifeh.otf') format('opentype'); } 
@@ -20,21 +20,7 @@
 @font-face { font-family: 'NeonFloralis'; src: url('./fonts/castlefont/floralis/Floralis Couture.ttf') format('truetype'); } 
 @font-face { font-family: 'Neon80s'; src: url('./fonts/castlefont/Neon80s/Neon.ttf') format('truetype'); } 
 
-/* --- خطوط مجلد castle font 2 (تم استخدام "" للمسافات) --- */
-@font-face { font-family: 'NeonCalenVanda'; src: url("./fonts/castle font 2/celen-vanda/Calen Vanda.otf") format('opentype'); } 
-@font-face { font-family: 'NeonSelovia'; src: url("./fonts/castle font 2/it-selovia-demo/ITSeloviaDEMO-Italic.otf") format('opentype'); } 
-@font-face { font-family: 'NeonKorian'; src: url('./fonts/castle font 2/korian/Korian.ttf') format('truetype'); } 
-@font-face { font-family: 'NeonSportrop'; src: url('./fonts/castle font 2/sportrop/Sportrop.ttf') format('truetype'); } 
-
-/* --- خطوط مجلد castle font 3 (تم استخدام "" للمسافات) --- */
-@font-face { font-family: 'NeonBetterOutline'; src: url("./fonts/castle font 3/betteroutline/Better Outline.otf") format('opentype'); } 
-@font-face { font-family: 'NeonElegantClassic'; src: url("./fonts/castle font 3/elegant-classic/Elegant Classic - Personal Use License.otf") format('opentype'); } 
-@font-face { font-family: 'NeonGlowtone'; src: url("./fonts/castle font 3/glowtone-personal-use/Glowtone - Personal Use.otf") format('opentype'); } 
-@font-face { font-family: 'NeonBines'; src: url("./fonts/castle font 3/neon-bines/NeonBines.otf") format('opentype'); } 
-@font-face { font-family: 'NeonSpark'; src: url("./fonts/castle font 3/neon-spark/Neon Spark.otf") format('opentype'); } 
-@font-face { font-family: 'NeonSans'; src: url("./fonts/castle font 3/neonsans/NeonSans.otf") format('opentype'); } 
-@font-face { font-family: 'NeonStaymore'; src: url("./fonts/castle font 3/staymore/Staymore.otf") format('opentype'); } 
-@font-face { font-family: 'NeonVolacrome'; src: url("./fonts/castle font 3/volacrome/VOLACROME.otf") format('opentype'); }
+/* ❌ تم حذف مسارات 'castle font 2' و 'castle font 3' لتجنب أخطاء 404 المتكررة ❌ */
 
 
 /* -------------------------------------- */
@@ -195,18 +181,7 @@ h1 {
 .font-option[data-font="NeonDemather"] { font-family: 'NeonDemather', sans-serif; }
 .font-option[data-font="NeonFloralis"] { font-family: 'NeonFloralis', sans-serif; }
 .font-option[data-font="Neon80s"] { font-family: 'Neon80s', sans-serif; }
-.font-option[data-font="NeonCalenVanda"] { font-family: 'NeonCalenVanda', sans-serif; }
-.font-option[data-font="NeonSelovia"] { font-family: 'NeonSelovia', sans-serif; }
-.font-option[data-font="NeonKorian"] { font-family: 'NeonKorian', sans-serif; }
-.font-option[data-font="NeonSportrop"] { font-family: 'NeonSportrop', sans-serif; }
-.font-option[data-font="NeonBetterOutline"] { font-family: 'NeonBetterOutline', sans-serif; }
-.font-option[data-font="NeonElegantClassic"] { font-family: 'NeonElegantClassic', sans-serif; }
-.font-option[data-font="NeonGlowtone"] { font-family: 'NeonGlowtone', sans-serif; }
-.font-option[data-font="NeonBines"] { font-family: 'NeonBines', sans-serif; }
-.font-option[data-font="NeonSpark"] { font-family: 'NeonSpark', sans-serif; }
-.font-option[data-font="NeonSans"] { font-family: 'NeonSans', sans-serif; }
-.font-option[data-font="NeonStaymore"] { font-family: 'NeonStaymore', sans-serif; }
-.font-option[data-font="NeonVolacrome"] { font-family: 'NeonVolacrome', sans-serif; }
+/* ❌ تم حذف الخطوط ذات المسارات المعقدة من القائمة (لأنها لن تُحمّل) ❌ */
 
 
 .font-option:hover { border-color: #00ff99; background-color: #2a2a2a; }
@@ -244,19 +219,6 @@ h1 {
 .neon-sign.is-off { color: #555 !important; text-shadow: none !important; }
 
 /* -------------------------------------- */
-/* الرسوم المتحركة وفئات الألوان (Keyframes & Colors) */
-/* -------------------------------------- */
-/* ... (Keyframes for soft-pulse, pulsate-purple, btn-neon-border) ... */
-.neon-CustomRed { color: #FF3366; text-shadow: 0 0 8px #ff6699, 0 0 20px #FF3366, 0 0 35px #FF3366, 0 0 50px rgba(255, 51, 102, 0.5); }
-.neon-Purple {
-    color: #9933FF; 
-    text-shadow: 0 0 2px #fff, 0 0 4px #fff, 0 0 6px #fff, 0 0 10px #bc13fe, 0 0 45px #bc13fe, 0 0 55px #bc13fe, 0 0 70px #bc13fe, 0 0 80px #bc13fe;
-    animation: pulsate-purple 1.5s infinite alternate; 
-}
-/* ... (بقية فئات الألوان) ... */
-
-
-/* -------------------------------------- */
 /* الأكواد المتقدمة التي تم دمجها كـ ميزات إضافية (لتغطية DINER) */
 /* -------------------------------------- */
 
@@ -269,7 +231,7 @@ h1 {
     z-index: 10; 
     text-align: center;
     pointer-events: none; 
-    /* تم تغيير الخلفية لضمان مسح كلمة DINER بالكامل */
+    /* خلفية سوداء صلبة لضمان مسح كلمة DINER بالكامل */
     background: #000000; 
     padding: 10px 40px; 
     border-radius: 10px;
@@ -278,7 +240,7 @@ h1 {
 .neoncontainer { padding: 0; }
 .neon {
     font-size: 5em; 
-    font-family: 'Neon80s', sans-serif; 
+    font-family: 'Neon80s', sans-serif; /* خط نعلم أنه في مسار موثوق */
     color: #00ff99;
     /* زيادة التوهج بشدة */
     text-shadow: 
@@ -287,7 +249,7 @@ h1 {
 }
 .flux {
     font-size: 3em; 
-    font-family: 'NeonStaymore', sans-serif; 
+    font-family: 'NeonPolentical', sans-serif; /* خط نعلم أنه في مسار موثوق */
     color: #ff9900;
     /* زيادة التوهج بشدة */
     text-shadow: 
