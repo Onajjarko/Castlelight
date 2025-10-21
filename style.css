@@ -42,10 +42,11 @@
 /* -------------------------------------- */
 
 .logo-container {
-    /* تم تعديله ليظهر الشعار فوق شريط الفيديو */
-    position: absolute;
-    top: 50px; 
-    width: 100%;
+    /* التعديل: إزالة اللوجو من فوق الفيديو ووضعه تحته بالوسط */
+    position: relative; 
+    top: 0; 
+    padding-top: 20px;
+    margin-bottom: 20px;
     text-align: center;
     z-index: 10; 
 }
@@ -151,7 +152,7 @@ h1 {
     position: absolute; 
     top: 0;
     left: 0;
-    z-index: 0; /* ليكون خلف المحتوى الرئيسي */
+    z-index: 0; 
     opacity: 0.6; 
     filter: brightness(0.7); 
 }
@@ -438,198 +439,4 @@ h1 {
 
 
 .neon-sign { 
-    font-family: 'NeonClip', sans-serif; 
-    font-size: 40px; 
-    text-align: center;
-    transition: all 0.2s ease-in-out; 
-    white-space: nowrap; 
-    animation: soft-pulse 4s infinite alternate; 
-}
-
-/* فئة إيقاف التشغيل: إلغاء التوهج */
-.neon-sign.is-off {
-    color: #555 !important; 
-    text-shadow: none !important; 
-}
-
-/* -------------------------------------- */
-/* الرسوم المتحركة (Animation) */
-/* -------------------------------------- */
-
-/* رسوم متحركة نبض خفيف لجميع الألوان */
-@keyframes soft-pulse {
-    0% { opacity: 1; }
-    50% { opacity: 0.98; }
-    100% { opacity: 1; }
-}
-
-/* الرسوم المتحركة (Animation) لتأثير النبض البنفسجي القوي */
-@keyframes pulsate-purple {
-    
-  100% {
-      text-shadow:
-      0 0 4px #fff,
-      0 0 11px #fff,
-      0 0 19px #fff,
-      0 0 40px #bc13fe,
-      0 0 80px #bc13fe,
-      0 0 90px #bc13fe,
-      0 0 100px #bc13fe,
-      0 0 150px #bc13fe;
-  }
-  
-  0% {
-      text-shadow:
-      0 0 2px #fff,
-      0 0 4px #fff,
-      0 0 6px #fff,
-      0 0 10px #bc13fe,
-      0 0 45px #bc13fe,
-      0 0 55px #bc13fe,
-      0 0 70px #bc13fe,
-      0 0 80px #bc13fe;
-  }
-}
-
-/* 💡 الرسوم المتحركة لحدود الأزرار النيونية (الجديدة) */
-@keyframes btn-neon-border-top { from { left: -100%; } to { left: 100%; } }
-@keyframes btn-neon-border-right { from { top: -100%; } to { top: 100%; } }
-@keyframes btn-neon-border-bottom { from { right: -100%; } to { right: 100%; } }
-@keyframes btn-neon-border-left { from { bottom: -100%; } to { bottom: 100%; } }
-
-
-/* -------------------------------------- */
-/* فئات الألوان - تطبيق النمط النيوني القوي الجديد (تأثير الانتشار) */
-/* -------------------------------------- */
-
-.neon-CustomRed {
-    color: #FF3366;
-    text-shadow: 0 0 8px #ff6699, 0 0 20px #FF3366, 0 0 35px #FF3366, 0 0 50px rgba(255, 51, 102, 0.5); 
-}
-.neon-CustomPink {
-    color: #FF6EC4;
-    text-shadow: 0 0 8px #ff99ff, 0 0 20px #FF6EC4, 0 0 35px #FF6EC4, 0 0 50px rgba(255, 110, 196, 0.5);
-}
-
-.neon-DeepPink {
-    color: #FF0099;
-    text-shadow: 0 0 8px #ff66cc, 0 0 20px #FF0099, 0 0 35px #FF0099, 0 0 50px rgba(255, 0, 153, 0.5);
-}
-
-.neon-Purple {
-    color: #9933FF; 
-    text-shadow: 
-        0 0 2px #fff,
-        0 0 4px #fff,
-        0 0 6px #fff,
-        0 0 10px #bc13fe,
-        0 0 45px #bc13fe,
-        0 0 55px #bc13fe,
-        0 0 70px #bc13fe,
-        0 0 80px #bc13fe;
-    animation: pulsate-purple 1.5s infinite alternate; 
-}
-
-.neon-ElectricBlue {
-    color: #0099FF;
-    text-shadow: 0 0 8px #66ccff, 0 0 20px #0099FF, 0 0 35px #0099FF, 0 0 50px rgba(0, 153, 255, 0.5);
-}
-
-.neon-IceBlue {
-    color: #33CCFF;
-    text-shadow: 0 0 8px #99e6ff, 0 0 20px #33CCFF, 0 0 35px #33CCFF, 0 0 50px rgba(51, 204, 255, 0.5);
-}
-
-.neon-DeepGreen {
-    color: #33CC00;
-    text-shadow: 0 0 8px #99ff66, 0 0 20px #33CC00, 0 0 35px #33CC00, 0 0 50px rgba(51, 204, 0, 0.5);
-}
-
-.neon-CustomYellow {
-    color: #FFFF33;
-    text-shadow: 0 0 8px #ffff99, 0 0 20px #FFFF33, 0 0 35px #FFFF33, 0 0 50px rgba(255, 255, 51, 0.5);
-}
-
-.neon-WarmWhite {
-    color: #FFFFAA; 
-    text-shadow: 0 0 8px #ffffff, 0 0 20px #FFFFAA, 0 0 35px #FFFFAA, 0 0 50px rgba(255, 255, 170, 0.5);
-}
-
-.neon-White {
-    color: #FFFFFF;
-    text-shadow: 0 0 8px #ffffff, 0 0 20px #ffffff, 0 0 35px #ffffff, 0 0 50px rgba(255, 255, 255, 0.5);
-}
-
-
-/* -------------------------------------- */
-/* تنسيق معرض الصور الجديد مع الشرح (Caption) */
-/* -------------------------------------- */
-
-.gallery-container {
-    width: 100%;
-    max-width: 1000px;
-    margin: 40px auto;
-    padding: 20px;
-    background-color: rgba(34, 34, 34, 0.9); 
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-}
-
-.gallery-container h2 {
-    text-align: center;
-    color: #00ff99; 
-    margin-bottom: 25px;
-}
-
-.image-grid {
-    display: grid; 
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
-    gap: 15px; 
-    justify-items: center;
-}
-
-.gallery-item {
-    width: 100%;
-    max-width: 300px;
-    text-align: center; 
-    padding: 0;
-    margin-bottom: 20px;
-    background-color: #333; 
-    border-radius: 6px;
-    overflow: hidden; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.gallery-item img {
-    width: 100%;
-    height: auto;
-    border-radius: 6px 6px 0 0; 
-    transition: transform 0.3s;
-}
-
-.gallery-item img:hover {
-    transform: scale(1.05); 
-}
-
-.gallery-item .caption {
-    margin: 0;
-    padding: 10px 15px;
-    font-size: 14px;
-    color: #f0f0f0; 
-    background-color: #333; 
-    font-weight: 500;
-    min-height: 40px; 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* -------------------------------------- */
-/* الأكواد المتقدمة التي تم دمجها كـ ميزات إضافية (مختصرة) */
-/* -------------------------------------- */
-.neon-title { display: flex; align-items: center; justify-content: center; margin-bottom: 60px; font-family: monospace; }
-.neon-title .text { position: relative; }
-.neon-title .text h1 { font-size: 90px; font-weight: bolder; text-transform: uppercase; letter-spacing: 3px; color: transparent; text-shadow: 0 0 25px #00bcd4; -webkit-text-stroke: 2px #00bcd4; }
-.neon-title .text h1:nth-child(2) { position: absolute; top: 0; left: 0; color: #00bcd4; animation: neon-title 3s ease-in-out infinite; }
-.neon-block .block { position: relative; display: flex; align-items: center; justify-content: center; margin: 60px auto; width: 300px; height: 150px; background: linear-gradient(45deg, #272325 40%, #020104); color: #fff; font-size: 30px; text-transform: uppercase; letter-spacing: 4px; font-family: monospace; }
-/* ... (بقية التنسيقات المتقدمة) ... */
+    font-family: 'NeonClip',
