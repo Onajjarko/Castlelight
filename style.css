@@ -247,7 +247,7 @@ h1 {
     transform: translate(-50%, -50%);
     width: 100%; 
     max-width: 450px; /* عرض تقديري لشريط DINER */
-    height: 60px; /* ارتفاع تقديري لشريط DINER */
+    height: 100px; /* ارتفاع تقديري لشريط DINER */
     background: #000000; /* خلفية سوداء صلبة */
     z-index: -1; /* خلف النص النيوني (Z-index: 10) وأمام الفيديو (Z-index: 0) */
 }
