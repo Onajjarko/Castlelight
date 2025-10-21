@@ -1,19 +1,15 @@
 /* -------------------------------------- */
-/* 1. تعريف خطوط النيون المخصصة (الثمانية الموثوقة فقط) */
+/* 1. تعريف خطوط النيون المخصصة (لتشغيل قائمة التحكم) */
 /* -------------------------------------- */
 
+/* --- تم إبقاء الخطوط المحلية الموثوقة هنا --- */
 @font-face { font-family: 'NeonClip'; src: url('./fonts/clip/Clip.ttf') format('truetype'); }
-@font-face { font-family: 'NeonDespairs'; src: url('./fonts/despairs/despairs-font-trial.ttf') format('truetype'); }
+/* ... (جميع الخطوط الأخرى يجب أن تكون مدرجة هنا بنفس الصيغة التي أرسلتها في الرد السابق) ... */
 @font-face { font-family: 'Neon80s'; src: url('./fonts/castlefont/Neon80s/Neon.ttf') format('truetype'); } 
-@font-face { font-family: 'NeonPolentical'; src: url('./fonts/castlefont/polentical-neon/Polentical Neon Regular.ttf') format('truetype'); } 
-@font-face { font-family: 'NeonAmman'; src: url('./fonts/castlefont/Amman/Amman.otf') format('opentype'); } 
-@font-face { font-family: 'NeonSwifeh'; src: url('./fonts/castlefont/Swifeh/Swifeh.otf') format('opentype'); } 
-@font-face { font-family: 'NeonDemather'; src: url('./fonts/castlefont/Demather/Demather.otf') format('opentype'); } 
-@font-face { font-family: 'NeonFloralis'; src: url('./fonts/castlefont/floralis/Floralis Couture.ttf') format('truetype'); } 
 
 
 /* -------------------------------------- */
-/* 2. تنسيق الفيديو والخلفية الرئيسية */
+/* 2. تنسيق الفيديو والعنوان النيوني (التثبيت النهائي) */
 /* -------------------------------------- */
 
 body, html {
@@ -25,17 +21,14 @@ body, html {
 body {
   display: block; 
   background: #121212; 
-  padding-top: 250px; 
+  padding-top: 250px; /* مسافة لشريط الفيديو */
   position: relative;
   z-index: 1;
-  direction: rtl; 
-  text-align: right;
-  font-family: Arial, sans-serif;
 }
 
-/* تنسيق الفيديو كشريط علوي ثابت */
+/* تنسيق الفيديو: يجب أن يكون ثابتًا في الخلفية */
 #bg-video {
-  position: absolute; 
+  position: fixed; /* 💡 ثابت لضمان بقائه في الخلفية */
   top: 0;
   left: 0;
   width: 100%; 
@@ -48,21 +41,25 @@ body {
 
 
 /* -------------------------------------- */
-/* 3. تنسيق NEOEN castle light (للتغطية وضمان الظهور) */
+/* 3. تنسيق NEOEN castle light (الحل النهائي لتثبيت العنوان والتغطية) */
 /* -------------------------------------- */
 
 .neon-wrapper {
-  position: absolute;
-  /* 💡 التعديل: خفض موضع اللوحة بالكامل على اللوحة الإعلانية الحمراء */
-  top: 160px; 
+  /* 💡 التثبيت: يجب أن يكون fixed ليبقى فوق الفيديو الثابت */
+  position: fixed; 
+  top: 125px; /* نصف ارتفاع الشريط (250px) */
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 10; 
+  z-index: 10; /* ليبقى فوق كل شيء */
   text-align: center;
   pointer-events: none; 
+  background: transparent; 
+  padding: 0; 
+  border-radius: 0;
+  box-shadow: none; 
 }
 
-/* 💡 العنصر الزائف: الشريط الأسود الذي يغطي كلمة DINER تماماً */
+/* الشريط الأسود الذي يغطي كلمة DINER (العنصر الزائف) */
 .neon-wrapper::before {
     content: '';
     position: absolute;
@@ -70,15 +67,14 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 100%; 
-    /* 💡 التعديل: زيادة العرض لـ 750px لضمان المسح الكامل */
-    max-width: 750px; 
-    /* 💡 التعديل: زيادة الارتفاع لـ 180px لضمان المسح الكامل لكلمة DINER */
-    height: 180px; 
-    background: #000000; 
-    z-index: -1; 
+    max-width: 450px; 
+    height: 100px; /* ارتفاع لضمان تغطية جيدة */
+    background: #000000; /* خلفية سوداء صلبة */
+    z-index: -1; /* خلف النص النيوني (Z-index: 10) وأمام الفيديو (Z-index: 0) */
 }
 
-/* التنسيقات المستوردة مع تعديلات تضييق المسافة */
+
+/* التنسيقات المستوردة من الكود الأصلي للفيديو */
 .neoncontainer {
   display: block; 
   text-align: center; 
@@ -89,9 +85,8 @@ body {
 
 .neon {
   font-family: 'Tilt Neon', sans-serif;
-  font-size: 7vw; 
-  /* 💡 التعديل: سحب النص العلوي للأسفل لتقريب النص السفلي */
-  line-height: 0.5vw; 
+  font-size: 5vw; 
+  line-height: 0.9vw;
   color: #28D7FE; 
   text-shadow: 0 0 3vw #2356FF;
   animation: neon 1.8s infinite;
@@ -100,9 +95,8 @@ body {
 
 .flux {
   font-family: 'Neonderthaw', cursive;
-  font-size: 14vw; 
-  /* 💡 التعديل: رفع النص السفلي قليلاً */
-  line-height: 8vw;
+  font-size: 10vw; 
+  line-height: 9vw;
   color: #FED128; 
   text-shadow: 0 0 3vw #F40A35;
   animation: flux 5s linear infinite;
@@ -110,271 +104,19 @@ body {
 
 
 /* -------------------------------------- */
-/* 4. تنسيقات الواجهة (الأكورديون وعناصر التحكم) - لم يتم تغييرها */
+/* 4. تنسيقات الواجهة (الأكورديون وعناصر التحكم) */
 /* -------------------------------------- */
 
 .logo-container { 
     position: relative; top: 0; padding-top: 20px; margin-bottom: 20px; text-align: center; z-index: 10; 
 }
 
-.main-logo {
-    max-width: 80px; 
-    height: auto;
-    border-radius: 8px; 
-    box-shadow: 0 0 5px #00ff99, 0 0 10px #00ff99; 
-}
+/* ... (بقية تنسيقات .customizer-panel, .accordion-header, .font-option, .neon-sign تبقى كما هي) ... */
 
-.container {
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-h1 {
-    text-align: center;
-    color: #fff;
-    margin-bottom: 30px;
-    margin-top: 10px;
-}
-
-.customizer-panel {
-    display: flex;
-    flex-wrap: wrap;
-    background-color: #1f1f1f; 
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-    min-height: 450px;
-}
-
-.controls-section {
-    flex: 1;
-    min-width: 300px;
-    padding-left: 0; 
-    margin-right: 20px; 
-}
-
-.neon-display {
-    flex: 2;
-    min-height: 350px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid #333;
-    border-radius: 8px;
-    margin-left: 20px;
-    margin-right: 0;
-    background-color: #000;
-    overflow: hidden; 
-}
-
-.input-group {
-    margin-bottom: 20px;
-}
-
-.input-group label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-}
-
-.input-group input[type="text"],
-.input-group select {
-    width: 100%;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #555;
-    background-color: #2a2a2a;
-    color: #fff;
-}
-
-/* تنسيقات الأكورديون (Accordion) */
-.custom-accordion {
-    border: 1px solid #333;
-    border-radius: 8px;
-    margin-bottom: 20px;
-}
-
-.accordion-header {
-    background-color: #2a2a2a;
-    padding: 15px;
-    border-bottom: 1px solid #333;
-    cursor: pointer;
-    font-weight: bold;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-radius: 8px; 
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-}
-
-.accordion-header.active {
-    background-color: #1f1f1f; 
-    color: #00ff99;
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-}
-
-.accordion-body {
-    padding: 15px;
-    background-color: #1f1f1f;
-    display: none; 
-    border-bottom-left-radius: 8px;
-    border-bottom-right-radius: 8px;
-}
-
-.accordion-body.expanded {
-    display: block;
-}
-
-.accordion-arrow {
-    transition: transform 0.3s;
-}
-
-.accordion-header.active .accordion-arrow {
-    transform: rotate(180deg);
-}
-
-/* تنسيق شبكة اختيار الخطوط الجديدة */
-.font-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); 
-    gap: 10px;
-    padding: 5px 0;
-}
-
-.font-option {
-    padding: 12px 5px;
-    border: 1px solid #444; 
-    border-radius: 8px;
-    text-align: center;
-    cursor: pointer;
-    transition: all 0.2s;
-    background-color: #2a2a2a; 
-    color: #fff;
-    font-size: 15px; 
-    overflow: hidden; 
-    white-space: nowrap; 
-    text-overflow: ellipsis; 
-}
-
-/* تطبيق الخطوط على الأزرار الثمانية */
-.font-option[data-font="NeonClip"] { font-family: 'NeonClip', sans-serif; }
-.font-option[data-font="NeonDespairs"] { font-family: 'NeonDespairs', sans-serif; }
-.font-option[data-font="Neon80s"] { font-family: 'Neon80s', sans-serif; }
-.font-option[data-font="NeonPolentical"] { font-family: 'NeonPolentical', sans-serif; }
-.font-option[data-font="NeonAmman"] { font-family: 'NeonAmman', sans-serif; }
-.font-option[data-font="NeonSwifeh"] { font-family: 'NeonSwifeh', sans-serif; }
-.font-option[data-font="NeonDemather"] { font-family: 'NeonDemather', sans-serif; }
-.font-option[data-font="NeonFloralis"] { font-family: 'NeonFloralis', sans-serif; }
-
-
-.font-option:hover {
-    border-color: #00ff99; 
-    background-color: #333;
-}
-
-.font-option.active {
-    background-color: #007bff; 
-    border-color: #007bff;
-    color: #fff;
-    font-weight: bold;
-    box-shadow: 0 0 8px rgba(0, 123, 255, 0.7);
-}
-
-/* تنسيق شبكة الألوان */
-.color-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(40px, 1fr)); 
-    gap: 10px;
-    padding: 5px 0;
-}
-
-.color-option {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    cursor: pointer;
-    border: 2px solid transparent;
-    transition: border 0.2s, box-shadow 0.2s;
-    margin: 5px auto;
-}
-
-.color-option:hover {
-    border-color: #fff;
-}
-
-.color-option.active {
-    border-color: #fff; 
-    box-shadow: 0 0 0 4px #007bff; 
-}
-
-/* تنسيق زر التشغيل/الإيقاف والتوهج */
-.neon-button {
-    width: 100%;
-    padding: 10px;
-    margin-top: 15px;
-    border: none;
-    border-radius: 5px;
-    font-size: 1.1em;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.neon-button.on {
-    background-color: #00ff99; 
-    color: #121212;
-    box-shadow: 0 0 10px #00ff99, 0 0 20px #00ff99 inset;
-}
-
-.neon-button.off {
-    background-color: #444; 
-    color: #aaa;
-    box-shadow: none;
-}
 
 .neon-sign { 
-    filter: blur(0.5px) contrast(1.1); 
-    font-family: 'NeonClip', sans-serif; 
-    font-size: 40px; 
-    text-align: center;
-    transition: all 0.2s ease-in-out; 
-    white-space: nowrap; 
-}
-
-/* فئة إيقاف التشغيل: إلغاء التوهج */
-.neon-sign.is-off {
-    color: #666 !important; 
-    text-shadow: none !important; 
-}
-
-/* فئات الألوان */
-.neon-CustomRed {
-    color: #FF3366;
-    text-shadow: 0 0 8px #ff6699, 0 0 20px #FF3366, 0 0 35px #FF3366, 0 0 50px rgba(255, 51, 102, 0.5); 
-}
-
-.neon-CustomPink {
-    color: #FF6EC4;
-    text-shadow: 0 0 8px #ff99ff, 0 0 20px #FF6EC4, 0 0 35px #FF6EC4, 0 0 50px rgba(255, 110, 196, 0.5);
-}
-
-/* تنسيقات خلفيات المعاينة */
-.bg-brick-wall {
-    background-image: url('images/bg-brick-wall.jpg');
-    background-size: cover;
-    background-position: center;
-}
-
-.bg-concrete {
-    background-image: url('images/bg-concrete.jpg');
-    background-size: cover;
-    background-position: center;
-}
-
-.bg-black {
-    background-color: #000;
-    background-image: none;
+    font-family: 'NeonClip', sans-serif; font-size: 40px; text-align: center;
+    transition: all 0.2s ease-in-out; white-space: nowrap; animation: soft-pulse 4s infinite alternate; 
 }
 
 
@@ -382,6 +124,7 @@ h1 {
 /* 5. الرسوم المتحركة (Keyframes) */
 /* -------------------------------------- */
 
+/* Neon Keyframes (من الكود الأصلي) */
 @keyframes neon {
   0%, 100% {
     opacity: 1;
@@ -391,6 +134,7 @@ h1 {
   }
 }
 
+/* Flux Glow Keyframes (من الكود الأصلي) */
 @keyframes flux {
   0%, 100% {
     text-shadow:
@@ -406,25 +150,329 @@ h1 {
 }
 
 /* -------------------------------------- */
-/* 6. استجابة التصميم (Media Queries) - تم تعديلها لتناسب الحجم الجديد */
+/* 6. استجابة التصميم (Media Queries) */
 /* -------------------------------------- */
 @media (max-width: 1366px) {
-  .neon { font-size: 8vw; line-height: 1.5vw; }
-  .flux { font-size: 16vw; line-height: 12vw; }
-  .neon-wrapper { top: 190px; }
-  .neon-wrapper::before { max-width: 500px; height: 120px; }
+  .neon { font-size: 6vw; line-height: 0vw; padding-right: 0vw; }
+  .flux { font-size: 12vw; line-height: 10vw; }
+  .neoncontainer { padding: 8px 16px; }
+}
+/* ... (بقية Media Queries) ... *//* -------------------------------------- */
+/* 1. تعريف خطوط النيون المخصصة (لتشغيل قائمة التحكم) */
+/* -------------------------------------- */
+
+/* --- تم إبقاء الخطوط المحلية الموثوقة هنا --- */
+@font-face { font-family: 'NeonClip'; src: url('./fonts/clip/Clip.ttf') format('truetype'); }
+/* ... (جميع الخطوط الأخرى يجب أن تكون مدرجة هنا بنفس الصيغة التي أرسلتها في الرد السابق) ... */
+@font-face { font-family: 'Neon80s'; src: url('./fonts/castlefont/Neon80s/Neon.ttf') format('truetype'); } 
+
+
+/* -------------------------------------- */
+/* 2. تنسيق الفيديو والعنوان النيوني (التثبيت النهائي) */
+/* -------------------------------------- */
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
 
-@media (max-width: 1024px) {
-  .neon { font-size: 9vw; line-height: 2vw; }
-  .flux { font-size: 18vw; line-height: 14vw; }
-  .neon-wrapper { top: 200px; }
-  .neon-wrapper::before { max-width: 450px; height: 100px; }
+body {
+  display: block; 
+  background: #121212; 
+  padding-top: 250px; /* مسافة لشريط الفيديو */
+  position: relative;
+  z-index: 1;
 }
 
-@media (max-width: 767px) {
-  .neon { font-size: 10vw; line-height: 1vw; }
-  .flux { font-size: 20vw; line-height: 15vw; }
-  .neon-wrapper { top: 200px; }
-  .neon-wrapper::before { max-width: 90%; height: 80px; }
+/* تنسيق الفيديو: يجب أن يكون ثابتًا في الخلفية */
+#bg-video {
+  position: fixed; /* 💡 ثابت لضمان بقائه في الخلفية */
+  top: 0;
+  left: 0;
+  width: 100%; 
+  height: 250px; 
+  object-fit: cover;
+  z-index: 0;
+  opacity: 0.6;
+  filter: brightness(0.7);
 }
+
+
+/* -------------------------------------- */
+/* 3. تنسيق NEOEN castle light (الحل النهائي لتثبيت العنوان والتغطية) */
+/* -------------------------------------- */
+
+.neon-wrapper {
+  /* 💡 التثبيت: يجب أن يكون fixed ليبقى فوق الفيديو الثابت */
+  position: fixed; 
+  top: 125px; /* نصف ارتفاع الشريط (250px) */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10; /* ليبقى فوق كل شيء */
+  text-align: center;
+  pointer-events: none; 
+  background: transparent; 
+  padding: 0; 
+  border-radius: 0;
+  box-shadow: none; 
+}
+
+/* الشريط الأسود الذي يغطي كلمة DINER (العنصر الزائف) */
+.neon-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%; 
+    max-width: 450px; 
+    height: 100px; /* ارتفاع لضمان تغطية جيدة */
+    background: #000000; /* خلفية سوداء صلبة */
+    z-index: -1; /* خلف النص النيوني (Z-index: 10) وأمام الفيديو (Z-index: 0) */
+}
+
+
+/* التنسيقات المستوردة من الكود الأصلي للفيديو */
+.neoncontainer {
+  display: block; 
+  text-align: center; 
+  vertical-align: middle;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.neon {
+  font-family: 'Tilt Neon', sans-serif;
+  font-size: 5vw; 
+  line-height: 0.9vw;
+  color: #28D7FE; 
+  text-shadow: 0 0 3vw #2356FF;
+  animation: neon 1.8s infinite;
+  padding-right: 0; 
+}
+
+.flux {
+  font-family: 'Neonderthaw', cursive;
+  font-size: 10vw; 
+  line-height: 9vw;
+  color: #FED128; 
+  text-shadow: 0 0 3vw #F40A35;
+  animation: flux 5s linear infinite;
+}
+
+
+/* -------------------------------------- */
+/* 4. تنسيقات الواجهة (الأكورديون وعناصر التحكم) */
+/* -------------------------------------- */
+
+.logo-container { 
+    position: relative; top: 0; padding-top: 20px; margin-bottom: 20px; text-align: center; z-index: 10; 
+}
+
+/* ... (بقية تنسيقات .customizer-panel, .accordion-header, .font-option, .neon-sign تبقى كما هي) ... */
+
+
+.neon-sign { 
+    font-family: 'NeonClip', sans-serif; font-size: 40px; text-align: center;
+    transition: all 0.2s ease-in-out; white-space: nowrap; animation: soft-pulse 4s infinite alternate; 
+}
+
+
+/* -------------------------------------- */
+/* 5. الرسوم المتحركة (Keyframes) */
+/* -------------------------------------- */
+
+/* Neon Keyframes (من الكود الأصلي) */
+@keyframes neon {
+  0%, 100% {
+    opacity: 1;
+    text-shadow:
+      0 0 1vw #1041FF, 0 0 3vw #1041FF, 0 0 10vw #1041FF, 0 0 10vw #1041FF, 0 0 .4vw #8BFDFE, .5vw .5vw .1vw #147280;
+    color: #28D7FE;
+  }
+}
+
+/* Flux Glow Keyframes (من الكود الأصلي) */
+@keyframes flux {
+  0%, 100% {
+    text-shadow:
+      0 0 1vw #FA1C16, 0 0 3vw #FA1C16, 0 0 10vw #FA1C16, 0 0 10vw #FA1C16, 0 0 .4vw #FED128, .5vw .5vw .1vw #806914;
+    color: #FED128;
+  }
+
+  50% {
+    text-shadow:
+      0 0 .5vw #800E0B, 0 0 1.5vw #800E0B, 0 0 5vw #800E0B, 0 0 5vw #800E0B, 0 0 .2vw #800E0B, .5vw .5vw .1vw #40340A;
+    color: #806914;
+  }
+}
+
+/* -------------------------------------- */
+/* 6. استجابة التصميم (Media Queries) */
+/* -------------------------------------- */
+@media (max-width: 1366px) {
+  .neon { font-size: 6vw; line-height: 0vw; padding-right: 0vw; }
+  .flux { font-size: 12vw; line-height: 10vw; }
+  .neoncontainer { padding: 8px 16px; }
+}
+/* ... (بقية Media Queries) ... *//* -------------------------------------- */
+/* 1. تعريف خطوط النيون المخصصة (لتشغيل قائمة التحكم) */
+/* -------------------------------------- */
+
+/* --- تم إبقاء الخطوط المحلية الموثوقة هنا --- */
+@font-face { font-family: 'NeonClip'; src: url('./fonts/clip/Clip.ttf') format('truetype'); }
+/* ... (جميع الخطوط الأخرى يجب أن تكون مدرجة هنا بنفس الصيغة التي أرسلتها في الرد السابق) ... */
+@font-face { font-family: 'Neon80s'; src: url('./fonts/castlefont/Neon80s/Neon.ttf') format('truetype'); } 
+
+
+/* -------------------------------------- */
+/* 2. تنسيق الفيديو والعنوان النيوني (التثبيت النهائي) */
+/* -------------------------------------- */
+
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  display: block; 
+  background: #121212; 
+  padding-top: 250px; /* مسافة لشريط الفيديو */
+  position: relative;
+  z-index: 1;
+}
+
+/* تنسيق الفيديو: يجب أن يكون ثابتًا في الخلفية */
+#bg-video {
+  position: fixed; /* 💡 ثابت لضمان بقائه في الخلفية */
+  top: 0;
+  left: 0;
+  width: 100%; 
+  height: 250px; 
+  object-fit: cover;
+  z-index: 0;
+  opacity: 0.6;
+  filter: brightness(0.7);
+}
+
+
+/* -------------------------------------- */
+/* 3. تنسيق NEOEN castle light (الحل النهائي لتثبيت العنوان والتغطية) */
+/* -------------------------------------- */
+
+.neon-wrapper {
+  /* 💡 التثبيت: يجب أن يكون fixed ليبقى فوق الفيديو الثابت */
+  position: fixed; 
+  top: 125px; /* نصف ارتفاع الشريط (250px) */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10; /* ليبقى فوق كل شيء */
+  text-align: center;
+  pointer-events: none; 
+  background: transparent; 
+  padding: 0; 
+  border-radius: 0;
+  box-shadow: none; 
+}
+
+/* الشريط الأسود الذي يغطي كلمة DINER (العنصر الزائف) */
+.neon-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%; 
+    max-width: 450px; 
+    height: 100px; /* ارتفاع لضمان تغطية جيدة */
+    background: #000000; /* خلفية سوداء صلبة */
+    z-index: -1; /* خلف النص النيوني (Z-index: 10) وأمام الفيديو (Z-index: 0) */
+}
+
+
+/* التنسيقات المستوردة من الكود الأصلي للفيديو */
+.neoncontainer {
+  display: block; 
+  text-align: center; 
+  vertical-align: middle;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.neon {
+  font-family: 'Tilt Neon', sans-serif;
+  font-size: 5vw; 
+  line-height: 0.9vw;
+  color: #28D7FE; 
+  text-shadow: 0 0 3vw #2356FF;
+  animation: neon 1.8s infinite;
+  padding-right: 0; 
+}
+
+.flux {
+  font-family: 'Neonderthaw', cursive;
+  font-size: 10vw; 
+  line-height: 9vw;
+  color: #FED128; 
+  text-shadow: 0 0 3vw #F40A35;
+  animation: flux 5s linear infinite;
+}
+
+
+/* -------------------------------------- */
+/* 4. تنسيقات الواجهة (الأكورديون وعناصر التحكم) */
+/* -------------------------------------- */
+
+.logo-container { 
+    position: relative; top: 0; padding-top: 20px; margin-bottom: 20px; text-align: center; z-index: 10; 
+}
+
+/* ... (بقية تنسيقات .customizer-panel, .accordion-header, .font-option, .neon-sign تبقى كما هي) ... */
+
+
+.neon-sign { 
+    font-family: 'NeonClip', sans-serif; font-size: 40px; text-align: center;
+    transition: all 0.2s ease-in-out; white-space: nowrap; animation: soft-pulse 4s infinite alternate; 
+}
+
+
+/* -------------------------------------- */
+/* 5. الرسوم المتحركة (Keyframes) */
+/* -------------------------------------- */
+
+/* Neon Keyframes (من الكود الأصلي) */
+@keyframes neon {
+  0%, 100% {
+    opacity: 1;
+    text-shadow:
+      0 0 1vw #1041FF, 0 0 3vw #1041FF, 0 0 10vw #1041FF, 0 0 10vw #1041FF, 0 0 .4vw #8BFDFE, .5vw .5vw .1vw #147280;
+    color: #28D7FE;
+  }
+}
+
+/* Flux Glow Keyframes (من الكود الأصلي) */
+@keyframes flux {
+  0%, 100% {
+    text-shadow:
+      0 0 1vw #FA1C16, 0 0 3vw #FA1C16, 0 0 10vw #FA1C16, 0 0 10vw #FA1C16, 0 0 .4vw #FED128, .5vw .5vw .1vw #806914;
+    color: #FED128;
+  }
+
+  50% {
+    text-shadow:
+      0 0 .5vw #800E0B, 0 0 1.5vw #800E0B, 0 0 5vw #800E0B, 0 0 5vw #800E0B, 0 0 .2vw #800E0B, .5vw .5vw .1vw #40340A;
+    color: #806914;
+  }
+}
+
+/* -------------------------------------- */
+/* 6. استجابة التصميم (Media Queries) */
+/* -------------------------------------- */
+@media (max-width: 1366px) {
+  .neon { font-size: 6vw; line-height: 0vw; padding-right: 0vw; }
+  .flux { font-size: 12vw; line-height: 10vw; }
+  .neoncontainer { padding: 8px 16px; }
+}
+/* ... (بقية Media Queries) ... */
