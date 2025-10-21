@@ -42,9 +42,12 @@
 /* -------------------------------------- */
 
 .logo-container {
-    text-align: center; 
-    padding-top: 20px;
-    margin-bottom: 20px;
+    /* تم تعديله ليظهر الشعار فوق شريط الفيديو */
+    position: absolute;
+    top: 50px; 
+    width: 100%;
+    text-align: center;
+    z-index: 10; 
 }
 
 .main-logo {
@@ -57,16 +60,15 @@
 
 /* تنسيق body تم تعديله ليتناسب مع شريط الفيديو العلوي */
 body {
-    background-color: transparent; /* لجعل خلفية الـ body شفافة لترى الفيديو */
+    background-color: #121212; 
     color: #f0f0f0; 
     font-family: Arial, sans-serif;
     margin: 0;
-    padding-top: 250px; /* مساوٍ لارتفاع الفيديو ليزيح المحتوى للأسفل */
+    padding-top: 250px; /* مساوٍ لارتفاع شريط الفيديو */
     padding-left: 20px;
     padding-right: 20px;
     direction: rtl;
     text-align: right;
-    /* تأكيد أن محتوى الجسم فوق الفيديو (Z-index) */
     position: relative; 
     z-index: 1;
 }
@@ -149,7 +151,7 @@ h1 {
     position: absolute; 
     top: 0;
     left: 0;
-    z-index: 0; 
+    z-index: 0; /* ليكون خلف المحتوى الرئيسي */
     opacity: 0.6; 
     filter: brightness(0.7); 
 }
@@ -504,7 +506,16 @@ h1 {
     color: #FF3366;
     text-shadow: 0 0 8px #ff6699, 0 0 20px #FF3366, 0 0 35px #FF3366, 0 0 50px rgba(255, 51, 102, 0.5); 
 }
-/* ... (يجب عليك إضافة بقية فئات الألوان هنا) ... */
+.neon-CustomPink {
+    color: #FF6EC4;
+    text-shadow: 0 0 8px #ff99ff, 0 0 20px #FF6EC4, 0 0 35px #FF6EC4, 0 0 50px rgba(255, 110, 196, 0.5);
+}
+
+.neon-DeepPink {
+    color: #FF0099;
+    text-shadow: 0 0 8px #ff66cc, 0 0 20px #FF0099, 0 0 35px #FF0099, 0 0 50px rgba(255, 0, 153, 0.5);
+}
+
 .neon-Purple {
     color: #9933FF; 
     text-shadow: 
@@ -518,7 +529,37 @@ h1 {
         0 0 80px #bc13fe;
     animation: pulsate-purple 1.5s infinite alternate; 
 }
-/* ... (بقية فئات الألوان) ... */
+
+.neon-ElectricBlue {
+    color: #0099FF;
+    text-shadow: 0 0 8px #66ccff, 0 0 20px #0099FF, 0 0 35px #0099FF, 0 0 50px rgba(0, 153, 255, 0.5);
+}
+
+.neon-IceBlue {
+    color: #33CCFF;
+    text-shadow: 0 0 8px #99e6ff, 0 0 20px #33CCFF, 0 0 35px #33CCFF, 0 0 50px rgba(51, 204, 255, 0.5);
+}
+
+.neon-DeepGreen {
+    color: #33CC00;
+    text-shadow: 0 0 8px #99ff66, 0 0 20px #33CC00, 0 0 35px #33CC00, 0 0 50px rgba(51, 204, 0, 0.5);
+}
+
+.neon-CustomYellow {
+    color: #FFFF33;
+    text-shadow: 0 0 8px #ffff99, 0 0 20px #FFFF33, 0 0 35px #FFFF33, 0 0 50px rgba(255, 255, 51, 0.5);
+}
+
+.neon-WarmWhite {
+    color: #FFFFAA; 
+    text-shadow: 0 0 8px #ffffff, 0 0 20px #FFFFAA, 0 0 35px #FFFFAA, 0 0 50px rgba(255, 255, 170, 0.5);
+}
+
+.neon-White {
+    color: #FFFFFF;
+    text-shadow: 0 0 8px #ffffff, 0 0 20px #ffffff, 0 0 35px #ffffff, 0 0 50px rgba(255, 255, 255, 0.5);
+}
+
 
 /* -------------------------------------- */
 /* تنسيق معرض الصور الجديد مع الشرح (Caption) */
@@ -582,4 +623,13 @@ h1 {
     align-items: center;
     justify-content: center;
 }
-/* ... (بقية الأكواد المتقدمة) ... */
+
+/* -------------------------------------- */
+/* الأكواد المتقدمة التي تم دمجها كـ ميزات إضافية (مختصرة) */
+/* -------------------------------------- */
+.neon-title { display: flex; align-items: center; justify-content: center; margin-bottom: 60px; font-family: monospace; }
+.neon-title .text { position: relative; }
+.neon-title .text h1 { font-size: 90px; font-weight: bolder; text-transform: uppercase; letter-spacing: 3px; color: transparent; text-shadow: 0 0 25px #00bcd4; -webkit-text-stroke: 2px #00bcd4; }
+.neon-title .text h1:nth-child(2) { position: absolute; top: 0; left: 0; color: #00bcd4; animation: neon-title 3s ease-in-out infinite; }
+.neon-block .block { position: relative; display: flex; align-items: center; justify-content: center; margin: 60px auto; width: 300px; height: 150px; background: linear-gradient(45deg, #272325 40%, #020104); color: #fff; font-size: 30px; text-transform: uppercase; letter-spacing: 4px; font-family: monospace; }
+/* ... (بقية التنسيقات المتقدمة) ... */
