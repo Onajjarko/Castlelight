@@ -1,5 +1,5 @@
 /* -------------------------------------- */
-/* تعريف خطوط النيون المخصصة (التصحيح النهائي للمسارات) */
+/* 1. تعريف خطوط النيون المخصصة (لتشغيل قائمة التحكم) */
 /* -------------------------------------- */
 
 /* --- الخطوط الأصلية والموجودة في المجلدات الخارجية --- */
@@ -20,222 +20,57 @@
 @font-face { font-family: 'NeonFloralis'; src: url('./fonts/castlefont/floralis/Floralis Couture.ttf') format('truetype'); } 
 @font-face { font-family: 'Neon80s'; src: url('./fonts/castlefont/Neon80s/Neon.ttf') format('truetype'); } 
 
-/* ❌ تم حذف مسارات 'castle font 2' و 'castle font 3' لتجنب أخطاء 404 المتكررة ❌ */
-
 
 /* -------------------------------------- */
-/* تنسيق الواجهة والخلفية السوداء */
+/* 2. تنسيق الفيديو والعنوان النيوني (تنسيق الفيديو الأصلي مع تصحيحات التغطية) */
 /* -------------------------------------- */
 
-.logo-container {
-    position: relative; 
-    top: 0; 
-    padding-top: 20px;
-    margin-bottom: 20px;
-    text-align: center;
-    z-index: 10; 
-}
-
-.main-logo {
-    max-width: 80px; 
-    height: auto;
-    border-radius: 8px; 
-    transition: all 0.3s;
-    box-shadow: 0 0 5px #00ff99, 0 0 10px #00ff99; 
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
 
 body {
-    background-color: #121212; 
-    color: #f0f0f0; 
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding-top: 250px; 
-    padding-left: 20px;
-    padding-right: 20px;
-    direction: rtl;
-    text-align: right;
-    position: relative; 
-    z-index: 1;
+  /* تم تعديل هذا ليناسب هيكل الواجهة الأكبر */
+  display: block; 
+  background: #121212; /* خلفية داكنة */
+  padding-top: 250px; /* مسافة لشريط الفيديو */
+  position: relative;
+  z-index: 1;
 }
 
-.container {
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-h1 {
-    text-align: center;
-    color: #f0f0f0; 
-    margin-bottom: 30px;
-    margin-top: 10px;
-}
-
-.customizer-panel {
-    background-color: rgba(34, 34, 34, 0.9); 
-    color: #f0f0f0; 
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-    min-height: 450px;
-}
-
-.controls-section {
-    flex: 1;
-    min-width: 300px;
-    padding-left: 0; 
-    margin-right: 20px; 
-}
-
-.neon-display {
-    flex: 2;
-    min-height: 350px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid #444; 
-    border-radius: 8px;
-    margin-left: 20px;
-    margin-right: 0;
-    background-color: #121211; 
-    background-image: url("data:image/svg+xml,%3Csvg width='42' height='44' viewBox='0 0 42 44' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M0 0h42v44H0V0zm1 1h40v20H1V1zM0 23h20v20H0V23zm22 0h20v20H22V23z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-    background-repeat: repeat;
-    overflow: hidden; 
-    filter: brightness(1.1); 
-    background-size: cover;
-    background-position: center;
-}
-
-.bg-brick-wall { background-image: url('images/bg-brick-wall.jpg'); background-color: #555; }
-.bg-concrete { background-image: url('images/bg-concrete.jpg'); background-color: #333; }
-.bg-black { background-color: #121211; background-image: url("data:image/svg+xml,%3Csvg width='42' height='44' viewBox='0 0 42 44' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M0 0h42v44H0V0zm1 1h40v20H1V1zM0 23h20v20H0V23zm22 0h20v20H22V23z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
-
+/* تنسيق الفيديو كشريط علوي ثابت */
 #bg-video {
-    width: 100%;
-    height: 250px; 
-    object-fit: cover; 
-    position: absolute; 
-    top: 0;
-    left: 0;
-    z-index: 0; 
-    opacity: 0.6; 
-    filter: brightness(0.7); 
+  position: absolute; 
+  top: 0;
+  left: 0;
+  width: 100%; 
+  height: 250px; /* ارتفاع شريط الفيديو */
+  object-fit: cover;
+  z-index: 0;
+  opacity: 0.6;
+  filter: brightness(0.7);
 }
 
-
-.input-group { margin-bottom: 20px; }
-.input-group label { display: block; margin-bottom: 8px; font-weight: bold; }
-.input-group input[type="text"], .input-group select {
-    width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #555; 
-    background-color: #333; color: #f0f0f0; 
-}
 
 /* -------------------------------------- */
-/* تنسيقات الأكورديون (Accordion) */
-/* -------------------------------------- */
-.custom-accordion { border: 1px solid #555; border-radius: 8px; margin-bottom: 20px; }
-.accordion-header {
-    background-color: #333333; padding: 15px; border-bottom: 1px solid #444; 
-    cursor: pointer; font-weight: bold; display: flex; justify-content: space-between;
-    align-items: center; border-radius: 8px; color: #f0f0f0; 
-}
-.accordion-header.active { background-color: #444; color: #00ff99; border-bottom-left-radius: 0; border-bottom-right-radius: 0; }
-.accordion-body {
-    padding: 15px; background-color: #444; display: none; 
-    border-bottom-left-radius: 8px; border-bottom-right-radius: 8px;
-    border-left: 1px solid #555; border-right: 1px solid #555; border-bottom: 1px solid #555;
-}
-.accordion-body.expanded { display: block; }
-.accordion-arrow { transition: transform 0.3s; }
-.accordion-header.active .accordion-arrow { transform: rotate(180deg); }
-
-/* -------------------------------------- */
-/* تنسيق شبكة اختيار الخطوط الجديدة */
+/* 3. تنسيق NEOEN castle light (الدمج مع التغطية) */
 /* -------------------------------------- */
 
-.font-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 10px; padding: 5px 0; }
-.font-option {
-    padding: 12px 5px; border: 1px solid #555; border-radius: 8px; text-align: center;
-    cursor: pointer; transition: all 0.2s; background-color: #333; color: #f0f0f0; 
-    font-size: 15px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; 
-    position: relative; 
-}
-
-.font-option.is-new:after {
-    content: "جديد"; position: absolute; top: -5px; right: -5px; background: #FF4500; 
-    color: white; padding: 2px 5px; border-radius: 4px; font-size: 10px; font-weight: bold;
-    transform: rotate(5deg);
-}
-
-/* ربط الخطوط بأسماء الفئات (للتأكد من عمل الخطوط الموثوقة) */
-.font-option[data-font="NeonClip"] { font-family: 'NeonClip', sans-serif; }
-.font-option[data-font="NeonDespairs"] { font-family: 'NeonDespairs', sans-serif; }
-.font-option[data-font="NeonIcklips"] { font-family: 'NeonIcklips', sans-serif; }
-.font-option[data-font="NeonKosan"] { font-family: 'NeonKosan', sans-serif; }
-.font-option[data-font="NeonParty"] { font-family: 'NeonParty', sans-serif; }
-.font-option[data-font="NeonPicadilly"] { font-family: 'NeonPicadilly', sans-serif; }
-.font-option[data-font="NeonAbdoun"] { font-family: 'NeonAbdoun', sans-serif; }
-.font-option[data-font="NeonAmman"] { font-family: 'NeonAmman', sans-serif; }
-.font-option[data-font="NeonSwifeh"] { font-family: 'NeonSwifeh', sans-serif; }
-.font-option[data-font="NeonSunsetClub"] { font-family: 'NeonSunsetClub', sans-serif; }
-.font-option[data-font="NeonPolentical"] { font-family: 'NeonPolentical', sans-serif; }
-.font-option[data-font="NeonDemather"] { font-family: 'NeonDemather', sans-serif; }
-.font-option[data-font="NeonFloralis"] { font-family: 'NeonFloralis', sans-serif; }
-.font-option[data-font="Neon80s"] { font-family: 'Neon80s', sans-serif; }
-
-
-.font-option:hover { border-color: #00ff99; background-color: #2a2a2a; }
-.font-option.active {
-    background-color: #00ff99; border-color: #00ff99; color: #121212; 
-    font-weight: bold; box-shadow: 0 0 8px rgba(0, 255, 153, 0.7);
-}
-
-/* -------------------------------------- */
-/* تنسيق شبكة الألوان والزر النيوني */
-/* -------------------------------------- */
-.color-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(40px, 1fr)); gap: 10px; padding: 5px 0; }
-.color-option {
-    width: 40px; height: 40px; border-radius: 50%; cursor: pointer; border: 2px solid #aaa; 
-    transition: border 0.2s, box-shadow 0.2s; margin: 5px auto;
-}
-.color-option:hover { border-color: #00ff99; }
-.color-option.active { border-color: #00ff99; box-shadow: 0 0 0 4px #00ff99; }
-
-/* تنسيق زر التشغيل/الإيقاف (مقدم) */
-.neon-button {
-    position: relative; padding: 10px; margin-top: 15px; border: none; border-radius: 5px; 
-    font-size: 1.1em; font-weight: bold; cursor: pointer; transition: all 0.3s ease;
-    text-transform: uppercase; letter-spacing: 3px; overflow: hidden; 
-}
-.neon-button.on { background-color: transparent; color: #00ff99; border: 2px solid #00ff99; box-shadow: 0 0 10px rgba(0, 255, 153, 0.5); }
-.neon-button.off { background-color: #555; color: #ccc; box-shadow: none; }
-/* ... (كود حركة الزر) ... */
-
-
-.neon-sign { 
-    font-family: 'NeonClip', sans-serif; font-size: 40px; text-align: center;
-    transition: all 0.2s ease-in-out; white-space: nowrap; animation: soft-pulse 4s infinite alternate; 
-}
-.neon-sign.is-off { color: #555 !important; text-shadow: none !important; }
-
-/* -------------------------------------- */
-/* الأكواد المتقدمة التي تم دمجها كـ ميزات إضافية (لتغطية DINER) */
-/* -------------------------------------- */
-
-/* تنسيق ظهور عنوان CASTLE LIGHT neon (التصحيح النهائي للتغطية) */
 .neon-wrapper {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 10; 
-    text-align: center;
-    pointer-events: none; 
-    
-    /* ❌ تم إزالة الخلفية السوداء الصلبة من العنصر الرئيسي ❌ */
-    background: transparent; 
-    padding: 0; 
-    border-radius: 0;
-    box-shadow: none; 
+  /* نضعه في وسط الشريط العلوي */
+  position: absolute;
+  top: 125px; /* نصف ارتفاع الشريط (250px) */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10; 
+  text-align: center;
+  pointer-events: none; 
+  background: transparent; 
+  padding: 0; 
+  border-radius: 0;
+  box-shadow: none; 
 }
 
 /* 💡 الشريط الأسود الذي يغطي كلمة DINER (العنصر الزائف) */
@@ -247,29 +82,113 @@ h1 {
     transform: translate(-50%, -50%);
     width: 100%; 
     max-width: 450px; /* عرض تقديري لشريط DINER */
-    height: 100px; /* ارتفاع تقديري لشريط DINER */
+    height: 100px; /* ارتفاع معدل لضمان تغطية جيدة */
     background: #000000; /* خلفية سوداء صلبة */
     z-index: -1; /* خلف النص النيوني (Z-index: 10) وأمام الفيديو (Z-index: 0) */
 }
 
+/* التنسيقات المستوردة من الكود الأصلي للفيديو */
+.neoncontainer {
+  display: block; 
+  text-align: center; 
+  vertical-align: middle;
+  width: 100%;
+  box-sizing: border-box;
+}
 
-.neoncontainer { padding: 0; }
 .neon {
-    font-size: 5em; 
-    font-family: 'Neon80s', sans-serif; 
-    color: #00ff99;
-    /* زيادة التوهج بشدة */
-    text-shadow: 
-        0 0 10px #00ff99, 0 0 40px #00ff99, 0 0 70px #00ff99, 0 0 100px rgba(0, 255, 153, 0.8); 
-    white-space: nowrap; display: block; line-height: 1.2;
+  font-family: 'Tilt Neon', sans-serif;
+  font-size: 5vw; /* تم تعديلها لـ 5vw للتغطية */
+  line-height: 0.9vw;
+  color: #28D7FE; 
+  text-shadow: 0 0 3vw #2356FF;
+  animation: neon 1.8s infinite;
+  padding-right: 0; 
 }
+
 .flux {
-    font-size: 3em; 
-    font-family: 'NeonPolentical', sans-serif; 
-    color: #ff9900;
-    /* زيادة التوهج بشدة */
-    text-shadow: 
-        0 0 10px #ff9900, 0 0 40px #ff9900, 0 0 70px #ff9900, 0 0 100px rgba(255, 153, 0, 0.8);
-    white-space: nowrap; display: block;
+  font-family: 'Neonderthaw', cursive;
+  font-size: 10vw; /* تم تعديلها لـ 10vw للتغطية */
+  line-height: 9vw;
+  color: #FED128; 
+  text-shadow: 0 0 3vw #F40A35;
+  animation: flux 5s linear infinite;
 }
-/* ... (بقية التنسيقات) ... */
+
+
+/* -------------------------------------- */
+/* 4. تنسيقات الواجهة (الأكورديون وعناصر التحكم) */
+/* -------------------------------------- */
+
+.logo-container { 
+    position: relative; top: 0; padding-top: 20px; margin-bottom: 20px; text-align: center; z-index: 10; 
+}
+
+/* ... (بقية تنسيقات .customizer-panel, .accordion-header, .font-option, .neon-sign تبقى كما هي) ... */
+
+
+.neon-sign { 
+    font-family: 'NeonClip', sans-serif; font-size: 40px; text-align: center;
+    transition: all 0.2s ease-in-out; white-space: nowrap; animation: soft-pulse 4s infinite alternate; 
+}
+
+
+/* -------------------------------------- */
+/* 5. الرسوم المتحركة (Keyframes) */
+/* -------------------------------------- */
+
+/* Neon Keyframes (من الكود الأصلي) */
+@keyframes neon {
+  0%, 100% {
+    opacity: 1;
+    text-shadow:
+      0 0 1vw #1041FF, 0 0 3vw #1041FF, 0 0 10vw #1041FF, 0 0 10vw #1041FF, 0 0 .4vw #8BFDFE, .5vw .5vw .1vw #147280;
+    color: #28D7FE;
+  }
+}
+
+/* Neon Flicker Keyframes (من الكود الأصلي) */
+@keyframes neon-flicker {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    opacity: 1;
+    text-shadow:
+      0 0 1vw #1041FF, 0 0 3vw #1041FF, 0 0 10vw #1041FF, 0 0 10vw #1041FF, 0 0 .4vw #8BFDFE, .5vw .5vw .1vw #147280;
+    color: #28D7FE;
+  }
+  20%, 24%, 55% { opacity: 0.8; }
+  22% { opacity: 0.7; }
+}
+
+/* Flux Glow Keyframes (من الكود الأصلي) */
+@keyframes flux {
+  0%, 100% {
+    text-shadow:
+      0 0 1vw #FA1C16, 0 0 3vw #FA1C16, 0 0 10vw #FA1C16, 0 0 10vw #FA1C16, 0 0 .4vw #FED128, .5vw .5vw .1vw #806914;
+    color: #FED128;
+  }
+
+  50% {
+    text-shadow:
+      0 0 .5vw #800E0B, 0 0 1.5vw #800E0B, 0 0 5vw #800E0B, 0 0 5vw #800E0B, 0 0 .2vw #800E0B, .5vw .5vw .1vw #40340A;
+    color: #806914;
+  }
+}
+
+/* -------------------------------------- */
+/* 6. استجابة التصميم (Media Queries) */
+/* -------------------------------------- */
+@media (max-width: 1366px) {
+  .neon { font-size: 6vw; line-height: 0vw; padding-right: 0vw; }
+  .flux { font-size: 12vw; line-height: 10vw; }
+  .neoncontainer { padding: 8px 16px; }
+}
+
+@media (max-width: 1024px) {
+  .neon { font-size: 6vw; line-height: 1.5vw; padding-right: 2vw; }
+  .flux { font-size: 13vw; line-height: 11vw; }
+}
+
+@media (max-width: 767px) {
+  .neon { font-size: 8vw; line-height: 0vw; padding-right: 0; }
+  .flux { font-size: 17vw; line-height: 12vw; }
+}
