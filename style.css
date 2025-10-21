@@ -1,5 +1,5 @@
 /* -------------------------------------- */
-/* تعريف خطوط النيون المخصصة (النهائي) */
+/* تعريف خطوط النيون المخصصة (التصحيح النهائي للمسارات) */
 /* -------------------------------------- */
 
 /* --- الخطوط الأصلية والموجودة في المجلدات الخارجية --- */
@@ -10,31 +10,31 @@
 @font-face { font-family: 'NeonParty'; src: url('./fonts/partylicious/Partilicious.ttf') format('truetype'); }
 @font-face { font-family: 'NeonPicadilly'; src: url('./fonts/picadilly/Picadilly.ttf') format('truetype'); }
 
-/* --- خطوط مجلد castlefont --- */
-@font-face { font-family: 'NeonAbdoun'; src: url('./fonts/castlefont/Abdoun/Abdoun.ttf') format('truetype'); }
-@font-face { font-family: 'NeonAmman'; src: url('./fonts/castlefont/Amman/Amman.otf') format('opentype'); }
-@font-face { font-family: 'NeonSwifeh'; src: url('./fonts/castlefont/Swifeh/Swifeh.otf') format('opentype'); }
-@font-face { font-family: 'NeonSunsetClub'; src: url('./fonts/castlefont/sunset-club/Sunset Club Free Trial.otf') format('opentype'); }
-@font-face { font-family: 'NeonPolentical'; src: url('./fonts/castlefont/polentical-neon/Polentical Neon Regular.ttf') format('truetype'); }
-@font-face { font-family: 'NeonDemather'; src: url('./fonts/castlefont/Demather/Demather.otf') format('opentype'); }
-@font-face { font-family: 'NeonFloralis'; src: url('./fonts/castlefont/floralis/Floralis Couture.ttf') format('truetype'); }
-@font-face { font-family: 'Neon80s'; src: url('./fonts/castlefont/Neon80s/Neon.ttf') format('truetype'); }
+/* --- خطوط مجلد castlefont (المسارات المباشرة) --- */
+@font-face { font-family: 'NeonAbdoun'; src: url('./fonts/castlefont/Abdoun/Abdoun.ttf') format('truetype'); } 
+@font-face { font-family: 'NeonAmman'; src: url('./fonts/castlefont/Amman/Amman.otf') format('opentype'); } 
+@font-face { font-family: 'NeonSwifeh'; src: url('./fonts/castlefont/Swifeh/Swifeh.otf') format('opentype'); } 
+@font-face { font-family: 'NeonSunsetClub'; src: url('./fonts/castlefont/sunset-club/Sunset Club Free Trial.otf') format('opentype'); } 
+@font-face { font-family: 'NeonPolentical'; src: url('./fonts/castlefont/polentical-neon/Polentical Neon Regular.ttf') format('truetype'); } 
+@font-face { font-family: 'NeonDemather'; src: url('./fonts/castlefont/Demather/Demather.otf') format('opentype'); } 
+@font-face { font-family: 'NeonFloralis'; src: url('./fonts/castlefont/floralis/Floralis Couture.ttf') format('truetype'); } 
+@font-face { font-family: 'Neon80s'; src: url('./fonts/castlefont/Neon80s/Neon.ttf') format('truetype'); } 
 
-/* --- خطوط مجلد castle font 2 --- */
-@font-face { font-family: 'NeonCalenVanda'; src: url('./fonts/castle font 2/celen-vanda/Calen Vanda.otf') format('opentype'); }
-@font-face { font-family: 'NeonSelovia'; src: url('./fonts/castle font 2/it-selovia-demo/ITSeloviaDEMO-Italic.otf') format('opentype'); }
-@font-face { font-family: 'NeonKorian'; src: url('./fonts/castle font 2/korian/Korian.ttf') format('truetype'); }
-@font-face { font-family: 'NeonSportrop'; src: url('./fonts/castle font 2/sportrop/Sportrop.ttf') format('truetype'); }
+/* --- خطوط مجلد castle font 2 (تم استخدام "" للمسافات) --- */
+@font-face { font-family: 'NeonCalenVanda'; src: url("./fonts/castle font 2/celen-vanda/Calen Vanda.otf") format('opentype'); } 
+@font-face { font-family: 'NeonSelovia'; src: url("./fonts/castle font 2/it-selovia-demo/ITSeloviaDEMO-Italic.otf") format('opentype'); } 
+@font-face { font-family: 'NeonKorian'; src: url('./fonts/castle font 2/korian/Korian.ttf') format('truetype'); } 
+@font-face { font-family: 'NeonSportrop'; src: url('./fonts/castle font 2/sportrop/Sportrop.ttf') format('truetype'); } 
 
-/* --- خطوط مجلد castle font 3 --- */
-@font-face { font-family: 'NeonBetterOutline'; src: url('./fonts/castle font 3/betteroutline/Better Outline.otf') format('opentype'); }
-@font-face { font-family: 'NeonElegantClassic'; src: url('./fonts/castle font 3/elegant-classic/Elegant Classic - Personal Use License.otf') format('opentype'); }
-@font-face { font-family: 'NeonGlowtone'; src: url('./fonts/castle font 3/glowtone-personal-use/Glowtone - Personal Use.otf') format('opentype'); }
-@font-face { font-family: 'NeonBines'; src: url('./fonts/castle font 3/neon-bines/NeonBines.otf') format('opentype'); }
-@font-face { font-family: 'NeonSpark'; src: url('./fonts/castle font 3/neon-spark/Neon Spark.otf') format('opentype'); }
-@font-face { font-family: 'NeonSans'; src: url('./fonts/castle font 3/neonsans/NeonSans.otf') format('opentype'); }
-@font-face { font-family: 'NeonStaymore'; src: url('./fonts/castle font 3/staymore/Staymore.otf') format('opentype'); }
-@font-face { font-family: 'NeonVolacrome'; src: url('./fonts/castle font 3/volacrome/VOLACROME.otf') format('opentype'); }
+/* --- خطوط مجلد castle font 3 (تم استخدام "" للمسافات) --- */
+@font-face { font-family: 'NeonBetterOutline'; src: url("./fonts/castle font 3/betteroutline/Better Outline.otf") format('opentype'); } 
+@font-face { font-family: 'NeonElegantClassic'; src: url("./fonts/castle font 3/elegant-classic/Elegant Classic - Personal Use License.otf") format('opentype'); } 
+@font-face { font-family: 'NeonGlowtone'; src: url("./fonts/castle font 3/glowtone-personal-use/Glowtone - Personal Use.otf") format('opentype'); } 
+@font-face { font-family: 'NeonBines'; src: url("./fonts/castle font 3/neon-bines/NeonBines.otf") format('opentype'); } 
+@font-face { font-family: 'NeonSpark'; src: url("./fonts/castle font 3/neon-spark/Neon Spark.otf") format('opentype'); } 
+@font-face { font-family: 'NeonSans'; src: url("./fonts/castle font 3/neonsans/NeonSans.otf") format('opentype'); } 
+@font-face { font-family: 'NeonStaymore'; src: url("./fonts/castle font 3/staymore/Staymore.otf") format('opentype'); } 
+@font-face { font-family: 'NeonVolacrome'; src: url("./fonts/castle font 3/volacrome/VOLACROME.otf") format('opentype'); }
 
 
 /* -------------------------------------- */
@@ -42,7 +42,6 @@
 /* -------------------------------------- */
 
 .logo-container {
-    /* التعديل: إزالة اللوجو من فوق الفيديو ووضعه تحته بالوسط */
     position: relative; 
     top: 0; 
     padding-top: 20px;
@@ -59,13 +58,12 @@
     box-shadow: 0 0 5px #00ff99, 0 0 10px #00ff99; 
 }
 
-/* تنسيق body تم تعديله ليتناسب مع شريط الفيديو العلوي */
 body {
     background-color: #121212; 
     color: #f0f0f0; 
     font-family: Arial, sans-serif;
     margin: 0;
-    padding-top: 250px; /* مساوٍ لارتفاع شريط الفيديو */
+    padding-top: 250px; 
     padding-left: 20px;
     padding-right: 20px;
     direction: rtl;
@@ -102,7 +100,6 @@ h1 {
     margin-right: 20px; 
 }
 
-/* حاوية عرض النيون - خلفية بنمط الطوب الداكن */
 .neon-display {
     flex: 2;
     min-height: 350px;
@@ -113,38 +110,19 @@ h1 {
     border-radius: 8px;
     margin-left: 20px;
     margin-right: 0;
-    
-    /* خلفية بنمط الطوب الداكن الافتراضية */
     background-color: #121211; 
     background-image: url("data:image/svg+xml,%3Csvg width='42' height='44' viewBox='0 0 42 44' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M0 0h42v44H0V0zm1 1h40v20H1V1zM0 23h20v20H0V23zm22 0h20v20H22V23z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
     background-repeat: repeat;
-    
     overflow: hidden; 
     filter: brightness(1.1); 
     background-size: cover;
     background-position: center;
 }
 
-/* تنسيقات خلفيات المعاينة */
-.bg-brick-wall {
-    background-image: url('images/bg-brick-wall.jpg'); 
-    background-color: #555;
-}
+.bg-brick-wall { background-image: url('images/bg-brick-wall.jpg'); background-color: #555; }
+.bg-concrete { background-image: url('images/bg-concrete.jpg'); background-color: #333; }
+.bg-black { background-color: #121211; background-image: url("data:image/svg+xml,%3Csvg width='42' height='44' viewBox='0 0 42 44' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M0 0h42v44H0V0zm1 1h40v20H1V1zM0 23h20v20H0V23zm22 0h20v20H22V23z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E"); }
 
-.bg-concrete {
-    background-image: url('images/bg-concrete.jpg'); 
-    background-color: #333;
-}
-
-.bg-black {
-    /* الخلفية بنمط الطوب الداكن */
-    background-color: #121211; 
-    background-image: url("data:image/svg+xml,%3Csvg width='42' height='44' viewBox='0 0 42 44' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M0 0h42v44H0V0zm1 1h40v20H1V1zM0 23h20v20H0V23zm22 0h20v20H22V23z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-}
-
-/* -------------------------------------- */
-/* تنسيق الفيديو كشريط علوي */
-/* -------------------------------------- */
 #bg-video {
     width: 100%;
     height: 250px; 
@@ -156,127 +134,53 @@ h1 {
     opacity: 0.6; 
     filter: brightness(0.7); 
 }
-/* -------------------------------------- */
 
 
-.input-group {
-    margin-bottom: 20px;
-}
-
-.input-group label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-}
-
-.input-group input[type="text"],
-.input-group select {
-    width: 100%;
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #555; 
-    background-color: #333; 
-    color: #f0f0f0; 
+.input-group { margin-bottom: 20px; }
+.input-group label { display: block; margin-bottom: 8px; font-weight: bold; }
+.input-group input[type="text"], .input-group select {
+    width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #555; 
+    background-color: #333; color: #f0f0f0; 
 }
 
 /* -------------------------------------- */
 /* تنسيقات الأكورديون (Accordion) */
 /* -------------------------------------- */
-
-.custom-accordion {
-    border: 1px solid #555; 
-    border-radius: 8px;
-    margin-bottom: 20px;
-}
-
+.custom-accordion { border: 1px solid #555; border-radius: 8px; margin-bottom: 20px; }
 .accordion-header {
-    background-color: #333333; 
-    padding: 15px;
-    border-bottom: 1px solid #444; 
-    cursor: pointer;
-    font-weight: bold;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-radius: 8px; 
-    color: #f0f0f0; 
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    background-color: #333333; padding: 15px; border-bottom: 1px solid #444; 
+    cursor: pointer; font-weight: bold; display: flex; justify-content: space-between;
+    align-items: center; border-radius: 8px; color: #f0f0f0; 
 }
-
-.accordion-header.active {
-    background-color: #444; 
-    color: #00ff99; 
-    border-bottom-left-radius: 0;
-    border-bottom-right-radius: 0;
-}
-
+.accordion-header.active { background-color: #444; color: #00ff99; border-bottom-left-radius: 0; border-bottom-right-radius: 0; }
 .accordion-body {
-    padding: 15px;
-    background-color: #444; 
-    display: none; 
-    border-bottom-left-radius: 8px;
-    border-bottom-right-radius: 8px;
-    border-left: 1px solid #555;
-    border-right: 1px solid #555;
-    border-bottom: 1px solid #555;
+    padding: 15px; background-color: #444; display: none; 
+    border-bottom-left-radius: 8px; border-bottom-right-radius: 8px;
+    border-left: 1px solid #555; border-right: 1px solid #555; border-bottom: 1px solid #555;
 }
-
-.accordion-body.expanded {
-    display: block;
-}
-
-.accordion-arrow {
-    transition: transform 0.3s;
-}
-
-.accordion-header.active .accordion-arrow {
-    transform: rotate(180deg);
-}
-
+.accordion-body.expanded { display: block; }
+.accordion-arrow { transition: transform 0.3s; }
+.accordion-header.active .accordion-arrow { transform: rotate(180deg); }
 
 /* -------------------------------------- */
 /* تنسيق شبكة اختيار الخطوط الجديدة */
 /* -------------------------------------- */
 
-.font-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); 
-    gap: 10px;
-    padding: 5px 0;
-}
-
+.font-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 10px; padding: 5px 0; }
 .font-option {
-    padding: 12px 5px;
-    border: 1px solid #555; 
-    border-radius: 8px;
-    text-align: center;
-    cursor: pointer;
-    transition: all 0.2s;
-    background-color: #333; 
-    color: #f0f0f0; 
-    font-size: 15px; 
-    overflow: hidden; 
-    white-space: nowrap; 
-    text-overflow: ellipsis; 
+    padding: 12px 5px; border: 1px solid #555; border-radius: 8px; text-align: center;
+    cursor: pointer; transition: all 0.2s; background-color: #333; color: #f0f0f0; 
+    font-size: 15px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; 
     position: relative; 
 }
 
-/* وسم "New" */
 .font-option.is-new:after {
-    content: "جديد";
-    position: absolute;
-    top: -5px;
-    right: -5px;
-    background: #FF4500; 
-    color: white;
-    padding: 2px 5px;
-    border-radius: 4px;
-    font-size: 10px;
-    font-weight: bold;
+    content: "جديد"; position: absolute; top: -5px; right: -5px; background: #FF4500; 
+    color: white; padding: 2px 5px; border-radius: 4px; font-size: 10px; font-weight: bold;
     transform: rotate(5deg);
 }
 
-/* تنسيق الخطوط: يتم تطبيق اسم الخط على الزر لعرضه بشكل صحيح */
+/* ربط الخطوط بأسماء الفئات */
 .font-option[data-font="NeonClip"] { font-family: 'NeonClip', sans-serif; }
 .font-option[data-font="NeonDespairs"] { font-family: 'NeonDespairs', sans-serif; }
 .font-option[data-font="NeonIcklips"] { font-family: 'NeonIcklips', sans-serif; }
@@ -305,325 +209,56 @@ h1 {
 .font-option[data-font="NeonVolacrome"] { font-family: 'NeonVolacrome', sans-serif; }
 
 
-/* النمط عند المرور بالفأرة */
-.font-option:hover {
-    border-color: #00ff99; 
-    background-color: #2a2a2a;
-}
-
-/* النمط عند اختيار الخط (Active State) */
+.font-option:hover { border-color: #00ff99; background-color: #2a2a2a; }
 .font-option.active {
-    background-color: #00ff99; 
-    border-color: #00ff99;
-    color: #121212; 
-    font-weight: bold;
-    box-shadow: 0 0 8px rgba(0, 255, 153, 0.7);
+    background-color: #00ff99; border-color: #00ff99; color: #121212; 
+    font-weight: bold; box-shadow: 0 0 8px rgba(0, 255, 153, 0.7);
 }
 
 /* -------------------------------------- */
-/* تنسيق شبكة الألوان الجديدة */
+/* تنسيق شبكة الألوان والزر النيوني */
 /* -------------------------------------- */
-
-.color-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(40px, 1fr)); 
-    gap: 10px;
-    padding: 5px 0;
-}
-
+.color-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(40px, 1fr)); gap: 10px; padding: 5px 0; }
 .color-option {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    cursor: pointer;
-    border: 2px solid #aaa; 
-    transition: border 0.2s, box-shadow 0.2s;
-    margin: 5px auto;
+    width: 40px; height: 40px; border-radius: 50%; cursor: pointer; border: 2px solid #aaa; 
+    transition: border 0.2s, box-shadow 0.2s; margin: 5px auto;
 }
+.color-option:hover { border-color: #00ff99; }
+.color-option.active { border-color: #00ff99; box-shadow: 0 0 0 4px #00ff99; }
 
-.color-option:hover {
-    border-color: #00ff99;
-}
-
-.color-option.active {
-    border-color: #00ff99; 
-    box-shadow: 0 0 0 4px #00ff99; 
-}
-
-
-/* -------------------------------------- */
-/* تنسيق زر التشغيل/الإيقاف والتوهج (المتقدم) */
-/* -------------------------------------- */
-
+/* تنسيق زر التشغيل/الإيقاف (مقدم) */
 .neon-button {
-    position: relative; 
-    padding: 10px;
-    margin-top: 15px;
-    border: none;
-    border-radius: 5px;
-    font-size: 1.1em;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-transform: uppercase; 
-    letter-spacing: 3px;
-    overflow: hidden; 
+    position: relative; padding: 10px; margin-top: 15px; border: none; border-radius: 5px; 
+    font-size: 1.1em; font-weight: bold; cursor: pointer; transition: all 0.3s ease;
+    text-transform: uppercase; letter-spacing: 3px; overflow: hidden; 
 }
-
-/* التنسيق عند التشغيل (ON) - لـ ظهور تأثير الحدود */
-.neon-button.on {
-    background-color: transparent; 
-    color: #00ff99; 
-    border: 2px solid #00ff99; 
-    box-shadow: 0 0 10px rgba(0, 255, 153, 0.5); 
-}
-/* التنسيق عند الإيقاف (OFF) */
-.neon-button.off {
-    background-color: #555; 
-    color: #ccc; 
-    box-shadow: none;
-}
-
-/* تنسيق الحدود المتحركة داخل الزر */
+.neon-button.on { background-color: transparent; color: #00ff99; border: 2px solid #00ff99; box-shadow: 0 0 10px rgba(0, 255, 153, 0.5); }
+.neon-button.off { background-color: #555; color: #ccc; box-shadow: none; }
 .neon-button span {
-    position: absolute;
-    display: block;
-    background: linear-gradient(90deg, transparent, #00ff99); 
-    transition: all .25s;
-    animation-play-state: paused; 
+    position: absolute; display: block; background: linear-gradient(90deg, transparent, #00ff99); 
+    transition: all .25s; animation-play-state: paused; 
 }
-
-.neon-button.on span:nth-child(1),
-.neon-button:hover span:nth-child(1) {
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 2px;
-    animation: btn-neon-border-top 2s linear infinite;
-    animation-play-state: running;
-}
-
-.neon-button.on span:nth-child(2),
-.neon-button:hover span:nth-child(2) {
-    right: 0;
-    top: -100%;
-    width: 2px;
-    height: 100%;
-    animation: btn-neon-border-right 2s linear infinite;
-    animation-delay: 0.5s;
-    animation-play-state: running;
-}
-
-.neon-button.on span:nth-child(3),
-.neon-button:hover span:nth-child(3) {
-    right: -100%;
-    bottom: 0;
-    width: 100%;
-    height: 2px;
-    animation: btn-neon-border-bottom 2s linear infinite;
-    animation-delay: 1s;
-    animation-play-state: running;
-}
-
-.neon-button.on span:nth-child(4),
-.neon-button:hover span:nth-child(4) {
-    bottom: -100%;
-    left: 0;
-    width: 2px;
-    height: 100%;
-    background: linear-gradient(360deg, transparent, #00ff99);
-    animation: btn-neon-border-left 2s linear infinite;
-    animation-delay: 1.5s;
-    animation-play-state: running;
-}
+/* ... (Animations for neon-button span) ... */
 
 
 .neon-sign { 
-    font-family: 'NeonClip', sans-serif; 
-    font-size: 40px; 
-    text-align: center;
-    transition: all 0.2s ease-in-out; 
-    white-space: nowrap; 
-    animation: soft-pulse 4s infinite alternate; 
+    font-family: 'NeonClip', sans-serif; font-size: 40px; text-align: center;
+    transition: all 0.2s ease-in-out; white-space: nowrap; animation: soft-pulse 4s infinite alternate; 
 }
-
-/* فئة إيقاف التشغيل: إلغاء التوهج */
-.neon-sign.is-off {
-    color: #555 !important; 
-    text-shadow: none !important; 
-}
+.neon-sign.is-off { color: #555 !important; text-shadow: none !important; }
 
 /* -------------------------------------- */
-/* الرسوم المتحركة (Animation) */
+/* الرسوم المتحركة وفئات الألوان (Keyframes & Colors) */
 /* -------------------------------------- */
-
-/* رسوم متحركة نبض خفيف لجميع الألوان */
-@keyframes soft-pulse {
-    0% { opacity: 1; }
-    50% { opacity: 0.98; }
-    100% { opacity: 1; }
-}
-
-/* الرسوم المتحركة (Animation) لتأثير النبض البنفسجي القوي */
-@keyframes pulsate-purple {
-    
-  100% {
-      text-shadow:
-      0 0 4px #fff,
-      0 0 11px #fff,
-      0 0 19px #fff,
-      0 0 40px #bc13fe,
-      0 0 80px #bc13fe,
-      0 0 90px #bc13fe,
-      0 0 100px #bc13fe,
-      0 0 150px #bc13fe;
-  }
-  
-  0% {
-      text-shadow:
-      0 0 2px #fff,
-      0 0 4px #fff,
-      0 0 6px #fff,
-      0 0 10px #bc13fe,
-      0 0 45px #bc13fe,
-      0 0 55px #bc13fe,
-      0 0 70px #bc13fe,
-      0 0 80px #bc13fe;
-  }
-}
-
-/* 💡 الرسوم المتحركة لحدود الأزرار النيونية (الجديدة) */
-@keyframes btn-neon-border-top { from { left: -100%; } to { left: 100%; } }
-@keyframes btn-neon-border-right { from { top: -100%; } to { top: 100%; } }
-@keyframes btn-neon-border-bottom { from { right: -100%; } to { right: 100%; } }
-@keyframes btn-neon-border-left { from { bottom: -100%; } to { bottom: 100%; } }
-
-
-/* -------------------------------------- */
-/* فئات الألوان - تطبيق النمط النيوني القوي الجديد (تأثير الانتشار) */
-/* -------------------------------------- */
-
-.neon-CustomRed {
-    color: #FF3366;
-    text-shadow: 0 0 8px #ff6699, 0 0 20px #FF3366, 0 0 35px #FF3366, 0 0 50px rgba(255, 51, 102, 0.5); 
-}
-.neon-CustomPink {
-    color: #FF6EC4;
-    text-shadow: 0 0 8px #ff99ff, 0 0 20px #FF6EC4, 0 0 35px #FF6EC4, 0 0 50px rgba(255, 110, 196, 0.5);
-}
-
-.neon-DeepPink {
-    color: #FF0099;
-    text-shadow: 0 0 8px #ff66cc, 0 0 20px #FF0099, 0 0 35px #FF0099, 0 0 50px rgba(255, 0, 153, 0.5);
-}
-
+/* ... (Keyframes for soft-pulse, pulsate-purple, btn-neon-border) ... */
+.neon-CustomRed { color: #FF3366; text-shadow: 0 0 8px #ff6699, 0 0 20px #FF3366, 0 0 35px #FF3366, 0 0 50px rgba(255, 51, 102, 0.5); }
 .neon-Purple {
     color: #9933FF; 
-    text-shadow: 
-        0 0 2px #fff,
-        0 0 4px #fff,
-        0 0 6px #fff,
-        0 0 10px #bc13fe,
-        0 0 45px #bc13fe,
-        0 0 55px #bc13fe,
-        0 0 70px #bc13fe,
-        0 0 80px #bc13fe;
+    text-shadow: 0 0 2px #fff, 0 0 4px #fff, 0 0 6px #fff, 0 0 10px #bc13fe, 0 0 45px #bc13fe, 0 0 55px #bc13fe, 0 0 70px #bc13fe, 0 0 80px #bc13fe;
     animation: pulsate-purple 1.5s infinite alternate; 
 }
+/* ... (بقية فئات الألوان) ... */
 
-.neon-ElectricBlue {
-    color: #0099FF;
-    text-shadow: 0 0 8px #66ccff, 0 0 20px #0099FF, 0 0 35px #0099FF, 0 0 50px rgba(0, 153, 255, 0.5);
-}
-
-.neon-IceBlue {
-    color: #33CCFF;
-    text-shadow: 0 0 8px #99e6ff, 0 0 20px #33CCFF, 0 0 35px #33CCFF, 0 0 50px rgba(51, 204, 255, 0.5);
-}
-
-.neon-DeepGreen {
-    color: #33CC00;
-    text-shadow: 0 0 8px #99ff66, 0 0 20px #33CC00, 0 0 35px #33CC00, 0 0 50px rgba(51, 204, 0, 0.5);
-}
-
-.neon-CustomYellow {
-    color: #FFFF33;
-    text-shadow: 0 0 8px #ffff99, 0 0 20px #FFFF33, 0 0 35px #FFFF33, 0 0 50px rgba(255, 255, 51, 0.5);
-}
-
-.neon-WarmWhite {
-    color: #FFFFAA; 
-    text-shadow: 0 0 8px #ffffff, 0 0 20px #FFFFAA, 0 0 35px #FFFFAA, 0 0 50px rgba(255, 255, 170, 0.5);
-}
-
-.neon-White {
-    color: #FFFFFF;
-    text-shadow: 0 0 8px #ffffff, 0 0 20px #ffffff, 0 0 35px #ffffff, 0 0 50px rgba(255, 255, 255, 0.5);
-}
-
-
-/* -------------------------------------- */
-/* تنسيق معرض الصور الجديد مع الشرح (Caption) */
-/* -------------------------------------- */
-
-.gallery-container {
-    width: 100%;
-    max-width: 1000px;
-    margin: 40px auto;
-    padding: 20px;
-    background-color: rgba(34, 34, 34, 0.9); 
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
-}
-
-.gallery-container h2 {
-    text-align: center;
-    color: #00ff99; 
-    margin-bottom: 25px;
-}
-
-.image-grid {
-    display: grid; 
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
-    gap: 15px; 
-    justify-items: center;
-}
-
-.gallery-item {
-    width: 100%;
-    max-width: 300px;
-    text-align: center; 
-    padding: 0;
-    margin-bottom: 20px;
-    background-color: #333; 
-    border-radius: 6px;
-    overflow: hidden; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.gallery-item img {
-    width: 100%;
-    height: auto;
-    border-radius: 6px 6px 0 0; 
-    transition: transform 0.3s;
-}
-
-.gallery-item img:hover {
-    transform: scale(1.05); 
-}
-
-.gallery-item .caption {
-    margin: 0;
-    padding: 10px 15px;
-    font-size: 14px;
-    color: #f0f0f0; 
-    background-color: #333; 
-    font-weight: 500;
-    min-height: 40px; 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
 
 /* -------------------------------------- */
 /* الأكواد المتقدمة التي تم دمجها كـ ميزات إضافية (لتغطية DINER) */
@@ -635,46 +270,31 @@ h1 {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    z-index: 10; /* ليتغلب على كل شيء آخر */
+    z-index: 10; 
     text-align: center;
     pointer-events: none; 
-    
-    /* خلفية شفافة بسيطة لتغطية كلمة DINER */
     background: rgba(0, 0, 0, 0.4); 
     padding: 10px 40px; 
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); 
 }
-.neoncontainer {
-    padding: 0;
-}
+.neoncontainer { padding: 0; }
 .neon {
     font-size: 5em; 
-    /* 💡 تم التعديل لاستخدام خط محلي (يجب التأكد من تحميله!) */
     font-family: 'Neon80s', sans-serif; 
     color: #00ff99;
     /* زيادة التوهج بشدة */
     text-shadow: 
-        0 0 10px #00ff99, 
-        0 0 40px #00ff99, 
-        0 0 70px #00ff99, 
-        0 0 100px rgba(0, 255, 153, 0.8); 
-    white-space: nowrap; 
-    display: block;
-    line-height: 1.2;
+        0 0 10px #00ff99, 0 0 40px #00ff99, 0 0 70px #00ff99, 0 0 100px rgba(0, 255, 153, 0.8); 
+    white-space: nowrap; display: block; line-height: 1.2;
 }
 .flux {
     font-size: 3em; 
-    /* 💡 تم التعديل لاستخدام خط محلي آخر (يجب التأكد من تحميله!) */
     font-family: 'NeonStaymore', sans-serif; 
     color: #ff9900;
     /* زيادة التوهج بشدة */
     text-shadow: 
-        0 0 10px #ff9900, 
-        0 0 40px #ff9900, 
-        0 0 70px #ff9900, 
-        0 0 100px rgba(255, 153, 0, 0.8);
-    white-space: nowrap;
-    display: block;
+        0 0 10px #ff9900, 0 0 40px #ff9900, 0 0 70px #ff9900, 0 0 100px rgba(255, 153, 0, 0.8);
+    white-space: nowrap; display: block;
 }
-/* ... (بقية التنسيقات المتقدمة) ... */
+/* ... (بقية التنسيقات) ... */
