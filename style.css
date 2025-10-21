@@ -234,11 +234,7 @@ h1 {
 }
 .neon-button.on { background-color: transparent; color: #00ff99; border: 2px solid #00ff99; box-shadow: 0 0 10px rgba(0, 255, 153, 0.5); }
 .neon-button.off { background-color: #555; color: #ccc; box-shadow: none; }
-.neon-button span {
-    position: absolute; display: block; background: linear-gradient(90deg, transparent, #00ff99); 
-    transition: all .25s; animation-play-state: paused; 
-}
-/* ... (Animations for neon-button span) ... */
+/* ... (كود حركة الزر) ... */
 
 
 .neon-sign { 
@@ -273,7 +269,8 @@ h1 {
     z-index: 10; 
     text-align: center;
     pointer-events: none; 
-    background: rgba(0, 0, 0, 0.4); 
+    /* تم تغيير الخلفية لضمان مسح كلمة DINER بالكامل */
+    background: #000000; 
     padding: 10px 40px; 
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); 
