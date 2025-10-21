@@ -166,7 +166,7 @@ h1 {
     transform: rotate(5deg);
 }
 
-/* ربط الخطوط بأسماء الفئات */
+/* ربط الخطوط بأسماء الفئات (للتأكد من عمل الخطوط الموثوقة) */
 .font-option[data-font="NeonClip"] { font-family: 'NeonClip', sans-serif; }
 .font-option[data-font="NeonDespairs"] { font-family: 'NeonDespairs', sans-serif; }
 .font-option[data-font="NeonIcklips"] { font-family: 'NeonIcklips', sans-serif; }
@@ -181,7 +181,6 @@ h1 {
 .font-option[data-font="NeonDemather"] { font-family: 'NeonDemather', sans-serif; }
 .font-option[data-font="NeonFloralis"] { font-family: 'NeonFloralis', sans-serif; }
 .font-option[data-font="Neon80s"] { font-family: 'Neon80s', sans-serif; }
-/* ❌ تم حذف الخطوط ذات المسارات المعقدة من القائمة (لأنها لن تُحمّل) ❌ */
 
 
 .font-option:hover { border-color: #00ff99; background-color: #2a2a2a; }
@@ -222,7 +221,7 @@ h1 {
 /* الأكواد المتقدمة التي تم دمجها كـ ميزات إضافية (لتغطية DINER) */
 /* -------------------------------------- */
 
-//* تنسيق ظهور عنوان CASTLE LIGHT neon (إزالة التغطية السوداء والاعتماد على SVG Filter) */
+/* تنسيق ظهور عنوان CASTLE LIGHT neon (التصحيح النهائي للتغطية) */
 .neon-wrapper {
     position: absolute;
     top: 50%;
@@ -232,35 +231,32 @@ h1 {
     text-align: center;
     pointer-events: none; 
     
-    /* 💡 التعديل الحاسم: إزالة الخلفية السوداء الصلبة */
+    /* ❌ تم إزالة الخلفية السوداء الصلبة من العنصر الرئيسي ❌ */
     background: transparent; 
-    padding: 10px 40px; 
-    border-radius: 10px;
+    padding: 0; 
+    border-radius: 0;
     box-shadow: none; 
 }
+
+/* 💡 الشريط الأسود الذي يغطي كلمة DINER (العنصر الزائف) */
+.neon-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%; 
+    max-width: 450px; /* عرض تقديري لشريط DINER */
+    height: 60px; /* ارتفاع تقديري لشريط DINER */
+    background: #000000; /* خلفية سوداء صلبة */
+    z-index: -1; /* خلف النص النيوني (Z-index: 10) وأمام الفيديو (Z-index: 0) */
+}
+
+
 .neoncontainer { padding: 0; }
 .neon {
     font-size: 5em; 
     font-family: 'Neon80s', sans-serif; 
-    color: #00ff99;
-    /* زيادة التوهج ليتغلب على DINER */
-    text-shadow: 
-        0 0 10px #00ff99, 0 0 50px #00ff99, 0 0 100px #00ff99, 0 0 150px rgba(0, 255, 153, 1); 
-    white-space: nowrap; display: block; line-height: 1.2;
-}
-.flux {
-    font-size: 3em; 
-    font-family: 'NeonPolentical', sans-serif; 
-    color: #ff9900;
-    /* زيادة التوهج ليتغلب على DINER */
-    text-shadow: 
-        0 0 10px #ff9900, 0 0 50px #ff9900, 0 0 100px #ff9900, 0 0 150px rgba(255, 153, 0, 1);
-    white-space: nowrap; display: block;
-}
-.neoncontainer { padding: 0; }
-.neon {
-    font-size: 5em; 
-    font-family: 'Neon80s', sans-serif; /* خط نعلم أنه في مسار موثوق */
     color: #00ff99;
     /* زيادة التوهج بشدة */
     text-shadow: 
@@ -269,7 +265,7 @@ h1 {
 }
 .flux {
     font-size: 3em; 
-    font-family: 'NeonPolentical', sans-serif; /* خط نعلم أنه في مسار موثوق */
+    font-family: 'NeonPolentical', sans-serif; 
     color: #ff9900;
     /* زيادة التوهج بشدة */
     text-shadow: 
